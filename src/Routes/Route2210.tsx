@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { FetchData } from './FetchData'
-// import { BrowserRouter as Router } from "react-router-dom"
 
 const path = 
   'https://raw.githubusercontent.com/nuoxoxo/in/main/2210.in'
@@ -101,30 +100,28 @@ var Route2210 = () => {
   }, [nums])
 
   return (
-    // <Router basename={import.meta.env.DEV ? "/gig/" : "/gig/route2210/"}>
-      <>
-        {loading ? (
-          <p>Loading data...</p>
-        ) : (
-          <div className='container-L'>
+    <>
+      {loading ? (
+        <p>Loading data...</p>
+      ) : (
+        <div className='container-L'>
+          <pre>
+            { lines ? lines.join('\n') : 'No data available.' }
+          </pre>
+          <pre>
+            { nums ? nums.join('\n') : 'No data available.' }
+          </pre>
+          <div className='container-R'>
+            <span>--- 2022 Day 10: Cathode-Ray Tube ---</span>
+            <span>Part 1: { p1 }</span>
+            <span>Part 2: </span>
             <pre>
-              { lines ? lines.join('\n') : 'No data available.' }
+              { p2 ? [...p2].reverse().join('\n') : 'No data available.' }
             </pre>
-            <pre>
-              { nums ? nums.join('\n') : 'No data available.' }
-            </pre>
-            <div className='container-R'>
-              <span>--- 2022 Day 10: Cathode-Ray Tube ---</span>
-              <span>Part 1: { p1 }</span>
-              <span>Part 2: </span>
-              <pre>
-                { p2 ? [...p2].reverse().join('\n') : 'No data available.' }
-              </pre>
-            </div>
           </div>
-        )}
-      </>
-    // </Router>
+        </div>
+      )}
+    </>
   )
 }
 
