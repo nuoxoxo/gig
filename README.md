@@ -1,14 +1,14 @@
 Log
-- [x] Fix
+- :red_circle: Fix
   - Routes : 404 when refresh
-- [x] Fix
+- :green_circle: Fix
   - `<Route>` only needed in `App.tsx` 
   - `<Link>` : button OK
     - wrapped within Link
-- [x] Fix
+- :green_circle: Fix
   - `/gig/{route}` renders OK
   - `<Link>` needs button
-- [x] Fix
+- :green_circle: Fix
   - `/gig` renders correctly
   - links not working
 
