@@ -7,8 +7,9 @@
     "skipLibCheck": true,
 
     /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
+    /*"moduleResolution": "bundler",*/
+    "moduleResolution": "node",
+    /*"allowImportingTsExtensions": true,*/
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
