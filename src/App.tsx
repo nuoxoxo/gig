@@ -2,7 +2,6 @@ import Route2210 from "./Routes/Route2210"
 // import Route2113 from "./Routes/Route2113"
 import Route1802 from "./Routes/Route1802"
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom"
-// import LinkButton from './LinkButton'
 
 var App = () => {
   return (
@@ -14,20 +13,12 @@ var App = () => {
             <li>
               {/* <button onClick={() => window.location.href="/route2210"}>
               22:10</button> */}
-              <Link to="/route2210">
-                {/* <button> */}
-                  22:10
-                {/* </button> */}
-              </Link>
+              <Link to="/route2210">22:10</Link>
             </li>
             <li>
               {/* <button onClick={() => window.location.href="/route1802"}>
               18:02</button> */}
-              <Link to="/route1802">
-                {/* <button> */}
-                  18:02
-                {/* </button> */}
-              </Link>
+              <Link to="/route1802">18:02</Link>
             </li>
             {/* <li>
               <button onClick={() => window.location.href="/route2113"}>
