@@ -13,12 +13,12 @@ var App = () => {
             <li>
               {/* <button onClick={() => window.location.href="/route2210"}>
               22:10</button> */}
-              <Link to="/route2210">22:10</Link>
+              <Link to="/route2210"><button>22:10</button></Link>
             </li>
             <li>
               {/* <button onClick={() => window.location.href="/route1802"}>
               18:02</button> */}
-              <Link to="/route1802">18:02</Link>
+              <Link to="/route1802"><button>18:02</button></Link>
             </li>
             {/* <li>
               <button onClick={() => window.location.href="/route2113"}>
