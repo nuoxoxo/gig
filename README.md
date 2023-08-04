@@ -1,5 +1,5 @@
-Log            | &#8203;
--------------- | -----
+&#8203;        | Log
+-------------- | ---
 :red_circle:   | Routes : 404 when refresh
 :green_circle: | `Route` only needed in `App.tsx` 
 &#8203;        | `Link` : button OK (wrapped within `Link`)
