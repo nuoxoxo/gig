@@ -5,25 +5,19 @@ import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom"
 
 var App = () => {
   return (
-    // <Router>
     <Router basename={import.meta.env.DEV ? "/" : "/gig/"}>
       <>
         <nav>
           <ul>
             <li>
-              {/* <button onClick={() => window.location.href="/route2210"}>
-              22:10</button> */}
               <Link to="/route2210"><button>22:10</button></Link>
             </li>
             <li>
-              {/* <button onClick={() => window.location.href="/route1802"}>
-              18:02</button> */}
               <Link to="/route1802"><button>18:02</button></Link>
             </li>
-            {/* <li>
-              <button onClick={() => window.location.href="/route2113"}>
-              21:13</button>
-            </li> */}
+            <li>
+              <Link to="/"><button>HOME</button></Link>
+            </li>
           </ul>
         </nav>
 
