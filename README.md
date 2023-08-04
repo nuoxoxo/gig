@@ -1,5 +1,8 @@
 Log
 - [x] Fixed
+  - `<Route>` only needed in `App.tsx` 
+  - `<Link>` : trying button wrapped within Link
+- [x] Fixed
   - `/gig/{route}` renders OK
   - `<Link>` needs button
 - [x] Fixed
