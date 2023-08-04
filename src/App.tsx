@@ -1,7 +1,7 @@
 import Route2210 from "./Routes/Route2210"
 // import Route2113 from "./Routes/Route2113"
 import Route1802 from "./Routes/Route1802"
-import { HashRouter as Router, Route, Routes, Link } from "react-router-dom"
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom"
 
 var App = () => {
   return (
