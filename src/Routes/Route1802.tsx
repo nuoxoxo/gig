@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { FetchData } from './FetchData'
-import { BrowserRouter as Router } from "react-router-dom"
+// import { BrowserRouter as Router } from "react-router-dom"
 
 
 const path = 
