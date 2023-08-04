@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { FetchData } from './FetchData'
-import { BrowserRouter as Router } from "react-router-dom"
+// import { BrowserRouter as Router } from "react-router-dom"
 
 
 const path = 
@@ -111,7 +111,7 @@ var Route1802 = () => {
   }, [lines])
 
   return (
-    <Router basename={import.meta.env.DEV ? "/gig/" : "/gig/route1802/"}>
+    // <Router basename={import.meta.env.DEV ? "/gig/" : "/gig/route1802/"}>
       <>
         {loading ? (
           <p>Loading data...</p>
@@ -131,7 +131,7 @@ var Route1802 = () => {
           </div>
         )}
       </>
-    </Router>
+    // </Router>
   )
 }
 
