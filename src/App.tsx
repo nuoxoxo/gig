@@ -5,7 +5,8 @@ import { BrowserRouter as Router, Route, Routes /*, Link*/ } from "react-router-
 
 var App = () => {
   return (
-    <Router>
+    // <Router>
+    <Router basename={import.meta.env.DEV ? "/" : "/gig/"}>
       <>
         <nav>
           <ul>

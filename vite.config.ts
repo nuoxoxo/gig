@@ -1,10 +1,23 @@
+/*
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/',
+})
+*/
+
+// vite.config.js
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vitejs.dev/config/
+export default defineConfig(({ command }) => {
+  const config = {
+    plugins: [react()],
+    base: '/',
+    // baseurl: ''
     build: {
       assetsInclude: ['src/App.css'],
     }
@@ -16,3 +29,4 @@ export default defineConfig({
 
   return config
 })
+
