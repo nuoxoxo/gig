@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { FetchData } from './FetchData'
-// import { BrowserRouter as Router } from "react-router-dom"
+import { BrowserRouter as Router } from "react-router-dom"
 
 
 const path = 
@@ -111,27 +111,27 @@ var Route1802 = () => {
   }, [lines])
 
   return (
-    // <Router basename={import.meta.env.DEV ? "/gig/" : "/gig/route1802/"}>
-    <>
-      {loading ? (
-        <p>Loading data...</p>
-      ) : (
-        <div className='container-L'>
-          <pre style={{ fontSize: '16px' }}>
-            { lines ? lines.join('\n') : 'No data available.' }
-          </pre>
-          <pre style={{ fontSize: '16px' }}>
-            { lines23 ? lines23.join('\n') : 'No data available.' }
-          </pre>
-          <div className='container-R'>
-            <span>--- 2018 Day 2: Inventory Management System ---</span>
-            <span>Part 1: <br />{ p1 }</span>
-            <span>Part 2: <br />{ p2 }</span>
+    <Router basename={import.meta.env.DEV ? "/gig/" : "/gig/route1802/"}>
+      <>
+        {loading ? (
+          <p>Loading data...</p>
+        ) : (
+          <div className='container-L'>
+            <pre style={{ fontSize: '16px' }}>
+              { lines ? lines.join('\n') : 'No data available.' }
+            </pre>
+            <pre style={{ fontSize: '16px' }}>
+              { lines23 ? lines23.join('\n') : 'No data available.' }
+            </pre>
+            <div className='container-R'>
+              <span>--- 2018 Day 2: Inventory Management System ---</span>
+              <span>Part 1: <br />{ p1 }</span>
+              <span>Part 2: <br />{ p2 }</span>
+            </div>
           </div>
-        </div>
-      )}
-    </>
-    // </Router>
+        )}
+      </>
+    </Router>
   )
 }
 
