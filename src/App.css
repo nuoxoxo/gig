@@ -30,12 +30,14 @@ pre, span, div {
 .container-L {
 
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
 .container-R {
 
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   white-space: pre-wrap; /* show \n inside strings */
 }
