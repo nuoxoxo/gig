@@ -1,34 +1,27 @@
-import Route2210 from "./Routes/Route2210"
-// import Route2113 from "./Routes/Route2113"
+import { useState } from "react"
 import Route1802 from "./Routes/Route1802"
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom"
+import Route2210 from "./Routes/Route2210"
 
 var App = () => {
+  const [ route, setRoute ] = useState<number>( 0 )
+  const handleSetRoute = (n: number) => {
+    setRoute(n)
+  }
   return (
-    <Router basename={import.meta.env.DEV ? "/" : "/gig/"}>
-      <>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/route2210"><button>22:10</button></Link>
-            </li>
-            <li>
-              <Link to="/route1802"><button>18:02</button></Link>
-            </li>
-            <li>
-              <Link to="/"><button>HOME</button></Link>
-            </li>
-          </ul>
-        </nav>
-
-        {/* must define routes below nav */}
-        <Routes>
-          <Route path="/route1802" element={<Route1802 />} />
-          <Route path="/route2210" element={<Route2210 />} />
-          {/* <Route path="/route2113" element={<Route2113 />} /> */}
-        </Routes>
-      </>
-    </Router>
+    <>
+      <nav>
+        <ul>
+          <li>
+            <button onClick={ () => handleSetRoute(2210) }>22:10</button>
+          </li>
+          <li>
+            <button onClick={ () => handleSetRoute(1802) }>18:02</button>
+          </li>
+        </ul>
+      </nav>
+      { route === 2210 ? <Route2210 /> : null }
+      { route === 1802 ? <Route1802 /> : null }
+    </>
   )
 }
 
