@@ -1,5 +1,5 @@
 Log            | Issue  | Content
-:------------: | :---:  | :-----
+:------------: | :----- | :-----
 :green_circle: | + cats |
 :green_circle: | Removal| `Router`
 :red_circle:   | Routes | ~~404 when refresh~~ - Fixed
