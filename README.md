@@ -1,10 +1,13 @@
 &#8203;        | Log
 :------------: | :--
 :red_circle:   | Routes : 404 when refresh
+&#8203;        | 
 :green_circle: | `Route` only needed in `App.tsx` 
 &#8203;        | `Link` : button OK (wrapped within `Link`)
+&#8203;        | 
 :green_circle: | `gig/{route}` renders OK
 &#8203;        | `Link` needs button
+&#8203;        | 
 :green_circle: | `gig` renders correctly
 &#8203;        | links not working
 
