@@ -43,8 +43,8 @@ function App() {
       cursor: 'pointer',
       justifyContent: 'center',
       alignContent: 'center',
-      marginLeft: '25vh',
-      marginRight: '21vh',
+      marginLeft: '6vh',
+      marginRight: '6vh',
       marginTop: '33%',
       marginBottom: '10%',
       }}>
