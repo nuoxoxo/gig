@@ -7,7 +7,7 @@ import RouteJoke from "./Routes/RouteJoke"
 type TargetRoute = React.FC
 
 var App = () => {
-  const [ route, setRoute ] = useState<string>( '' )
+  const [ route, setRoute ] = useState<string>( 'dadj' )
   const handleSetRoute = (s: string) => {
     setRoute(s)
   }
