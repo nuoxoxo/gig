@@ -6,6 +6,8 @@
   --FONT-SIZE-2X: calc(var(--FONT-SIZE) * 2);
   --FONT-SIZE-3X: calc(var(--FONT-SIZE) * 3);
   --BTN-WATER-GREEN: #23aeba;
+  --DAD-MARGIN-H: 20%;
+  --DAD-MARGIN-V: 12%;
 }
 
 body {
@@ -54,24 +56,23 @@ nav > ul {
   list-style: none;
   padding: 0;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
 
 button {
-  -webkit-user-select: none;
   cursor: pointer;
-  /* Safari */
+  -webkit-user-select: none;
   -ms-user-select: none;
-  /* IE 10 and IE 11 */
   user-select: none;
   border: 1px solid var(--BTN-WATER-GREEN);
   border-radius: 10px;
   padding: 4px 10px;
-  margin: 0 3px;
+  margin: 3px;
   font-size: 16px;
   background-color: transparent;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.2s ease;
   
   color: white;
 }
@@ -104,3 +105,15 @@ button:hover {
   border-radius: 10px;
 }
 
+.dad-jokes-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding-bottom: 50vh;
+  user-select: none;
+  margin-left: var(--DAD-MARGIN-H);
+  margin-right: var(--DAD-MARGIN-H);
+  margin-top: var(--DAD-MARGIN-V);
+}

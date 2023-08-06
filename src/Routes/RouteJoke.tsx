@@ -38,20 +38,20 @@ function App() {
 
   return (
     <div className='container' onClick={handleClick} 
-      style={{display: 'flex',
-      userSelect: 'none',
-      cursor: 'pointer',
-      justifyContent: 'center',
-      alignContent: 'center',
-      marginLeft: '6vh',
-      marginRight: '6vh',
-      marginTop: '33%',
-      marginBottom: '10%',
-      }}>
+      // style={{display: 'flex',
+      // userSelect: 'none',
+      // cursor: 'pointer',
+      // justifyContent: 'center',
+      // alignContent: 'center',
+      // marginLeft: '6vh',
+      // marginRight: '6vh',
+      // marginTop: '33%',
+      // marginBottom: '10%',}}
+      >
       {loading ? (
         <p>Loading data...</p>
       ) : (
-        <div>
+        <div className='dad-jokes-text'>
           <span>
             { lines ? lines[Math.floor(Math.random() * lines.length)] : 'No data available.' }
           </span>
