@@ -4,19 +4,27 @@ import Route2210 from "./Routes/Route2210"
 import RouteCats from "./Routes/RouteCats"
 import RouteJoke from "./Routes/RouteJoke"
 
+//  make `Route` the new typedef
 type TargetRoute = React.FC
 
+//  set routes of type <Route>
+const routes: { [key: string]: TargetRoute } = {
+  '2210': Route2210,
+  '1802': Route1802,
+  'cats': RouteCats,
+  'dadj': RouteJoke,
+}
+
+//  default route onload
+const defaultRoute: string = 'dadj'
+
 var App = () => {
-  const [ route, setRoute ] = useState<string>( 'dadj' )
+
+  const [ route, setRoute ] = useState<string>( defaultRoute )
   const handleSetRoute = (s: string) => {
     setRoute(s)
   }
-  const routes: { [key: string]: TargetRoute } = {
-    '2210': Route2210,
-    '1802': Route1802,
-    'cats': RouteCats,
-    'dadj': RouteJoke
-  }
+
   const TargetRoute = routes[route]
   return (
     <>
