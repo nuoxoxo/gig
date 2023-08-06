@@ -2,7 +2,7 @@ var RouteCats = () => {
 
   const L:string = 'https://cdn.freecodecamp.org/curriculum/css-photo-gallery/'
   const Urls = Array.from(
-    { length: 9 }, (_, idx) => L + `${idx + 1}.jpg`
+    { length: 9 }, (_, idx) => L + `${idx + 1}` + '.jpg'
   )
 
   return (

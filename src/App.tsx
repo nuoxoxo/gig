@@ -2,6 +2,7 @@ import { useState } from "react"
 import Route1802 from "./Routes/Route1802"
 import Route2210 from "./Routes/Route2210"
 import RouteCats from "./Routes/RouteCats"
+import RouteJoke from "./Routes/RouteJoke"
 
 type TargetRoute = React.FC
 
@@ -13,7 +14,8 @@ var App = () => {
   const routes: { [key: string]: TargetRoute } = {
     '2210': Route2210,
     '1802': Route1802,
-    'cats': RouteCats
+    'cats': RouteCats,
+    'dadj': RouteJoke
   }
   const TargetRoute = routes[route]
   return (
@@ -23,6 +25,7 @@ var App = () => {
           <li><button onClick={()=>handleSetRoute('2210')}>22:10</button></li>
           <li><button onClick={()=>handleSetRoute('1802')}>18:02</button></li>
           <li><button onClick={()=>handleSetRoute('cats')}>Chats</button></li>
+          <li><button onClick={()=>handleSetRoute('dadj')}>Jokes</button></li>
         </ul>
       </nav>
       { routes.hasOwnProperty(route) ? <TargetRoute /> : null }
