@@ -110,6 +110,7 @@ button:hover {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  white-space: pre-wrap;
   cursor: pointer;
   padding-bottom: 50vh;
   user-select: none;
