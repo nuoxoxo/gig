@@ -1,13 +1,13 @@
 :root {
 
-  --FONT-TEXT: Consolas;
+  --FONT-TEXT: "Courier New", Courier, monospace, Consolas;
   --FONT-SIZE: 42px;
   --FONT-SIZE-HALF: calc(var(--FONT-SIZE) / 2);
   --FONT-SIZE-2X: calc(var(--FONT-SIZE) * 2);
   --FONT-SIZE-3X: calc(var(--FONT-SIZE) * 3);
   --BTN-WATER-GREEN: #23aeba;
   --DAD-MARGIN-H: 20%;
-  --DAD-MARGIN-V: 12%;
+  --DAD-MARGIN-V: 21%;
 }
 
 body {
