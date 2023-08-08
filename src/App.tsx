@@ -34,6 +34,7 @@ var App = () => {
           <li><button onClick={()=>handleSetRoute('1802')}>18:02</button></li>
           <li><button onClick={()=>handleSetRoute('cats')}>Chats</button></li>
           <li><button onClick={()=>handleSetRoute('dadj')}>Jokes</button></li>
+          <li><button onClick={()=>window.location.href='https://nuoxoxo.github.io'}>Go Back</button></li>
         </ul>
       </nav>
       { routes.hasOwnProperty(route) ? <TargetRoute /> : null }
