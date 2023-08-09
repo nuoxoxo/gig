@@ -24,6 +24,10 @@ $DadMarginV: 18%;
   transition: background-color 0.2s ease;
   color: white;
   border: 1px solid $BtnWaterGreen;
+
+  &:hover {
+    background-color: $BtnWaterGreen;
+  }
 }
 
 body {
@@ -54,31 +58,27 @@ pre, span, div {
   flex-wrap: wrap;
   flex-direction: column;
   white-space: pre-wrap; /* show \n inside strings */
-}
 
-.container-R > span {
-  margin-bottom: 1.2em;
+  > span {
+    margin-bottom: 1.2em;
+  }
 }
 
 nav {
   margin-top: 5%;
-}
 
-nav > ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  > ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 button {
   @include button-styles;
-}
-
-button:hover {
-  background-color: $BtnWaterGreen;
 }
 
 .gallery {
@@ -91,19 +91,18 @@ button:hover {
   max-width: 1400px;
   margin: 0 auto;
   padding: 20px 10px;
-}
 
-.gallery img {
-  width: 100%;
-  max-width: 320px;
-  height: 300px;
-  max-height: 320px;
-  object-fit: cover;
-  border-radius: 10px;
+  img {
+    width: 100%;
+    max-width: 320px;
+    height: 300px;
+    max-height: 320px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
 }
 
 .dad-jokes-text {
-  color: #FAEED5;
   display: flex;
   flex-direction: row;
   justify-content: center;
