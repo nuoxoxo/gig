@@ -7,12 +7,30 @@ $BtnWaterGreen: #23aeba;
 $DadMarginH: 20%;
 $DadMarginV: 18%;
 
-body {
+@mixin font-styles {
+  font-family: $FontText;
+}
 
+@mixin button-styles {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-radius: 10px;
+  padding: 4px 10px;
+  margin: 3px;
+  font-size: 16px;
+  background-color: transparent;
+  transition: background-color 0.2s ease;
+  color: white;
+  border: 1px solid $BtnWaterGreen;
+}
+
+body {
   margin: 0;
   background-color: black;
   color: white;
-  font-family: $FontText;
+  @include font-styles;
   position: relative;
   top: 50%;
   left: 50%;
@@ -21,20 +39,17 @@ body {
 }
 
 pre, span, div {
-
-  font-family: $FontText;
+  @include font-styles;
   margin: .3em;
 }
 
 .container-L {
-
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .container-R {
-
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -59,28 +74,14 @@ nav > ul {
 }
 
 button {
-  cursor: pointer;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  border: 1px solid $BtnWaterGreen;
-  border-radius: 10px;
-  padding: 4px 10px;
-  margin: 3px;
-  font-size: 16px;
-  background-color: transparent;
-  transition: background-color 0.2s ease;
-  
-  color: white;
+  @include button-styles;
 }
 
 button:hover {
-
   background-color: $BtnWaterGreen;
 }
 
 .gallery {
-
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
