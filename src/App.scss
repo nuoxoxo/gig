@@ -1,90 +1,87 @@
-:root {
+$FontText: "Courier New", Courier, monospace, Consolas;
+$FontSize: 42px;
+$FontSizeHalf: calc(#{$FontSize} / 2);
+$FontSize2X: calc(#{$FontSize} * 2);
+$FontSize3X: calc(#{$FontSize} * 3);
+$BtnWaterGreen: #23aeba;
+$DadMarginH: 20%;
+$DadMarginV: 18%;
 
-  --FONT-TEXT: "Courier New", Courier, monospace, Consolas;
-  --FONT-SIZE: 42px;
-  --FONT-SIZE-HALF: calc(var(--FONT-SIZE) / 2);
-  --FONT-SIZE-2X: calc(var(--FONT-SIZE) * 2);
-  --FONT-SIZE-3X: calc(var(--FONT-SIZE) * 3);
-  --BTN-WATER-GREEN: #23aeba;
-  --DAD-MARGIN-H: 20%;
-  --DAD-MARGIN-V: 18%;
+@mixin font-styles {
+  font-family: $FontText;
 }
 
-body {
-
-  margin: 0;
-  background-color: black;
-  color: white;
-  font-family: var(--FONT-TEXT);
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, 0%);
-  font-size: var(--FONT-SIZE-HALF);
-}
-
-pre, span, div {
-
-  font-family: var(--FONT-TEXT);
-  margin: .3em;
-}
-
-.container-L {
-
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.container-R {
-
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  white-space: pre-wrap; /* show \n inside strings */
-}
-
-.container-R > span {
-  margin-bottom: 1.2em;
-}
-
-nav {
-  margin-top: 5%;
-}
-
-nav > ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-button {
+@mixin button-styles {
   cursor: pointer;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  border: 1px solid var(--BTN-WATER-GREEN);
   border-radius: 10px;
   padding: 4px 10px;
   margin: 3px;
   font-size: 16px;
   background-color: transparent;
   transition: background-color 0.2s ease;
-  
   color: white;
+  border: 1px solid $BtnWaterGreen;
+
+  &:hover {
+    background-color: $BtnWaterGreen;
+  }
 }
 
-button:hover {
-
-  background-color: var(--BTN-WATER-GREEN);
+body {
+  margin: 0;
+  background-color: black;
+  color: white;
+  @include font-styles;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  font-size: $FontSizeHalf;
 }
 
+pre, span, div {
+  @include font-styles;
+  margin: .3em;
+}
+
+.container-L {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.container-R {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  white-space: pre-wrap; /* show \n inside strings */
+
+  > span {
+    margin-bottom: 1.2em;
+  }
+}
+
+nav {
+  margin-top: 5%;
+
+  > ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+button {
+  @include button-styles;
+}
 
 .gallery {
-
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -94,18 +91,19 @@ button:hover {
   max-width: 1400px;
   margin: 0 auto;
   padding: 20px 10px;
-}
 
-.gallery img {
-  width: 100%;
-  max-width: 320px;
-  height: 300px;
-  max-height: 320px;
-  object-fit: cover;
-  border-radius: 10px;
+  img {
+    width: 100%;
+    max-width: 320px;
+    height: 300px;
+    max-height: 320px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
 }
 
 .dad-jokes-text {
+  color: #FAEED5;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -114,7 +112,7 @@ button:hover {
   cursor: pointer;
   padding-bottom: 50vh;
   user-select: none;
-  margin-left: var(--DAD-MARGIN-H);
-  margin-right: var(--DAD-MARGIN-H);
-  margin-top: var(--DAD-MARGIN-V);
+  margin-left: $DadMarginH;
+  margin-right: $DadMarginH;
+  margin-top: $DadMarginV;
 }
