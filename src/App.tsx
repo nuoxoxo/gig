@@ -28,7 +28,7 @@ var App = () => {
   const TargetRoute = routes[route]
   return (
     <>
-      <nav>
+      <div className='nav'>
         <ul>
           <li><button onClick={()=>handleSetRoute('2210')}>22:10</button></li>
           <li><button onClick={()=>handleSetRoute('1802')}>18:02</button></li>
@@ -36,7 +36,7 @@ var App = () => {
           <li><button onClick={()=>handleSetRoute('dadj')}>Jokes</button></li>
           <li><button onClick={()=>window.location.href='https://nuoxoxo.github.io'}>Go Back</button></li>
         </ul>
-      </nav>
+      </div>
       { routes.hasOwnProperty(route) ? <TargetRoute /> : null }
     </>
   )
