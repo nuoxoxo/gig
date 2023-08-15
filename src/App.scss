@@ -64,7 +64,7 @@ pre, span, div {
   }
 }
 
-nav {
+.nav {
   margin-top: 5%;
 
   > ul {
@@ -115,4 +115,73 @@ button {
   margin-left: $DadMarginH;
   margin-right: $DadMarginH;
   margin-top: $DadMarginV;
+}
+
+
+// Markdown Previewer
+
+$BGColor: #000000;
+$TextColor: #ffffff;
+$InputColor: #FEFBEA;
+$InputColor: #FEFBEA;
+$Size-1: 42px;
+$Size-2: 84px;
+$Font-1: monospace, "Courier New", "Lucida Console", Courier;
+
+.mdp-body {
+
+  font-family: $Font-1;
+  font-size: $Size-2;
+  color: $TextColor;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-row {
+  font-family: $Font-1;
+  font-size: $Size-2;
+  color: $TextColor;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+textarea {
+  border: none;
+  overflow: auto;
+  outline: none;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+
+  resize: none;
+}
+
+.input {
+  width: 500px;
+  height: 500px;
+  background-color: #FEFBEA;
+  margin-left: auto;
+  margin-right: 3px;
+  padding: 10px;
+  font-family: Georgia;
+  font-size: 21px;
+}
+
+.output {
+  width: 500px;
+  height: 500px;
+  background-color: #E6FFE6;
+  // background-color: $BGColor;
+  color: $BGColor;
+  margin-left: 3px;
+  margin-right: auto;
+  padding: 10px;
+  font-family: Georgia;
+  font-size: 21px;
 }
