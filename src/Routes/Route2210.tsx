@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { FetchData } from './FetchData'
+import { FetchData } from './Helpers'
 
 const path = 
   'https://raw.githubusercontent.com/nuoxoxo/in/main/2210.in'

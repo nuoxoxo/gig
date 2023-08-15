@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import { FetchData } from './FetchData'
+import { FetchData } from './Helpers'
 
-function App() {
+var RouteJoke = () => {
 
   const path = 
   'https://raw.githubusercontent.com/nuoxoxo/in/main/jokes.in'
@@ -61,4 +61,4 @@ function App() {
   )
 }
 
-export default App
+export default RouteJoke
