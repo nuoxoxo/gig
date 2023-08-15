@@ -65,7 +65,7 @@ pre, span, div {
 }
 
 .nav {
-  margin-top: 5%;
+  margin-top: 1%;
 
   > ul {
     list-style: none;
@@ -137,9 +137,10 @@ $Font-1: monospace, "Courier New", "Lucida Console", Courier;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  margin: 0;
 }
 
-.container-row {
+.container-hello {
   font-family: $Font-1;
   font-size: $Size-2;
   color: $TextColor;
@@ -148,6 +149,11 @@ $Font-1: monospace, "Courier New", "Lucida Console", Courier;
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
+  margin: 0;
+
+  span {
+    margin: 0!important
+  }
 }
 
 textarea {
@@ -163,8 +169,8 @@ textarea {
 }
 
 .input {
-  width: 500px;
-  height: 500px;
+  width: 640px;
+  height: 640px;
   background-color: #FEFBEA;
   margin-left: auto;
   margin-right: 3px;
@@ -174,8 +180,8 @@ textarea {
 }
 
 .output {
-  width: 500px;
-  height: 500px;
+  width: 640px;
+  height: 640px;
   background-color: #E6FFE6;
   // background-color: $BGColor;
   color: $BGColor;
