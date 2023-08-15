@@ -3,6 +3,7 @@ import Route1802 from "./Routes/Route1802"
 import Route2210 from "./Routes/Route2210"
 import RouteCats from "./Routes/RouteCats"
 import RouteJoke from "./Routes/RouteJoke"
+import RouteMark from "./Routes/RouteMark"
 
 //  make `Route` the new typedef
 type TargetRoute = React.FC
@@ -13,6 +14,7 @@ const routes: { [key: string]: TargetRoute } = {
   '1802': Route1802,
   'cats': RouteCats,
   'dadj': RouteJoke,
+  'mark': RouteMark,
 }
 
 //  default route onload
@@ -34,6 +36,7 @@ var App = () => {
           <li><button onClick={()=>handleSetRoute('1802')}>18:02</button></li>
           <li><button onClick={()=>handleSetRoute('cats')}>Chats</button></li>
           <li><button onClick={()=>handleSetRoute('dadj')}>Jokes</button></li>
+          <li><button onClick={()=>handleSetRoute('mark')}>MD Preview</button></li>
           <li><button onClick={()=>window.location.href='https://nuoxoxo.github.io'}>Go Back</button></li>
         </ul>
       </div>
