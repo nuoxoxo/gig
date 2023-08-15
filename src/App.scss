@@ -191,3 +191,20 @@ textarea {
   font-family: Georgia;
   font-size: 21px;
 }
+
+
+@media (max-width: 960px) {
+  .mdp-body {
+    flex-direction: column;
+  }
+
+  .container-hello {
+    font-size: $Size-1;
+  }
+
+  .input, .output {
+    width: 400px;
+    height: 400px;
+  }
+
+}
