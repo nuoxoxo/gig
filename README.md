@@ -11,3 +11,4 @@ Log            | Issue  | Content
 &#8203;        | links  | not working
 
 Tutorial: How to [Deploy](https://blog.devgenius.io/how-to-deploy-your-vite-react-app-to-github-pages-with-and-without-react-router-b060d912b10e) on Github Pages
+
