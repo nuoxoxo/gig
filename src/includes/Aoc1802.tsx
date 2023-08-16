@@ -107,7 +107,8 @@ var Aoc1802 = () => {
     { lines ?
       <div className='playground'>
         <div className="field res"
-          style={{ fontSize: fontSize1802 }} >
+          // style={{ fontSize: fontSize1802 }}
+        >
           <span>--- 2018 Day 2: Inventory Management System ---</span>
           <span>Part 1: {p1}</span>
           <span>Part 2: {p2}</span>
