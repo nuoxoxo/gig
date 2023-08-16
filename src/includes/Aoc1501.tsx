@@ -102,36 +102,34 @@ var Aoc1501 = () => {
   return (
     <>
       {lines ? (
-        <>
+        <div className="playground">
+          <div
+            className="field data-field santa-mid"
+            // style={{ fontSize: fontSize1501 }}
+          >
+            {lines
+              ? lines.length === 1
+                ? LenNStrsFromLine(lines[0], 16).join("\n")
+                : lines.join("\n")
+              : "No data available."}
+          </div>
+          <div
+            className="field data-field"
+            // style={{ fontSize: fontSize1501 }}
+          >
+            {upDown ? [...upDown].reverse().join("\n") : "No data available."}
+          </div>
           <div className="field res"
             // style={{ fontSize: fontSize1501 }}
           >
             <span>--- 2015 Day 1: Not Quite Lisp ---</span>
             <span>Part 1: {p1}</span>
             <span>Part 2: {p2}</span>
-          </div>
-          <div className="playground">
             <div className="field data-field santa-mid">
               {lines ? computeFloors().join("\n") : "No data available."}
             </div>
-            <div
-              className="field data-field santa-mid"
-              // style={{ fontSize: fontSize1501 }}
-            >
-              {lines
-                ? lines.length === 1
-                  ? LenNStrsFromLine(lines[0], 16).join("\n")
-                  : lines.join("\n")
-                : "No data available."}
-            </div>
-            <div
-              className="field data-field"
-              // style={{ fontSize: fontSize1501 }}
-            >
-              {upDown ? [...upDown].reverse().join("\n") : "No data available."}
-            </div>
           </div>
-        </>
+        </div>
       ) : (
         <p>Loading data...</p>
       )}
