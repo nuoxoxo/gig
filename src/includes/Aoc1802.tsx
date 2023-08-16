@@ -6,7 +6,7 @@ const path =
 
 const special2 = '🔵'
 const special3 = '🟠'
-const fontSize1802 = '17px'
+// const fontSize1802 = '17px'
 
 var Aoc1802 = () => {
   const [ lines, setLines ] = useState<string[]>( [] )
