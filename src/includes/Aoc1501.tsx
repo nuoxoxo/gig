@@ -3,9 +3,10 @@ import { FetchData, LenNStrsFromLine } from "../helpers/Helpers"
 
 const path = 
   "https://raw.githubusercontent.com/nuoxoxo/in/main/1501.in"
-const fontSize1501: string = '17px'
+
 const santaArray: string[] = ['🎅🏻', '🎅🏼', '🎅🏽', '🎅🏾', '🎅🏿', '🎄']
 const santaString: string = santaArray[Math.floor(Math.random() * santaArray.length)]
+// const fontSize1501: string = '17px'
 
 var Aoc1501 = () => {
   const [lines, setLines] = useState<string[]>( [] )
@@ -108,7 +109,8 @@ var Aoc1501 = () => {
     { lines ?
       <div className='playground'>
         <div className="field res"
-          style={{ fontSize: fontSize1501 }} >
+          // style={{ fontSize: fontSize1501 }} 
+        >
           <span>--- 2015 Day 1: Not Quite Lisp ---</span>
           <span>Part 1: {p1}</span>
           <span>Part 2: {p2}</span>
@@ -119,7 +121,8 @@ var Aoc1501 = () => {
             : "No data available."}
         </div>
         <div className="field data-field"
-          style={{ fontSize: fontSize1501 }} >
+          // style={{ fontSize: fontSize1501 }} 
+        >
           {lines
             ? lines.length === 1
               ? LenNStrsFromLine(lines[0], 16).join("\n")
@@ -127,7 +130,8 @@ var Aoc1501 = () => {
             : "No data available."}
         </div>
         <div className="field data-field"
-          style={{ fontSize: fontSize1501 }} >
+          // style={{ fontSize: fontSize1501 }} 
+        >
           {upDown
             ? [...upDown].reverse().join("\n")
             : "No data available."}
