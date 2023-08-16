@@ -115,12 +115,12 @@ var Aoc1501 = () => {
           <span>Part 1: {p1}</span>
           <span>Part 2: {p2}</span>
         </div>
-        <div className="field data-field">
+        <div className="field data-field santa-mid">
           {lines
             ? computeFloors().join('\n')
             : "No data available."}
         </div>
-        <div className="field data-field"
+        <div className="field data-field santa-mid"
           // style={{ fontSize: fontSize1501 }} 
         >
           {lines

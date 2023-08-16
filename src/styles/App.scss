@@ -117,19 +117,27 @@ h2 {
 }
 
 @media only screen and (max-width: 768px) {
+
   .nav, .playground, .field {
-    // flex-direction: column;
     font-size: 8px;
   }
+
+  .santa-mid {
+    font-size: 6px;
+  }
+
   .playground {
     margin-top: .3em;
   }
+
   .btn {
     font-size: $TextSize-025;
   }
+
   h2 {
     font-size: $TextSize-05;
   }
+
   .dad-jokes-field {
     font-size: 16px;
     height: 76vh;
