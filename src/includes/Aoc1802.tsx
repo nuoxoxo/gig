@@ -1,19 +1,27 @@
-import { useState, useEffect } from 'react'
-import { FetchData } from './Helpers'
+import { useState, useEffect } from "react"
+import { FetchData, LenNStrsFromLine } from "../helpers/Helpers"
 
 const path = 
-  'https://raw.githubusercontent.com/nuoxoxo/in/main/1802.in'
+  "https://raw.githubusercontent.com/nuoxoxo/in/main/1802.in"
 
 const special2 = '🔵'
 const special3 = '🟠'
+const fontSize1802 = '17px'
 
-var Route1802 = () => {
-
-  const [ loading, setLoading ] = useState<boolean>( true )
+var Aoc1802 = () => {
   const [ lines, setLines ] = useState<string[]>( [] )
   const [ lines23, setLines23 ] = useState<string[]>( [] )
   const [ p1, setP1 ] = useState<number>( 0 )
   const [ p2, setP2 ] = useState<string>( '' )
+
+  const handleData = async () => {
+    try {
+      const raws = await FetchData(path)
+      setLines(raws)
+    } catch (error: any) {
+      console.error("Error fetching data: ", error)
+    }
+  }
 
   const Solver_Part_One = () => {
 
@@ -85,50 +93,49 @@ var Route1802 = () => {
     setP2(res2)
   }
 
-  const handleData = async () => {
-    try {
-      const raws = await FetchData( path )
-      setLines(raws)
-      setLoading(false)
-    } catch (error: any) {
-      console.error("Error fetching data: ", error);
-      setLoading(false);
-    }
-  }
-
-  useEffect( () => {
+  useEffect(() => {
     handleData()
   }, [])
 
-  useEffect( () => {
+  useEffect(() => {
     Solver_Part_One()
-  }, [lines])
-
-  useEffect( () => {
     Solver_Part_Two()
   }, [lines])
 
   return (
     <>
-      {loading ? (
-        <p>Loading data...</p>
-      ) : (
-        <div className='container-L'>
-          <pre style={{ fontSize: '16px' }}>
-            { lines ? lines.join('\n') : 'No data available.' }
-          </pre>
-          <pre style={{ fontSize: '16px' }}>
-            { lines23 ? lines23.join('\n') : 'No data available.' }
-          </pre>
-          <div className='container-R'>
-            <span>--- 2018 Day 2: Inventory Management System ---</span>
-            <span>Part 1: <br />{ p1 }</span>
-            <span>Part 2: <br />{ p2 }</span>
-          </div>
+    { lines ?
+      <div className='playground'>
+        <div className="field res"
+          style={{ fontSize: fontSize1802 }} >
+          <span>--- 2018 Day 2: Inventory Management System ---</span>
+          <span>Part 1: {p1}</span>
+          <span>Part 2: {p2}</span>
         </div>
-      )}
+        <div className="field data-field" 
+          style={{ fontSize: fontSize1802 }} >
+          { lines
+            ? lines.length === 1
+              ? LenNStrsFromLine(lines23[0], 16).join("\n")
+              : lines23.join("\n")
+            : "No data available."
+          }
+        </div>
+        <div className="field data-field"
+          style={{ fontSize: fontSize1802 }} >
+          { lines
+            ? lines.length === 1
+              ? LenNStrsFromLine(lines[0], 16).join("\n")
+              : lines.join("\n")
+            : "No data available."
+          }
+        </div>
+      </div>
+      :
+      <p>Loading data...</p>
+}
     </>
   )
 }
 
-export default Route1802
+export default Aoc1802

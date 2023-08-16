@@ -1,44 +1,58 @@
-import { useState } from "react"
-import Route1802 from "./Routes/Route1802"
-import Route2210 from "./Routes/Route2210"
-import RouteCats from "./Routes/RouteCats"
-import RouteJoke from "./Routes/RouteJoke"
-import RouteMark from "./Routes/RouteMark"
+import { useState } from 'react'
+import Aoc2210 from "./includesAoc/Aoc2210"
+import Aoc1802 from "./includesAoc/Aoc1802"
+import Aoc1502 from "./includesAoc/Aoc1502"
+import Aoc1501 from "./includesAoc/Aoc1501"
+import DadJokes from "./includesAoc/DadJokes"
+import './styles/App.scss'
 
-//  make `Route` the new typedef
 type TargetRoute = React.FC
 
-//  set routes of type <Route>
 const routes: { [key: string]: TargetRoute } = {
-  '2210': Route2210,
-  '1802': Route1802,
-  'cats': RouteCats,
-  'dadj': RouteJoke,
-  'mark': RouteMark,
+  '2210': Aoc2210,
+  '1802': Aoc1802,
+  '1502': Aoc1502,
+  '1501': Aoc1501,
+  'DadJokes': DadJokes,
 }
 
-//  default route onload
-const defaultRoute: string = 'dadj'
+function App() {
+  const [ route, setRoute ] = useState<string>( Object.keys(routes)[Math.floor(Math.random() * Object.keys(routes).length)] )
 
-var App = () => {
-
-  const [ route, setRoute ] = useState<string>( defaultRoute )
-  const handleSetRoute = (s: string) => {
-    setRoute(s)
+  const handleSetRoute = (r: string) => {
+    setRoute(r)
   }
-
   const TargetRoute = routes[route]
+
   return (
     <>
+      <h2>Hello World</h2>
       <div className='nav'>
-        <ul>
-          <li><button onClick={()=>handleSetRoute('2210')}>22:10</button></li>
-          <li><button onClick={()=>handleSetRoute('1802')}>18:02</button></li>
-          <li><button onClick={()=>handleSetRoute('cats')}>Chats</button></li>
-          <li><button onClick={()=>handleSetRoute('dadj')}>Jokes</button></li>
-          <li><button onClick={()=>handleSetRoute('mark')}>MD Preview</button></li>
-          <li><button onClick={()=>window.location.href='https://nuoxoxo.github.io'}>Go Back</button></li>
-        </ul>
+        <button 
+          className='btn' 
+          onClick={()=>handleSetRoute('1501')} >
+          15:01
+        </button>
+        <button 
+          className='btn' 
+          onClick={()=>handleSetRoute('1502')} >
+          15:02
+        </button>
+        <button 
+          className='btn' 
+          onClick={()=>handleSetRoute('1802')} >
+          18:02
+        </button>
+        <button 
+          className='btn' 
+          onClick={()=>handleSetRoute('2210')} >
+          22:10
+        </button>
+        <button 
+          className='btn' 
+          onClick={()=>handleSetRoute('DadJokes')} >
+          Jokes
+        </button>
       </div>
       { routes.hasOwnProperty(route) ? <TargetRoute /> : null }
     </>
