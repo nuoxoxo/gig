@@ -107,14 +107,15 @@ var Aoc1802 = () => {
     { lines ?
       <div className='playground'>
         <div className="field res"
-          style={{ fontSize: fontSize1802 }}
+          // style={{ fontSize: fontSize1802 }}
         >
           <span>--- 2018 Day 2: Inventory Management System ---</span>
-          {/* <span>Part 1: {p1}</span> */}
+          <span>Part 1: {p1}</span>
           <span>Part 2: {p2}</span>
         </div>
         <div className="field data-field" 
-          style={{ fontSize: fontSize1802 }} >
+          // style={{ fontSize: fontSize1802 }} 
+        >
           { lines
             ? lines.length === 1
               ? LenNStrsFromLine(lines23[0], 16).join("\n")
@@ -123,7 +124,8 @@ var Aoc1802 = () => {
           }
         </div>
         <div className="field data-field"
-          style={{ fontSize: fontSize1802 }} >
+          // style={{ fontSize: fontSize1802 }}
+        >
           { lines
             ? lines.length === 1
               ? LenNStrsFromLine(lines[0], 16).join("\n")
