@@ -119,7 +119,6 @@ h2 {
 @media only screen and (max-width: 768px) {
   .nav, .playground, .field {
     // flex-direction: column;
-    align-items: center;
     font-size: 16px;
   }
   .playground {
@@ -133,7 +132,8 @@ h2 {
   }
   .dad-jokes-field {
     font-size: $TextSize-1;
-    // height: 96vh;
+    height: 76vh;
+    margin-left: calc($DadMarginL - 5px);
     user-select: none;
   }
 }
