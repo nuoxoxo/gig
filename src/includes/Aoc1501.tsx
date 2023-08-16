@@ -1,17 +1,17 @@
 import { useState, useEffect } from "react"
 import { FetchData, LenNStrsFromLine } from "../helpers/Helpers"
 
-const path = 
-  "https://raw.githubusercontent.com/nuoxoxo/in/main/1501.in"
+const path = "https://raw.githubusercontent.com/nuoxoxo/in/main/1501.in"
 
-const santaArray: string[] = ['🎅🏻', '🎅🏼', '🎅🏽', '🎅🏾', '🎅🏿', '🎄']
-const santaString: string = santaArray[Math.floor(Math.random() * santaArray.length)]
+const santaArray: string[] = ["🎅🏻", "🎅🏼", "🎅🏽", "🎅🏾", "🎅🏿", "🎄"]
+const santaString: string =
+  santaArray[Math.floor(Math.random() * santaArray.length)]
 // const fontSize1501: string = '17px'
 
 var Aoc1501 = () => {
-  const [lines, setLines] = useState<string[]>( [] )
-  const [floors, setFloors] = useState<number[]>( [] )
-  const [upDown, setUpDown] = useState<string[]>( [] )
+  const [lines, setLines] = useState<string[]>([])
+  const [floors, setFloors] = useState<number[]>([])
+  const [upDown, setUpDown] = useState<string[]>([])
   const [p1, setP1] = useState<number>(0)
   const [p2, setP2] = useState<number>(0)
 
@@ -25,8 +25,7 @@ var Aoc1501 = () => {
   }
 
   const Solver = () => {
-    if (lines === undefined || lines[0] === undefined)
-      return
+    if (lines === undefined || lines[0] === undefined) return
     let s: string = lines[0]
     let res1: number = 0
     let res2: number = 0
@@ -40,33 +39,31 @@ var Aoc1501 = () => {
 
     while (++i < s.length) {
       let c: string = s[i]
-      let temp: string = ''
+      let temp: string = ""
       if (c == "(") {
         ++res1
       } else {
         --res1
       }
       saveCurrentFloors.push(res1)
-      let symbol = ' '
+      let symbol = " "
       if (prev !== c) {
-        if (prev === '(') {
-          symbol = '↗'
-        } else if (prev === ')') {
-          symbol = '↘'
+        if (prev === "(") {
+          symbol = "↗"
+        } else if (prev === ")") {
+          symbol = "↘"
         } else {
-          symbol = '-'
+          symbol = "-"
         }
       }
-      if ( !basement && res1 < 0) {
+      if (!basement && res1 < 0) {
         res2 = i + 1
         basement = true
       }
-      temp = symbol + ' ' + (res1 < 0 ? '' : ' ') + res1.toString()
-      if ( !basementChecked && basement) {
-        
-        temp += ' ☆'
+      temp = symbol + " " + (res1 < 0 ? "" : " ") + res1.toString()
+      if (!basementChecked && basement) {
+        temp += " ☆"
         basementChecked = true
-        
       }
       process.push(temp)
       // console.log(temp)
@@ -82,18 +79,16 @@ var Aoc1501 = () => {
     let low: number = Math.min(...floors)
     let width = Math.max(...floors) - low
     let res: string[] = []
-    let char: string = '.'
+    let char: string = "."
     for (let n of floors) {
       let temp: string = char.repeat(21)
-      let dist: number = Math.floor((n - low) / width * temp.length)
-      temp = temp.substring(0, dist) + santaString + ' ' // + '|' + temp.substring(dist)
+      let dist: number = Math.floor(((n - low) / width) * temp.length)
+      temp = temp.substring(0, dist) + santaString + " " // + '|' + temp.substring(dist)
       // console.log(temp.length)
       res.push(temp)
     }
     // console.log(Math.min(...floors), Math.max(...floors))
-    return res.filter(
-      (item, pos, arr) => pos === 0 || item !== arr[pos - 1]
-    )
+    return res.filter((item, pos, arr) => pos === 0 || item !== arr[pos - 1])
   }
 
   useEffect(() => {
@@ -106,40 +101,40 @@ var Aoc1501 = () => {
 
   return (
     <>
-    { lines ?
-      <div className='playground'>
-        <div className="field res"
-          // style={{ fontSize: fontSize1501 }} 
-        >
-          <span>--- 2015 Day 1: Not Quite Lisp ---</span>
-          <span>Part 1: {p1}</span>
-          <span>Part 2: {p2}</span>
-        </div>
-        <div className="field data-field santa-mid">
-          {lines
-            ? computeFloors().join('\n')
-            : "No data available."}
-        </div>
-        <div className="field data-field santa-mid"
-          // style={{ fontSize: fontSize1501 }} 
-        >
-          {lines
-            ? lines.length === 1
-              ? LenNStrsFromLine(lines[0], 16).join("\n")
-              : lines.join("\n")
-            : "No data available."}
-        </div>
-        <div className="field data-field"
-          // style={{ fontSize: fontSize1501 }} 
-        >
-          {upDown
-            ? [...upDown].reverse().join("\n")
-            : "No data available."}
-        </div>
-      </div>
-      :
-      <p>Loading data...</p>
-    }
+      {lines ? (
+        <>
+          <div className="field res"
+            // style={{ fontSize: fontSize1501 }}
+          >
+            <span>--- 2015 Day 1: Not Quite Lisp ---</span>
+            <span>Part 1: {p1}</span>
+            <span>Part 2: {p2}</span>
+          </div>
+          <div className="playground">
+            <div className="field data-field santa-mid">
+              {lines ? computeFloors().join("\n") : "No data available."}
+            </div>
+            <div
+              className="field data-field santa-mid"
+              // style={{ fontSize: fontSize1501 }}
+            >
+              {lines
+                ? lines.length === 1
+                  ? LenNStrsFromLine(lines[0], 16).join("\n")
+                  : lines.join("\n")
+                : "No data available."}
+            </div>
+            <div
+              className="field data-field"
+              // style={{ fontSize: fontSize1501 }}
+            >
+              {upDown ? [...upDown].reverse().join("\n") : "No data available."}
+            </div>
+          </div>
+        </>
+      ) : (
+        <p>Loading data...</p>
+      )}
     </>
   )
 }
