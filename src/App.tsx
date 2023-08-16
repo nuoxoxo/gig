@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import Aoc2210 from "./includesAoc/Aoc2210"
-import Aoc1802 from "./includesAoc/Aoc1802"
-import Aoc1502 from "./includesAoc/Aoc1502"
-import Aoc1501 from "./includesAoc/Aoc1501"
-import DadJokes from "./includesAoc/DadJokes"
+import Aoc2210 from "./includes/Aoc2210"
+import Aoc1802 from "./includes/Aoc1802"
+import Aoc1502 from "./includes/Aoc1502"
+import Aoc1501 from "./includes/Aoc1501"
+import DadJokes from "./includes/DadJokes"
 import './styles/App.scss'
 
 type TargetRoute = React.FC
