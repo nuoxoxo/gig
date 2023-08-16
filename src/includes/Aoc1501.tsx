@@ -86,7 +86,7 @@ var Aoc1501 = () => {
     for (let n of floors) {
       let temp: string = char.repeat(21)
       let dist: number = Math.floor((n - low) / width * temp.length)
-      temp = temp.substring(0, dist) + santaString // + '|' + temp.substring(dist)
+      temp = temp.substring(0, dist) + santaString + ' ' // + '|' + temp.substring(dist)
       // console.log(temp.length)
       res.push(temp)
     }
