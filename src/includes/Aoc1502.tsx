@@ -51,24 +51,24 @@ var Aoc1501 = () => {
 
   return (
     <>
-    { lines ?
-      <div className='playground'>
-        <div className="field res">
-          <span>--- 2015 Day 2: I Was Told There Would Be No Math ---</span>
-          <span>Part 1: {p1}</span>
-          <span>Part 2: {p2}</span>
+      { lines ?
+        <div className='playground'>
+          <div className="field res">
+            <span>--- 2015 Day 2: I Was Told There Would Be No Math ---</span>
+            <span>Part 1: {p1}</span>
+            <span>Part 2: {p2}</span>
+          </div>
+          <div className="field data-field">
+            { lines
+              ? lines.length === 1
+                ? LenNStrsFromLine(lines[0], 16).join("\n")
+                : lines.join("\n")
+              : "No data available."}
+          </div>
         </div>
-        <div className="field data-field">
-          {lines
-            ? lines.length === 1
-              ? LenNStrsFromLine(lines[0], 16).join("\n")
-              : lines.join("\n")
-            : "No data available."}
-        </div>
-      </div>
-      :
-      <p>Loading data...</p>
-    }
+        :
+        <p>Loading data...</p>
+      }
     </>
   )
 }

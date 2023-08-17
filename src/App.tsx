@@ -35,8 +35,8 @@ function App() {
         </button>
         <button 
           className='btn' 
-          onClick={()=>handleSetRoute('2210')} >
-          22:10
+          onClick={()=>handleSetRoute('1502')} >
+          15:02
         </button>
         <button 
           className='btn' 
@@ -45,8 +45,8 @@ function App() {
         </button>
         <button 
           className='btn' 
-          onClick={()=>handleSetRoute('1502')} >
-          15:02
+          onClick={()=>handleSetRoute('2210')} >
+          22:10
         </button>
         <button 
           className='btn' 

@@ -97,7 +97,7 @@ var Aoc2210 = () => {
 
   return (
     <>
-      {lines ? (
+      { lines ? (
         <div className="playground">
           <div className="field res"
             // style={{ fontSize: fontSize1802 }}
@@ -108,7 +108,7 @@ var Aoc2210 = () => {
             <span>{ p2 ? [...p2].reverse().join('\n') : 'No data available.' }</span>
           </div>
           <div className="field data-field" >
-            {lines
+            { lines
               ? lines.length === 1
                 ? LenNStrsFromLine(lines[0], 16).join("\n")
                 : lines.join("\n")
