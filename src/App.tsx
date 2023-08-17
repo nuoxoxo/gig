@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Aoc2223 from "./includes/Aoc2223"
 import Aoc2210 from "./includes/Aoc2210"
 import Aoc1802 from "./includes/Aoc1802"
 import Aoc1502 from "./includes/Aoc1502"
@@ -10,6 +11,7 @@ import './styles/App.scss'
 type TargetRoute = React.FC
 
 const routes: { [key: string]: TargetRoute } = {
+  '2223': Aoc2223,
   '2210': Aoc2210,
   '1802': Aoc1802,
   '1502': Aoc1502,
@@ -51,6 +53,11 @@ function App() {
           className='btn' 
           onClick={()=>handleSetRoute('2210')} >
           22:10
+        </button>
+        <button 
+          className='btn' 
+          onClick={()=>handleSetRoute('2223')} >
+          22:23
         </button>
         <button 
           className='btn' 
