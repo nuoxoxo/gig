@@ -42,8 +42,9 @@ body {
   white-space: pre-wrap;
 }
 
-h2 {
+.gig-header {
   margin: 0;
+  font-size: $TextSize-1;
   user-select: none;
 }
 

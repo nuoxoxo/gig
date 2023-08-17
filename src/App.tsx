@@ -4,6 +4,7 @@ import Aoc1802 from "./includes/Aoc1802"
 import Aoc1502 from "./includes/Aoc1502"
 import Aoc1501 from "./includes/Aoc1501"
 import DadJokes from "./includes/DadJokes"
+import { GetRandomHexColorCode } from './helpers/Helpers'
 import './styles/App.scss'
 
 type TargetRoute = React.FC
@@ -22,11 +23,14 @@ function App() {
   const handleSetRoute = (r: string) => {
     setRoute(r)
   }
-  const TargetRoute = routes[route]
+  const TargetRoute: TargetRoute = routes[route]
+  const ColorHeader: string = GetRandomHexColorCode()
 
   return (
     <>
-      <h2>Hello World</h2>
+      <h2 className='gig-header' style={{ color: ColorHeader }} >
+        Hello World
+      </h2>
       <div className='nav'>
         <button 
           className='btn' 
