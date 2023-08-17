@@ -10,7 +10,6 @@
 !*/public/index.html
 *ts/src/*.js
 *.eslintrc.cjs
-*.svg
 
 
 # dependencies
