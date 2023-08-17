@@ -1,9 +1,12 @@
-import { useState, useEffect } from "react"
-import { FetchData, LenNStrsFromLine } from "../helpers/Helpers"
+import { useState, useEffect } from 'react'
+import { FetchData, LenNStrsFromLine } from '../helpers/Helpers'
 
-const path = "https://raw.githubusercontent.com/nuoxoxo/in/main/1501.in"
+const path = 
+  'https://raw.githubusercontent.com/nuoxoxo/in/main/1501.in'
 
-const santaArray: string[] = ["🎅🏻", "🎅🏼", "🎅🏽", "🎅🏾", "🎅🏿", "🎄"]
+const santaArray: string[] = 
+  ['🎅🏻', '🧑🏻‍🎄', '🤶🏻', '🦌', '🛷', '🎄', 
+    '🔔', '🧦', '🎁', '🎄', '🌲', '❄️']
 const santaString: string =
   santaArray[Math.floor(Math.random() * santaArray.length)]
 // const fontSize1501: string = '17px'
@@ -20,7 +23,7 @@ var Aoc1501 = () => {
       const raws = await FetchData(path)
       setLines(raws)
     } catch (error: any) {
-      console.error("Error fetching data: ", error)
+      console.error('Error fetching data: ', error)
     }
   }
 
@@ -39,30 +42,30 @@ var Aoc1501 = () => {
 
     while (++i < s.length) {
       let c: string = s[i]
-      let temp: string = ""
-      if (c == "(") {
+      let temp: string = ''
+      if (c == '(') {
         ++res1
       } else {
         --res1
       }
       saveCurrentFloors.push(res1)
-      let symbol = " "
+      let symbol = ' '
       if (prev !== c) {
-        if (prev === "(") {
-          symbol = "↗"
-        } else if (prev === ")") {
-          symbol = "↘"
+        if (prev === '(') {
+          symbol = '↗'
+        } else if (prev === ')') {
+          symbol = '↘'
         } else {
-          symbol = "-"
+          symbol = '-'
         }
       }
       if (!basement && res1 < 0) {
         res2 = i + 1
         basement = true
       }
-      temp = symbol + " " + (res1 < 0 ? "" : " ") + res1.toString()
+      temp = symbol + ' ' + (res1 < 0 ? '' : ' ') + res1.toString()
       if (!basementChecked && basement) {
-        temp += " ☆"
+        temp += ' ☆'
         basementChecked = true
       }
       process.push(temp)
@@ -79,7 +82,7 @@ var Aoc1501 = () => {
     let low: number = Math.min(...floors)
     let width = Math.max(...floors) - low
     let res: string[] = []
-    let char: string = "."
+    let char: string = '.'
     for (let n of floors) {
       let temp: string = char.repeat(21)
       let dist: number = Math.floor(((n - low) / width) * temp.length)
@@ -102,29 +105,29 @@ var Aoc1501 = () => {
   return (
     <>
       { lines ? (
-        <div className="playground">
-          <div className="field data-field santa-mid"
+        <div className='playground'>
+          <div className='field data-field santa-mid'
             // style={{ fontSize: fontSize1501 }}
           >
             { lines
               ? lines.length === 1
-                ? LenNStrsFromLine(lines[0], 16).join("\n")
-                : lines.join("\n")
-              : "No data available."}
+                ? LenNStrsFromLine(lines[0], 16).join('\n')
+                : lines.join('\n')
+              : 'No data available.'}
           </div>
-          <div className="field data-field"
+          <div className='field data-field'
             // style={{ fontSize: fontSize1501 }}
           >
-            {upDown ? [...upDown].reverse().join("\n") : "No data available."}
+            {upDown ? [...upDown].reverse().join('\n') : 'No data available.'}
           </div>
-          <div className="field res"
+          <div className='field res'
             // style={{ fontSize: fontSize1501 }}
           >
             <span>--- 2015 Day 1: Not Quite Lisp ---</span>
             <span>Part 1: {p1}</span>
             <span>Part 2: {p2}</span>
-            <div className="field data-field santa-mid">
-              {lines ? computeFloors().join("\n") : "No data available."}
+            <div className='field data-field santa-mid'>
+              {lines ? computeFloors().join('\n') : 'No data available.'}
             </div>
           </div>
         </div>
