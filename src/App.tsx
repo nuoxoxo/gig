@@ -4,6 +4,7 @@ import Aoc2210 from "./includes/Aoc2210"
 import Aoc1802 from "./includes/Aoc1802"
 import Aoc1502 from "./includes/Aoc1502"
 import Aoc1501 from "./includes/Aoc1501"
+import Aoc1908 from "./includes/Aoc1908"
 import DadJokes from "./includes/DadJokes"
 import { GetRandomHexColorCode } from './helpers/Helpers'
 import './styles/App.scss'
@@ -16,12 +17,14 @@ const routes: { [key: string]: TargetRoute } = {
   '1802': Aoc1802,
   '1502': Aoc1502,
   '1501': Aoc1501,
+  '1908': Aoc1908,
   'DadJokes': DadJokes,
 }
 
 function App() {
   const [ route, setRoute ] = useState<string>( 
-    Object.keys(routes)[Math.floor(Math.random() * Object.keys(routes).length)] 
+    'DadJokes'
+    // Object.keys(routes)[Math.floor(Math.random() * Object.keys(routes).length)] 
   )
 
   const handleSetRoute = (r: string) => {
@@ -50,6 +53,11 @@ function App() {
           className='btn' 
           onClick={()=>handleSetRoute('1802')} >
           18:02
+        </button>
+        <button 
+          className='btn' 
+          onClick={()=>handleSetRoute('1908')} >
+          19:08
         </button>
         <button 
           className='btn' 
