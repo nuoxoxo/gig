@@ -112,7 +112,7 @@ var Aoc1802 = () => {
                 : lines.join("\n")
               : "No data available."}
           </div>
-          <div className="field res"
+          <div className="field res-field"
             // style={{ fontSize: fontSize1802 }}
           >
             <span>--- 2018 Day 2: Inventory Management System ---</span>

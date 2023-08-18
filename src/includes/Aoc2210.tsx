@@ -99,7 +99,7 @@ var Aoc2210 = () => {
     <>
       { lines ? (
         <div className="playground">
-          <div className="field res"
+          <div className="field res-field"
             // style={{ fontSize: fontSize1802 }}
           >
             <span>--- 2022 Day 10: Cathode-Ray Tube ---</span>

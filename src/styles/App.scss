@@ -117,13 +117,17 @@ body {
   margin-top: $DadMarginV;
 }
 
+.res-field-1908-image {
+  font-size: 42px;
+}
+
 @media only screen and (max-width: 768px) {
 
   .nav, .playground, .field {
     font-size: 8px;
   }
 
-  .santa-mid {
+  .santa-mid, .res-field-1908-image {
     font-size: 11px;
   }
 

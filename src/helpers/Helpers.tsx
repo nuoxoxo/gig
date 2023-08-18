@@ -11,6 +11,18 @@ export const FetchData = async ( path: string ): Promise<string[]> => {
   }
 }
 
+export function deepcopy_2d_array<T>(arr: T[][]): T[][] {
+  const res: T[][] = []
+  for (const row of arr) {
+    const temp: T[] = []
+    for (const c of row) {
+      temp.push(c)
+    }
+    res.push(temp)
+  }
+  return res 
+}
+
 export const GetRandomHexColorCode = () => {
 
   const chars: string = '0123456789ABCDEF'

@@ -120,7 +120,7 @@ var Aoc1501 = () => {
           >
             {upDown ? [...upDown].reverse().join('\n') : 'No data available.'}
           </div>
-          <div className='field res'
+          <div className='field res-field'
             // style={{ fontSize: fontSize1501 }}
           >
             <span>--- 2015 Day 1: Not Quite Lisp ---</span>
