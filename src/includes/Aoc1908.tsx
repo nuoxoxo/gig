@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { FetchData, LenNStrsFromLine } from "../helpers/Helpers"
 
 const path = 
-  "https://raw.githubusercontent.com/nuoxoxo/advent-of-code/main/_inputs/1908.0"
+  "https://raw.githubusercontent.com/nuoxoxo/advent-of-code/main/_inputs_/1908.0"
 
 var Aoc1908 = () => {
   const [lines, setLines] = useState<string[]>([])
