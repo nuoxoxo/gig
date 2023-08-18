@@ -2,7 +2,6 @@ import { useState } from 'react'
 import Aoc2223 from "./includes/Aoc2223"
 import Aoc2210 from "./includes/Aoc2210"
 import Aoc1802 from "./includes/Aoc1802"
-import Aoc1502 from "./includes/Aoc1502"
 import Aoc1501 from "./includes/Aoc1501"
 import Aoc1908 from "./includes/Aoc1908"
 import DadJokes from "./includes/DadJokes"
@@ -15,7 +14,6 @@ const routes: { [key: string]: TargetRoute } = {
   '2223': Aoc2223,
   '2210': Aoc2210,
   '1802': Aoc1802,
-  '1502': Aoc1502,
   '1501': Aoc1501,
   '1908': Aoc1908,
   'DadJokes': DadJokes,
@@ -44,11 +42,7 @@ function App() {
           onClick={()=>handleSetRoute('1501')} >
           15:01
         </button>
-        <button 
-          className='btn' 
-          onClick={()=>handleSetRoute('1502')} >
-          15:02
-        </button>
+        {/* <button className='btn' onClick={()=>handleSetRoute('1502')} > 15:02</button> */}
         <button 
           className='btn' 
           onClick={()=>handleSetRoute('1802')} >
