@@ -20,7 +20,9 @@ const routes: { [key: string]: TargetRoute } = {
 }
 
 function App() {
-  const [ route, setRoute ] = useState<string>( Object.keys(routes)[Math.floor(Math.random() * Object.keys(routes).length)] )
+  const [ route, setRoute ] = useState<string>( 
+    Object.keys(routes)[Math.floor(Math.random() * Object.keys(routes).length)] 
+  )
 
   const handleSetRoute = (r: string) => {
     setRoute(r)
