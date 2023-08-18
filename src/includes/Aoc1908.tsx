@@ -21,7 +21,6 @@ var Aoc1908 = () => {
     }
   }
 
-
   //  What's wrong with this arrow function
 
   // const deepcopy_2d_array = <T>(arr: T[][]): T[][] => {
@@ -123,9 +122,11 @@ var Aoc1908 = () => {
               <span>Part 2: </span>
               <span className='res-field-1908-image'>
                 { imgFinal.map(line => line.join('')).join('\n') }
-                <br /><br />
+                <br />
+                <br />
                 { imgGoing.map(line => line.join('')).join('\n') }
-                <br /><br />
+                <br />
+                <br />
                 { imgStart.map(line => line.join('')).join('\n') }
               </span>
             </div>
