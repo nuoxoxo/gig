@@ -121,6 +121,7 @@ body {
 
   .nav, .playground, .field {
     font-size: 8px;
+    flex-direction: column;
   }
 
   .santa-mid {
@@ -133,6 +134,7 @@ body {
 
   .btn {
     font-size: $TextSize-025;
+    
   }
 
   h2 {
@@ -146,3 +148,4 @@ body {
     user-select: none;
   }
 }
+
