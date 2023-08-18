@@ -53,7 +53,7 @@ var Aoc2223 = () => {
           </div>
 
           <div className="playground">
-            <div className="field data-field">
+            <div className="field data-field data-field-2223">
               { lines ? lines.length === 1 
                   ? LenNStrsFromLine(lines[0], 16).join("\n")
                   : lines.join("\n")
