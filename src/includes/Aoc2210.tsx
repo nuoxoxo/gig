@@ -1,7 +1,14 @@
 import { useState, useEffect } from "react"
 import { FetchData, LenNStrsFromLine } from "../helpers/Helpers"
 
-const path = "https://raw.githubusercontent.com/nuoxoxo/in/main/2210.in"
+const path = 
+  "https://raw.githubusercontent.com/nuoxoxo/in/main/2210.in"
+
+const denseChars:string[] = 
+  ['@']//, '▓', '✲', '✳', '✴', '✵', '✶', '✷', '✸', '✹', '✺', '✻', '✼', '✽', '✾', '✿', '❀']
+
+const denseChar:string = denseChars[Math.floor(Math.random() * denseChars.length)]
+
 
 var Aoc2210 = () => {
 
@@ -63,7 +70,7 @@ var Aoc2210 = () => {
       }
       let mod40: number = i % 40
       if (mod40 === x - 1 || mod40 === x || mod40 === x + 1) {
-        ss += "@"
+        ss += denseChar
       } else {
         ss += " "
       }

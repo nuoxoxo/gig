@@ -21,7 +21,7 @@ const routes: { [key: string]: TargetRoute } = {
 
 function App() {
   const [ route, setRoute ] = useState<string>( 
-    'DadJokes'
+    '2210'
     // Object.keys(routes)[Math.floor(Math.random() * Object.keys(routes).length)] 
   )
 

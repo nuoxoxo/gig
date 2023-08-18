@@ -11,7 +11,7 @@ export const FetchData = async ( path: string ): Promise<string[]> => {
   }
 }
 
-export function deepcopy_2d_array<T>(arr: T[][]): T[][] {
+export function Deepcopy2DArray<T>(arr: T[][]): T[][] {
   const res: T[][] = []
   for (const row of arr) {
     const temp: T[] = []
@@ -22,6 +22,20 @@ export function deepcopy_2d_array<T>(arr: T[][]): T[][] {
   }
   return res 
 }
+
+//  What's wrong with this arrow function
+
+// export const Deepcopy2DArray = <T>(arr: T[][]): T[][] => {
+//   let res: T[][] = []
+//   for (const row of arr) {
+//     const temp: T[] = []
+//     for (const c of row) {
+//       temp.push(c)
+//     }
+//     res.push(temp)
+//   }
+//   return res
+// }
 
 export const GetRandomHexColorCode = () => {
 

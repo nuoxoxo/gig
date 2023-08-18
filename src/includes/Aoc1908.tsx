@@ -1,16 +1,24 @@
 import { useState, useEffect } from "react"
-import { FetchData, LenNStrsFromLine, deepcopy_2d_array } from "../helpers/Helpers"
+import { FetchData, LenNStrsFromLine, Deepcopy2DArray } from "../helpers/Helpers"
 
 const path = 
   "https://raw.githubusercontent.com/nuoxoxo/advent-of-code/main/_inputs_/1908.0"
 
+const roundChars:string[] = ['o', 'O', '0', '8', '@']
+const sparseChars:string[] = [':']
+const denseChars:string[] = ['▓']//, '@', '✲', '✳', '✴', '✵', '✶', '✷', '✸', '✹', '✺', '✻', '✼', '✽', '✾', '✿', '❀']
+
+const roundChar:string = roundChars[Math.floor(Math.random() * roundChars.length)]
+const sparseChar:string = sparseChars[Math.floor(Math.random() * sparseChars.length)]
+const denseChar:string = denseChars[Math.floor(Math.random() * denseChars.length)]
+
 var Aoc1908 = () => {
+
   const [lines, setLines] = useState<string[]>([])
   const [p1, setP1] = useState<number>(0)
   const [imgStart, setImgStart] = useState<string[][]>([])
   const [imgGoing, setImgGoing] = useState<string[][]>([])
   const [imgFinal, setImgFinal] = useState<string[][]>([])
-  // const [p2, setP2] = useState<number>(0)
 
   const handleData = async () => {
     try {
@@ -21,31 +29,18 @@ var Aoc1908 = () => {
     }
   }
 
-  //  What's wrong with this arrow function
-
-  // const deepcopy_2d_array = <T>(arr: T[][]): T[][] => {
-  //   let res: T[][] = []
-  //   for (const row of arr) {
-  //     const temp: T[] = []
-  //     for (const c of row) {
-  //       temp.push(c)
-  //     }
-  //     res.push(temp)
-  //   }
-  //   return res
-  // }
-
   const Solver = () => {
+
     if (lines === undefined || lines[0] === undefined)
       return
-    let line = lines[0] // input is one long string
+    let line:string = lines[0] // input is one long string
     let img: string[][] = []
     let zero:number = 0
     let one:number = 0
     let two:number = 0
     let res:number = 0
     let i:number
-    let j: number
+    let j:number
 
     i = -1
     while (++i < 6) {
@@ -59,6 +54,7 @@ var Aoc1908 = () => {
 
     let max:number = Number.MAX_SAFE_INTEGER
     let index:number = 0
+
     while (index < line.length) {
       
       i = -1
@@ -88,18 +84,18 @@ var Aoc1908 = () => {
     }
     setP1(res)
     setImgStart(img)
-    let imgForImgStart:string[][] = deepcopy_2d_array(img)
-    let imgForImgGoing:string[][] = deepcopy_2d_array(img)
+    let imgForImgFinal:string[][] = Deepcopy2DArray(img)
+    let imgForImgGoing:string[][] = Deepcopy2DArray(img)
 
     i = -1
     while (++i < 6) {
       j = -1
       while (++j < 25) {
-        img[i][j] === '0' ? imgForImgStart[i][j] = ' ' : img[i][j] === '1' ? imgForImgStart[i][j] = '$' : ''
-        img[i][j] === '1' ? imgForImgGoing[i][j] = '.' : imgForImgGoing[i][j] = img[i][j]
+        img[i][j] === '0' ? imgForImgFinal[i][j] = ' ' : img[i][j] === '1' ? imgForImgFinal[i][j] = denseChar : ''
+        img[i][j] === '1' ? imgForImgGoing[i][j] = sparseChar : imgForImgGoing[i][j] = roundChar
       }
     }
-    setImgFinal(imgForImgStart)
+    setImgFinal(imgForImgFinal)
     setImgGoing(imgForImgGoing)
   }
 
@@ -110,6 +106,7 @@ var Aoc1908 = () => {
   useEffect(() => {
     Solver()
   }, [lines])
+
 
   return (
     <>
