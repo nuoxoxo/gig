@@ -33,42 +33,43 @@ function App() {
 
   return (
     <>
-      <h2 className='gig-header' 
+      <h2 className='gig-header'
         // style={{ color: ColorHeader }}
       >
         Hello World
       </h2>
       <div className='nav'>
-        <button 
-          className='btn' 
+        <button className='btn' 
           onClick={()=>handleSetRoute('1501')} >
           15:01
         </button>
         {/* <button className='btn' onClick={()=>handleSetRoute('1502')} > 15:02</button> */}
-        <button 
-          className='btn' 
+        <button className='btn' 
           onClick={()=>handleSetRoute('1802')} >
           18:02
         </button>
-        <button 
-          className='btn' 
+        <button className='btn' 
           onClick={()=>handleSetRoute('1908')} >
           19:08
         </button>
-        <button 
-          className='btn' 
+        <button className='btn' 
           onClick={()=>handleSetRoute('2210')} >
           22:10
         </button>
-        <button 
-          className='btn' 
+        <button className='btn' 
           onClick={()=>handleSetRoute('2223')} >
           22:23
         </button>
-        <button 
-          className='btn' 
+        <button className='btn' 
           onClick={()=>handleSetRoute('DadJokes')} >
           Jokes
+        </button>
+        <button className='btn' 
+          onClick={ (e) => {
+            e.preventDefault();
+            window.location.href='http://nuoxoxo.github.io';
+          }}>
+          &nbsp;io&nbsp;
         </button>
       </div>
       { routes.hasOwnProperty(route) ? <TargetRoute /> : null }
