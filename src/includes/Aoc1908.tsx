@@ -75,7 +75,7 @@ var Aoc1908 = () => {
           }
         }
       }
-      console.log(zero, one, two, res)
+      // console.log(zero, one, two, res)
       if (max > zero) {
         max = zero
         res = one * two
@@ -127,9 +127,10 @@ var Aoc1908 = () => {
                 { imgStart.map(line => line.join('')).join('\n') }
               </span>
             </div>
-            <div className="field data-field">
+            <div className="field data-field data-field-single-line-string" >
               { lines ? lines.length === 1 
-                  ? LenNStrsFromLine(lines[0], 42).join("\n")
+                  ? lines[0]
+                  // ? LenNStrsFromLine(lines[0], 32).join("\n")
                   : lines.join("\n")
                 : "No data available."
               }

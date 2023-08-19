@@ -121,6 +121,10 @@ body {
   font-size: 32px;
 }
 
+.data-field-single-line-string {
+  word-break: break-all;
+}
+
 @media only screen and (max-width: 768px) {
 
   .nav, .playground, .field {
