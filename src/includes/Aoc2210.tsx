@@ -107,7 +107,6 @@ var Aoc2210 = () => {
       { lines ? (
         <div className="playground">
           <div className="field res-field res-field-2210-image"
-            // style={{ fontSize: fontSize1802 }}
           >
             <span>--- 2022 Day 10: Cathode-Ray Tube ---</span>
             <span>Part 1: {p1}</span>

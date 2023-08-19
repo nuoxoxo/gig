@@ -9,7 +9,6 @@ const santaArray: string[] =
     '🔔', '🧦', '🎁', '🎄', '🌲', '❄️']
 const santaString: string =
   santaArray[Math.floor(Math.random() * santaArray.length)]
-// const fontSize1501: string = '17px'
 
 var Aoc1501 = () => {
   const [lines, setLines] = useState<string[]>([])
@@ -106,11 +105,11 @@ var Aoc1501 = () => {
     <>
       { lines ? (
         <div className='playground'>
-          <div className='field data-field santa-mid'
-            // style={{ fontSize: fontSize1501 }}
+          <div className='field data-field data-field-1501-santa'
           >
             { lines
               ? lines.length === 1
+                // lines[0]
                 ? LenNStrsFromLine(lines[0], 16).join('\n')
                 : lines.join('\n')
               : 'No data available.'}
@@ -126,7 +125,7 @@ var Aoc1501 = () => {
             <span>--- 2015 Day 1: Not Quite Lisp ---</span>
             <span>Part 1: {p1}</span>
             <span>Part 2: {p2}</span>
-            <div className='field data-field santa-mid'>
+            <div className='field data-field data-field-1501-santa'>
               {lines ? computeFloors().join('\n') : 'No data available.'}
             </div>
           </div>

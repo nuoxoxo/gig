@@ -4,12 +4,13 @@ import { FetchData, /*LenNStrsFromLine, */ Deepcopy2DArray } from "../helpers/He
 const path = 
   "https://raw.githubusercontent.com/nuoxoxo/advent-of-code/main/_inputs_/1908.0"
 
-const roundChars:string[] = ['o', 'O', '0', '8', '@']
 const sparseChars:string[] = [':']
-const denseChars:string[] = ['▓']//, '@', '✲', '✳', '✴', '✵', '✶', '✷', '✸', '✹', '✺', '✻', '✼', '✽', '✾', '✿', '❀']
-
-const roundChar:string = roundChars[Math.floor(Math.random() * roundChars.length)]
 const sparseChar:string = sparseChars[Math.floor(Math.random() * sparseChars.length)]
+
+const roundChars:string[] = ['o', 'O', '0', '8', '@']
+const roundChar:string = roundChars[Math.floor(Math.random() * roundChars.length)]
+
+const denseChars:string[] = ['▓']//, '@', '✲', '✳', '✴', '✵', '✶', '✷', '✸', '✹', '✺', '✻', '✼', '✽', '✾', '✿', '❀']
 const denseChar:string = denseChars[Math.floor(Math.random() * denseChars.length)]
 
 var Aoc1908 = () => {
