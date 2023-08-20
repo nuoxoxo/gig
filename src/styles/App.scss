@@ -186,8 +186,9 @@ body {
   }
 
   .dad-jokes-field {
-    font-size: 16px;
-    height: 76vh;
+    font-size: 5vh;
+    // height: 76vh;
+    margin-top: 99px;
     margin-left: calc($DadMarginL - 5px);
     user-select: none;
   }
