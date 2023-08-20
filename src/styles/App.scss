@@ -107,10 +107,10 @@ body {
   color: $ButtonColor;
   border: $ButtonOutline solid $ButtonColor;
   border-radius: 12px;
-  font-size: 13px;
-  padding: 4px 10px;
+  font-size: 16px;
+  padding: 5px;
   margin: 0 1px;
-  width: 55px;
+  width: 77px;
   background-color: transparent;
   transition: background-color $TransitionS ease, color $TransitionS ease, border $TransitionS ease;
   cursor: pointer;
