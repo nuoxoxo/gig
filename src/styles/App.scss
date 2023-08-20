@@ -4,6 +4,7 @@ $TextSize-15: calc($TextSize-1 * 1.5);
 $TextSize-2: calc($TextSize-1 * 2);
 $TextSize-05: calc($TextSize-1 / 2);
 $TextSize-025: calc($TextSize-1 / 4);
+$TextSize-02: calc($TextSize-1 / 5);
 
 $WATER-GREEN: #23aeba;
 $CREAM-YELLO: #FFFDD0;
@@ -177,7 +178,7 @@ body {
   }
 
   .btn {
-    font-size: $TextSize-025;
+    font-size: $TextSize-02;
     
   }
 
