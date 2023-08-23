@@ -187,7 +187,7 @@ body {
 @media only screen and (max-width: 768px) {
 
   .nav, .playground, .field {
-    font-size: 8px;
+    font-size: 7px;
   }
 
   .data-field-2212 {
@@ -211,7 +211,7 @@ body {
   // }
 
   .btn {
-    font-size: $TextSize-025;
+    // font-size: $TextSize-025;
     width: 42px;
     padding: 2px;
     border: 1px solid $ButtonColor;
