@@ -11,8 +11,9 @@ var Aoc2212 = () => {
   const [p1Grid, setP1Grid] = useState<string[]>([])
   const [p2, setP2] = useState<number>(0)
   const [p2Grid, setP2Grid] = useState<string[]>([])
-  // const [p2Grid, setP2Grid] = useState<string[]>([])
-
+  // const [p2Trace, setP2Trace] = useState<number[][][]>([])
+  // const [p2Trace, setP2Trace] = useState<string[]>([])
+ 
   const handleData = async () => {
     try {
       const raws = await FetchData(path)
@@ -90,6 +91,7 @@ var Aoc2212 = () => {
     er: number,
     ec: number
   ) => {
+
     let res:number = 1e9
     let [R, C]: number[] = [lines.length, lines[0].length]
     const D: [number, number][] = [
@@ -98,6 +100,9 @@ var Aoc2212 = () => {
       [0, 1],
       [0, -1],
     ]
+
+    // let traceCoor:number[][][] = = Array.from({ length: R }, () => Array(C).fill([]) )
+
     let seen: boolean[][] = Array.from({ length: R }, () =>
       Array(C).fill(false)
     )
@@ -130,6 +135,9 @@ var Aoc2212 = () => {
         seen[rr][cc] = true
         mp[rr][cc] = mp[r][c] + 1
         dq.push([rr, cc])
+
+        // traceCoor[rr][cc] = [r, c]
+
       }
     }
 
@@ -144,6 +152,9 @@ var Aoc2212 = () => {
         }
       }
     }
+
+    // let i: number = -1
+    // while (++i < 
 
     for (let row of tempGrid) {
       Grid.push(row.join(""))
