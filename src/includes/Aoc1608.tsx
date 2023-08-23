@@ -5,9 +5,7 @@ const URL:string =
   "https://raw.githubusercontent.com/nuoxoxo/in/main/1608.in"
 
 // const denseChars:string[] = ['@']//, '▓', '✲', '✳', '✴', '✵', '✶', '✷', '✸', '✹', '✺', '✻', '✼', '✽', '✾', '✿', '❀']
-
 // const denseChar:string = denseChars[Math.floor(Math.random() * denseChars.length)]
-
 
 var Aoc1608 = () => {
 
