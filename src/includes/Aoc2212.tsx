@@ -95,7 +95,7 @@ var Aoc2212 = () => {
     )
     let Grid: string[] = []
     let tempGrid: string[][] = Array.from({ length: R }, () =>
-      Array(C).fill(' ')
+      Array(C).fill('.')
     )
     let dq: number[][] = [[er, ec]]
     while (dq.length !== 0) {
