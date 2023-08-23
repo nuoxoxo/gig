@@ -175,12 +175,12 @@ body {
 
 .data-field-2212 {
   font-family: monospace;
-  font-size: 8px;
+  font-size: 9px;
 }
 
 @media only screen and (max-width: 910px) {
-  .playground-2212 {
-    font-size: 4px;
+  .data-field-2212 {
+    font-size: 7px;
   }
 }
 
@@ -190,9 +190,9 @@ body {
     font-size: 10px; // ? 
   }
 
-  .data-field-2212 {
-    font-size: 2px;
-  }
+  // .data-field-2212 {
+  //   font-size: 2px;
+  // }
 
   .data-field-1501-santa {
     font-size: 11px;
