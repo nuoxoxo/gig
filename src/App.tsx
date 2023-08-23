@@ -73,12 +73,13 @@ function App() {
           onClick={()=>handleSetRoute('DadJokes')} >
           Jokes
         </button>
-        <button className='btn'
+        <button className='btn btn-io'
           onClick={ (e) => {
             e.preventDefault();
             window.location.href='http://nuoxoxo.github.io';
           }}>
-          &nbsp;io&nbsp;
+          &#8203;
+          {/* &nbsp;io&nbsp; */}
         </button>
       </div>
       { routes.hasOwnProperty(route) ? <TargetRoute /> : null }

@@ -14,6 +14,7 @@ $HOT-PINK: #EF7C8E;
 $ButtonColor: $CREAM-YELLO;
 $ButtonHoverColor: $WATER-GREEN;
 $ButtonOutline: 2px;
+$ButtonSize: 16px;
 
 $TransitionS: .2s;
 
@@ -107,7 +108,7 @@ body {
   color: $ButtonColor;
   border: $ButtonOutline solid $ButtonColor;
   border-radius: 12px;
-  font-size: 16px;
+  font-size: $ButtonSize;
   padding: 5px;
   margin: 0 1px;
   width: 77px;
@@ -127,6 +128,13 @@ body {
 
 .btn {
   @include button-style;
+}
+
+.btn-io {
+  border-radius: 50%;
+  width: calc($ButtonSize * 2);
+  height: calc($ButtonSize * 2);
+  background-color: $ButtonColor;
 }
 
 .data-field {
@@ -199,6 +207,13 @@ body {
     font-size: $TextSize-025;
     width: 42px;
     padding: 2px;
+  }
+
+  .btn-io {
+    border-radius: 50%;
+    width: $TextSize-05;
+    height: $TextSize-05;
+    background-color: $ButtonColor;
   }
 
   h2 {
