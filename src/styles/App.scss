@@ -124,8 +124,8 @@ body {
   user-select: none;
 
   &:hover {
-    background-color: $ButtonColor;
-    color: $ButtonHoverColor;
+    // background-color: $ButtonColor;
+    // color: $ButtonHoverColor;
     border: $ButtonOutline solid $ButtonHoverColor;
   }
 }
@@ -139,6 +139,10 @@ body {
   width: calc($ButtonSize * 2);
   height: calc($ButtonSize * 2);
   background-color: $ButtonColor;
+}
+
+.btn-current-route {
+  border: $ButtonOutline solid $ButtonHoverColor;
 }
 
 .data-field {
