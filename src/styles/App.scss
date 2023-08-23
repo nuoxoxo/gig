@@ -68,6 +68,10 @@ body {
   padding-right: 12px
 }
 
+.playground-2212 {
+  flex-direction: column;
+}
+
 .field {
   padding-left: 6px;
   padding-right: 6px;
@@ -167,12 +171,11 @@ body {
 
 .data-field-2212 {
   font-family: monospace;
-  font-size: 13px;
+  font-size: $ButtonSize;
 }
 
 @media only screen and (max-width: 990px) {
   .playground-2212 {
-    flex-direction: column;
     font-size: 4px;
   }
 }
