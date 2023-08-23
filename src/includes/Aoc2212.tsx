@@ -67,6 +67,17 @@ var Aoc2212 = () => {
     let tempGrid: string[][] = Array.from({ length: R }, () =>
       Array(C).fill(symbol)
     )
+    let i: number = -1
+    while (++i < mp.length) {
+      // let mini: number = Math.max(...mp[i])
+      let j: number = -1
+      while (++j < mp[i].length) {
+        // if (mp[i][j] == mini) {
+        if (mp[i][j] > 20) {
+          tempGrid[i][j] = ' '
+        }
+      }
+    }
     for (let row of tempGrid) {
       Grid.push(row.join(""))
     }
