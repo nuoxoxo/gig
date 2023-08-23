@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { FetchData, LenNStrsFromLine } from '../helpers/Helpers'
 
-const path = 
+const URL:string = 
   'https://raw.githubusercontent.com/nuoxoxo/in/main/1501.in'
 
 const santaArray: string[] = 
@@ -19,7 +19,7 @@ var Aoc1501 = () => {
 
   const handleData = async () => {
     try {
-      const raws = await FetchData(path)
+      const raws = await FetchData(URL)
       setLines(raws)
     } catch (error: any) {
       console.error('Error fetching data: ', error)

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { FetchData, LenNStrsFromLine } from "../helpers/Helpers"
 
-const path = 
+const URL:string = 
   "https://raw.githubusercontent.com/nuoxoxo/in/main/2223.in"
 
 var Aoc2223 = () => {
@@ -12,7 +12,7 @@ var Aoc2223 = () => {
 
   const handleData = async () => {
     try {
-      const raws = await FetchData(path)
+      const raws = await FetchData(URL)
       setLines(raws)
     } catch (error: any) {
       console.error("Error fetching data: ", error)

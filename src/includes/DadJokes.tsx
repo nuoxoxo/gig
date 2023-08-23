@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { FetchData } from "../helpers/Helpers"
 
-const path = "https://raw.githubusercontent.com/nuoxoxo/in/main/jokes.in"
+const URL:string = "https://raw.githubusercontent.com/nuoxoxo/in/main/jokes.in"
 
 var DadJokes = () => {
   const [lines, setLines] = useState<string[]>([])
@@ -9,7 +9,7 @@ var DadJokes = () => {
 
   const handleData = async () => {
     try {
-      let raws = await FetchData(path)
+      let raws = await FetchData(URL)
       raws = raws.map(str => str.replace(/<br\s*[\/]?>/gi, '\n'))
       setLines(raws)
     } catch (error: any) {

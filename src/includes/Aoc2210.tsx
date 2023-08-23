@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { FetchData, LenNStrsFromLine } from "../helpers/Helpers"
 
-const path = 
+const URL:string = 
   "https://raw.githubusercontent.com/nuoxoxo/in/main/2210.in"
 
 const denseChars:string[] = 
@@ -19,7 +19,7 @@ var Aoc2210 = () => {
 
   const handleData = async () => {
     try {
-      const raws = await FetchData(path)
+      const raws = await FetchData(URL)
       const arr: number[] = []
       for (let raw of raws) {
         arr.push(0)

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { FetchData, /*LenNStrsFromLine, */ Deepcopy2DArray } from "../helpers/Helpers"
 
-const path = 
+const URL:string = 
   "https://raw.githubusercontent.com/nuoxoxo/advent-of-code/main/_inputs_/1908.0"
 
 const sparseChars:string[] = [':']
@@ -23,7 +23,7 @@ var Aoc1908 = () => {
 
   const handleData = async () => {
     try {
-      const raws = await FetchData(path)
+      const raws = await FetchData(URL)
       setLines(raws)
     } catch (error: any) {
       console.error("Error fetching data: ", error)
