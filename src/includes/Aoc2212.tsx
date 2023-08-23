@@ -1,13 +1,16 @@
 import { useState, useEffect } from "react"
-import { FetchData, Deepcopy2DArray, LenNStrsFromLine } from "../helpers/Helpers"
+import { FetchData, LenNStrsFromLine } from "../helpers/Helpers"
 
 const path = "https://raw.githubusercontent.com/nuoxoxo/in/main/2212.in"
+const symbolArr = ['○']//, '·', '•', '▓']
+const symbol = symbolArr[Math.floor(Math.random() * symbolArr.length)]
 
 var Aoc2212 = () => {
   const [lines, setLines] = useState<string[]>([])
   const [p1, setP1] = useState<number>(0)
   const [p1Grid, setP1Grid] = useState<string[]>([])
   const [p2, setP2] = useState<number>(0)
+  const [p2Grid, setP2Grid] = useState<string[]>([])
   // const [p2Grid, setP2Grid] = useState<string[]>([])
 
   const handleData = async () => {
@@ -62,7 +65,7 @@ var Aoc2212 = () => {
     }
     let Grid: string[] = []
     let tempGrid: string[][] = Array.from({ length: R }, () =>
-      Array(C).fill("▓")
+      Array(C).fill(symbol)
     )
     let i: number = -1
     while (++i < mp.length) {
@@ -71,7 +74,7 @@ var Aoc2212 = () => {
       while (++j < mp[i].length) {
         // if (mp[i][j] == mini) {
         if (mp[i][j] > 170) {
-          tempGrid[i][j] = " "
+          tempGrid[i][j] = ' '
         }
       }
     }
@@ -101,7 +104,10 @@ var Aoc2212 = () => {
     let mp: number[][] = Array.from({ length: R }, () => 
       Array(C).fill(0)
     )
-
+    let Grid: string[] = []
+    let tempGrid: string[][] = Array.from({ length: R }, () =>
+      Array(C).fill(symbol)
+    )
     let dq: number[][] = [[er, ec]]
     while (dq.length !== 0) {
       let [r, c]: number[] = dq.shift() || []
@@ -113,6 +119,7 @@ var Aoc2212 = () => {
         }
         if (arr[rr][cc] === 0 && mp[rr][cc] !== 0) {
           res = Math.min(res, mp[rr][cc])
+          tempGrid[rr][cc] = ' '
         }
         if (seen[rr][cc]) {
           continue
@@ -125,7 +132,11 @@ var Aoc2212 = () => {
         dq.push([rr, cc])
       }
     }
+    for (let row of tempGrid) {
+      Grid.push(row.join(""))
+    }
     setP2(res)
+    setP2Grid(Grid)
   }
 
   const Solver = () => {
@@ -154,7 +165,8 @@ var Aoc2212 = () => {
       }
       arr.push(temp)
     }
-    BFS_1(Deepcopy2DArray(arr), sr, sc, er, ec)
+    BFS_1(arr, sr, sc, er, ec)
+    // BFS_1(Deepcopy2DArray(arr), sr, sc, er, ec)
     BFS_2(arr, er, ec)
   }
 
@@ -177,6 +189,10 @@ var Aoc2212 = () => {
             <span>Part 2: {p2}</span>
           </div>
           <div className="playground playground-2212">
+            <div className="field data-field data-field-2212">
+              {/* { p2Grid ? p2Grid.join('\n') : "No data available." } */}
+              { p1Grid ? p1Grid.map(line => line.split('').join(' ')).join('\n') : "No data available." }
+            </div>
             <div className="field data-field data-field-2212">
               {/* { p1Grid ? p1Grid.join("\n") : "No data available." } */}
               { p1Grid ? p1Grid.map(line => line.split('').join(' ')).join('\n') : "No data available." }
