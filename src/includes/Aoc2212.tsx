@@ -139,7 +139,7 @@ var Aoc2212 = () => {
       let j: number = -1
       while (++j < mp[i].length) {
         // if (mp[i][j] == mini) {
-        if (mp[i][j] > 80) {
+        if (mp[i][j] > 20) {
           tempGrid[i][j] = ' '
         }
       }
