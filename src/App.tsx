@@ -32,7 +32,7 @@ function App() {
   )
 
   const handleSetRoute = (r: string) => {
-    window.localStorage.setItem('route', JSON.stringify(r)); // save route to local storage
+    localStorage.setItem('route', JSON.stringify(r)); // save route to local storage
     setRoute(r)
   }
   const TargetRoute: TargetRoute = routes[route]
@@ -101,7 +101,7 @@ function App() {
         <button className='btn btn-io'
           onClick={ (e) => {
             e.preventDefault();
-            window.location.href='http://nuoxoxo.github.io';
+            location.href='http://nuoxoxo.github.io';
           }}>
           &#8203;
           {/* &nbsp;io&nbsp; */}
