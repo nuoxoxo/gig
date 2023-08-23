@@ -59,7 +59,7 @@ var Aoc2212 = () => {
     }
     let Grid: string[] = []
     let tempGrid: string[][] = Array.from({ length: R }, () =>
-      Array(C).fill(".")
+      Array(C).fill("▓")
     )
     let i: number = -1
     while (++i < mp.length) {
@@ -68,7 +68,7 @@ var Aoc2212 = () => {
       while (++j < mp[i].length) {
         // if (mp[i][j] == mini) {
         if (mp[i][j] > 170) {
-          tempGrid[i][j] = "#"
+          tempGrid[i][j] = " "
         }
       }
     }
@@ -131,12 +131,14 @@ var Aoc2212 = () => {
               {lines
                 ? lines.length === 1
                   ? LenNStrsFromLine(lines[0], 16).join("\n")
-                  : lines.join("\n")
+                  // : lines.join("\n")
+                  : lines.map(line => line.split('').join(' ')).join('\n')
                 : // : lines.map(line => line.toUpperCase()).join('\n')
                   "No data available."}
             </div>
             <div className="field data-field data-field-2212">
-              {p1Grid ? p1Grid.join("\n") : "No data available."}
+              {/* { p1Grid ? p1Grid.join("\n") : "No data available." } */}
+              { p1Grid ? p1Grid.map(line => line.split('').join(' ')).join('\n') : "No data available." }
             </div>
           </div>
         </>
