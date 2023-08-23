@@ -63,10 +63,11 @@ var Aoc2212 = () => {
     )
     let i: number = -1
     while (++i < mp.length) {
-      let mini: number = Math.max(...mp[i])
+      // let mini: number = Math.max(...mp[i])
       let j: number = -1
       while (++j < mp[i].length) {
-        if (mp[i][j] == mini) {
+        // if (mp[i][j] == mini) {
+        if (mp[i][j] > 170) {
           tempGrid[i][j] = "#"
         }
       }
