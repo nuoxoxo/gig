@@ -252,16 +252,16 @@ var Aoc2212 = () => {
             </div>
 
             <div className="field data-field data-field-2212">
-              {/* { p2Grid ? p2Grid.join('\n') : "No data available." } */}
-              { P2Path
-                ? P2Path.map((line) => line.split("").join(" ")).join("\n")
+              {/* { p1Grid ? p1Grid.join("\n") : "No data available." } */}
+              { p1Grid
+                ? p1Grid.map((line) => line.split("").join(" ")).join("\n")
                 : "No data available."}
             </div>
 
             <div className="field data-field data-field-2212">
-              {/* { p1Grid ? p1Grid.join("\n") : "No data available." } */}
-              { p1Grid
-                ? p1Grid.map((line) => line.split("").join(" ")).join("\n")
+              {/* { p2Grid ? p2Grid.join('\n') : "No data available." } */}
+              { P2Path
+                ? P2Path.map((line) => line.split("").join(" ")).join("\n")
                 : "No data available."}
             </div>
 
