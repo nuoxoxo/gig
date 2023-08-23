@@ -119,7 +119,7 @@ var Aoc2212 = () => {
         }
         if (arr[rr][cc] === 0 && mp[rr][cc] !== 0) {
           res = Math.min(res, mp[rr][cc])
-          tempGrid[rr][cc] = 'x'
+          // tempGrid[rr][cc] = 'x'
         }
         if (seen[rr][cc]) {
           continue
