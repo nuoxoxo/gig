@@ -122,7 +122,7 @@ var Aoc2212 = () => {
           <div className="field res-field">
             <span>--- 2022 Day 12: Hill Climbing Algorithm ---</span>
             <span>Part 1: {p1}</span>
-            <span>Part 2: </span>
+            <span>Part 2: (empty)</span>
           </div>
 
           <div className="playground playground-2212">
