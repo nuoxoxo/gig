@@ -53,7 +53,7 @@ var Aoc1802 = () => {
       }
       if (ok3) {
         c3++
-        strToPush = strToPush.replace(new RegExp(char3, "gi"), char3.toUppetCase())//special3)
+        strToPush = strToPush.replace(new RegExp(char3, "gi"), char3.toUpperCase())//special3)
       }
       if (strToPush.length !== 0) {
         tempLines23.push(strToPush)
