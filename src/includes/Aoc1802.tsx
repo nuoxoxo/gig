@@ -3,8 +3,8 @@ import { FetchData, LenNStrsFromLine } from "../helpers/Helpers"
 
 const path = "https://raw.githubusercontent.com/nuoxoxo/in/main/1802.in"
 
-const special2 = "🔵"
-const special3 = "🦁"
+// const special2 = "🔵"
+// const special3 = "🦁"
 
 var Aoc1802 = () => {
   const [lines, setLines] = useState<string[]>([])
@@ -49,11 +49,11 @@ var Aoc1802 = () => {
       }
       if (ok2) {
         c2++
-        strToPush = strToPush.replace(new RegExp(char2, "gi"), special2)
+        strToPush = strToPush.replace(new RegExp(char2, "gi"), char2.toUpperCase())//special2)
       }
       if (ok3) {
         c3++
-        strToPush = strToPush.replace(new RegExp(char3, "gi"), special3)
+        strToPush = strToPush.replace(new RegExp(char3, "gi"), char3.toUppetCase())//special3)
       }
       if (strToPush.length !== 0) {
         tempLines23.push(strToPush)
