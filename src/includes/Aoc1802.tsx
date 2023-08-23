@@ -3,7 +3,7 @@ import { FetchData, LenNStrsFromLine } from "../helpers/Helpers"
 
 const path = "https://raw.githubusercontent.com/nuoxoxo/in/main/1802.in"
 
-const special2 = "🔵"
+const special2 = "🌀"
 const special3 = "🦁"
 
 var Aoc1802 = () => {
