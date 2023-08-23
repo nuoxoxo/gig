@@ -125,20 +125,19 @@ var Aoc2212 = () => {
             <span>Part 1: {p1}</span>
             <span>Part 2: (empty)</span>
           </div>
-
           <div className="playground playground-2212">
+            <div className="field data-field data-field-2212">
+              {/* { p1Grid ? p1Grid.join("\n") : "No data available." } */}
+              { p1Grid ? p1Grid.map(line => line.split('').join(' ')).join('\n') : "No data available." }
+            </div>
             <div className="field data-field data-field-2212">
               {lines
                 ? lines.length === 1
                   ? LenNStrsFromLine(lines[0], 16).join("\n")
                   // : lines.join("\n")
                   : lines.map(line => line.split('').join(' ')).join('\n')
-                : // : lines.map(line => line.toUpperCase()).join('\n')
-                  "No data available."}
-            </div>
-            <div className="field data-field data-field-2212">
-              {/* { p1Grid ? p1Grid.join("\n") : "No data available." } */}
-              { p1Grid ? p1Grid.map(line => line.split('').join(' ')).join('\n') : "No data available." }
+                // : lines.map(line => line.toUpperCase()).join('\n')
+                : "No data available."}
             </div>
           </div>
         </>

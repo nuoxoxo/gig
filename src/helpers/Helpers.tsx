@@ -11,6 +11,11 @@ export const FetchData = async ( path: string ): Promise<string[]> => {
   }
 }
 
+// export function Rotate2DArrayLeft90Deg<T>(originalArray: T[][]): T[][] {
+//   const arr = Deepcopy2DArray(originalArray)
+
+// }
+
 export function Deepcopy2DArray<T>(arr: T[][]): T[][] {
   const res: T[][] = []
   for (const row of arr) {
