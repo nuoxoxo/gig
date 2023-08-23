@@ -106,7 +106,7 @@ var Aoc2212 = () => {
     )
     let Grid: string[] = []
     let tempGrid: string[][] = Array.from({ length: R }, () =>
-      Array(C).fill(symbol)
+      Array(C).fill('_')
     )
     let dq: number[][] = [[er, ec]]
     while (dq.length !== 0) {
@@ -191,7 +191,7 @@ var Aoc2212 = () => {
           <div className="playground playground-2212">
             <div className="field data-field data-field-2212">
               {/* { p2Grid ? p2Grid.join('\n') : "No data available." } */}
-              { p1Grid ? p1Grid.map(line => line.split('').join(' ')).join('\n') : "No data available." }
+              { p2Grid ? p2Grid.map(line => line.split('').join(' ')).join('\n') : "No data available." }
             </div>
             <div className="field data-field data-field-2212">
               {/* { p1Grid ? p1Grid.join("\n") : "No data available." } */}
