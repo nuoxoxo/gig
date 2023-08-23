@@ -82,6 +82,10 @@ body {
   }
 }
 
+.res-field-1908 {
+  padding-left: 42px;
+}
+
 @keyframes rainbow-rotate {
   from {
     filter: hue-rotate(0deg);
@@ -182,6 +186,9 @@ body {
   .data-field-2212 {
     font-size: 7px;
   }
+  .res-field-1908 {
+  padding-left: 6px;
+}
 }
 
 @media only screen and (max-width: 768px) {
