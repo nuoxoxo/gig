@@ -23,10 +23,14 @@ const routes: { [key: string]: TargetRoute } = {
 function App() {
   const [ route, setRoute ] = useState<string>( 
     // '2210'
+    (window.localStorage.getItem('route'))  // save route to local storage
+    ||
     Object.keys(routes)[Math.floor(Math.random() * Object.keys(routes).length)] 
   )
 
   const handleSetRoute = (r: string) => {
+    window.localStorage.setItem('route', r); // save route to local storage
+    console.log(localStorage.getItem('route'))
     setRoute(r)
   }
   const TargetRoute: TargetRoute = routes[route]
