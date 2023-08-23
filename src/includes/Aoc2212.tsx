@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { FetchData, LenNStrsFromLine } from "../helpers/Helpers"
+import { FetchData, Deepcopy2DArray, LenNStrsFromLine } from "../helpers/Helpers"
 
 const path = "https://raw.githubusercontent.com/nuoxoxo/in/main/2212.in"
 
@@ -7,7 +7,8 @@ var Aoc2212 = () => {
   const [lines, setLines] = useState<string[]>([])
   const [p1, setP1] = useState<number>(0)
   const [p1Grid, setP1Grid] = useState<string[]>([])
-  // const [p2, setP2] = useState<number>(0)
+  const [p2, setP2] = useState<number>(0)
+  // const [p2Grid, setP2Grid] = useState<string[]>([])
 
   const handleData = async () => {
     try {
@@ -18,8 +19,8 @@ var Aoc2212 = () => {
     }
   }
 
-  const BFS = (
-    aa: number[][],
+  const BFS_1 = (
+    arr: number[][],
     sr: number,
     sc: number,
     er: number,
@@ -35,7 +36,9 @@ var Aoc2212 = () => {
     let seen: boolean[][] = Array.from({ length: R }, () =>
       Array(C).fill(false)
     )
-    let mp: number[][] = Array.from({ length: R }, () => Array(C).fill(0))
+    let mp: number[][] = Array.from({ length: R }, () => 
+      Array(C).fill(0)
+    )
 
     let dq: number[][] = [[sr, sc]]
     while (dq.length !== 0) {
@@ -49,7 +52,7 @@ var Aoc2212 = () => {
         if (seen[rr][cc]) {
           continue
         }
-        if (aa[rr][cc] - aa[r][c] > 1) {
+        if (arr[rr][cc] - arr[r][c] > 1) {
           continue
         }
         seen[rr][cc] = true
@@ -79,9 +82,56 @@ var Aoc2212 = () => {
     setP1Grid(Grid)
   }
 
-  const Solver_Part_One = () => {
-    if (lines === undefined || lines[0] === undefined) return
-    let aa: number[][] = []
+  const BFS_2 = (
+    arr: number[][],
+    er: number,
+    ec: number
+  ) => {
+    let res:number = 1e9
+    let [R, C]: number[] = [lines.length, lines[0].length]
+    const D: [number, number][] = [
+      [-1, 0],
+      [1, 0],
+      [0, 1],
+      [0, -1],
+    ]
+    let seen: boolean[][] = Array.from({ length: R }, () =>
+      Array(C).fill(false)
+    )
+    let mp: number[][] = Array.from({ length: R }, () => 
+      Array(C).fill(0)
+    )
+
+    let dq: number[][] = [[er, ec]]
+    while (dq.length !== 0) {
+      let [r, c]: number[] = dq.shift() || []
+      for (let dir of D) {
+        let rr: number = r + dir[0]
+        let cc: number = c + dir[1]
+        if (rr < 0 || rr > R - 1 || cc < 0 || cc > C - 1) {
+          continue
+        }
+        if (arr[rr][cc] === 0 && mp[rr][cc] !== 0) {
+          res = Math.min(res, mp[rr][cc])
+        }
+        if (seen[rr][cc]) {
+          continue
+        }
+        if (arr[r][c] - arr[rr][cc] > 1) {
+          continue
+        }
+        seen[rr][cc] = true
+        mp[rr][cc] = mp[r][c] + 1
+        dq.push([rr, cc])
+      }
+    }
+    setP2(res)
+  }
+
+  const Solver = () => {
+    if (lines === undefined || lines[0] === undefined)
+      return
+    let arr: number[][] = []
     let [R, C]: number[] = [lines.length, lines[0].length]
     let [sr, sc, er, ec]: number[] = [-1, -1, -1, -1]
     let r: number = -1
@@ -102,9 +152,10 @@ var Aoc2212 = () => {
         }
         temp.push(n)
       }
-      aa.push(temp)
+      arr.push(temp)
     }
-    BFS(aa, sr, sc, er, ec)
+    BFS_1(Deepcopy2DArray(arr), sr, sc, er, ec)
+    BFS_2(arr, er, ec)
   }
 
   useEffect(() => {
@@ -112,7 +163,7 @@ var Aoc2212 = () => {
   }, [])
 
   useEffect(() => {
-    Solver_Part_One()
+    Solver()
     // Solver_Part_Two()
   }, [lines])
 
@@ -123,7 +174,7 @@ var Aoc2212 = () => {
           <div className="field res-field">
             <span>--- 2022 Day 12: Hill Climbing Algorithm ---</span>
             <span>Part 1: {p1}</span>
-            <span>Part 2: (empty)</span>
+            <span>Part 2: {p2}</span>
           </div>
           <div className="playground playground-2212">
             <div className="field data-field data-field-2212">
