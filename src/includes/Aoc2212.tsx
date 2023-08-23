@@ -106,7 +106,7 @@ var Aoc2212 = () => {
     )
     let Grid: string[] = []
     let tempGrid: string[][] = Array.from({ length: R }, () =>
-      Array(C).fill(symbol)
+      Array(C).fill(' ')
     )
     let dq: number[][] = [[er, ec]]
     while (dq.length !== 0) {
@@ -119,7 +119,7 @@ var Aoc2212 = () => {
         }
         if (arr[rr][cc] === 0 && mp[rr][cc] !== 0) {
           res = Math.min(res, mp[rr][cc])
-          tempGrid[rr][cc] = ' '
+          tempGrid[rr][cc] = 'x'
         }
         if (seen[rr][cc]) {
           continue
