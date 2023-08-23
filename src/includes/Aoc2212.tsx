@@ -205,7 +205,7 @@ var Aoc2212 = () => {
 
   return (
     <>
-      {lines ? (
+      { lines ? (
         <>
           <div className="field res-field">
             <span>--- 2022 Day 12: Hill Climbing Algorithm ---</span>
