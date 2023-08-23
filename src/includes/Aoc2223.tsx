@@ -47,8 +47,8 @@ var Aoc2223 = () => {
         <>
           <div className="field res-field">
             <span>--- 2022 Day 23: Unstable Diffusion ---</span>
-            <span>Part 1: </span>
-            <span>Part 2: </span>
+            <span>Part 1: (empty)</span>
+            <span>Part 2: (empty)</span>
           </div>
 
           <div className="playground">
