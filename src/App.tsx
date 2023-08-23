@@ -32,7 +32,7 @@ function App() {
   )
 
   const handleSetRoute = (r: string) => {
-    window.localStorage.setItem('route', r); // save route to local storage
+    window.localStorage.setItem('route', JSON.stringify(r)); // save route to local storage
     setRoute(r)
   }
   const TargetRoute: TargetRoute = routes[route]
