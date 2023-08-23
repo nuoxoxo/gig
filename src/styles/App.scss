@@ -219,8 +219,8 @@ body {
 
   .btn-io {
     border-radius: 50%;
-    width: $TextSize-05;
-    height: $TextSize-05;
+    width: calc($TextSize-05 - 1px);
+    height: calc($TextSize-05 - 1px);
     background-color: $ButtonColor;
   }
 
