@@ -18,7 +18,7 @@ var Aoc1608 = () => {
 
   const [lines, setLines] = useState<string[]>([])
   const [p1, setP1] = useState<number>(0)
-  const [p2Grid, setP2Grid] = useState<string[][]>([])
+  // const [p2Grid, setP2Grid] = useState<string[][]>([])
   const [p2Traces, setP2Traces] = useState<string[][][]>([])
 
   const handleData = async () => {
@@ -114,7 +114,7 @@ var Aoc1608 = () => {
       res += line.filter((c) => c === symbol).length
     }
     setP1(res)
-    setP2Grid(grid)
+    // setP2Grid(grid)
     setP2Traces(traces)
     // for (let line of grid) {
     //   console.log(line)
@@ -148,19 +148,13 @@ var Aoc1608 = () => {
             <span>--- 2016 Day 8: Two-Factor Authentication ---</span>
             <span>Part 1: {p1} </span>
             <span>Part 2: </span>
+            {/* <span> { p2Grid.map((line) => line.join('')).join('\n') } </span> */}
+            {/* <span> - sep - </span> */}
             <span>
-              {
-                p2Grid.map((line) => line.join('')).join('\n')
-              }
-            </span>
-            <span> - sep - </span>
-            <span>
-              {
-                p2Traces.map((trace) => trace.map((t) => t.join('')).join('\n')).join('\n\n')
-              }
+              { p2Traces.map((trace) => trace.map((t) => t.join('')).join('\n')).join('\n\n') }
             </span>
           </div>
-          <div className="field data-field res-field-1608-image" >
+          <div className="field data-field data-field-1608" >
             { lines
               ? lines.length === 1
                 ? LenNStrsFromLine(lines[0], 16).join("\n")
