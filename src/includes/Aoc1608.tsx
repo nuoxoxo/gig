@@ -59,7 +59,20 @@ var Aoc1608 = () => {
             { lines
               ? lines.length === 1
                 ? LenNStrsFromLine(lines[0], 16).join("\n")
-                : lines.map((line, index) => `(${index}) ${line}`).join("\n")
+                : lines.map(
+                  // (line, index) => `(${index}) ${line}`
+                  (line, n) => {
+                    let index:string
+                    if (n < 10) {
+                      index = `00${n}`
+                    } else if (n < 100) {
+                      index = `0${n}`
+                    } else  {
+                      index = `${n}`
+                    }
+                    return `(${index}) ${line}`
+                  }
+                ).join("\n")
               : "No data available."}
           </div>
         </div>
