@@ -43,6 +43,18 @@ function App() {
     <>
       <h2 className="gig-header">Hello World</h2>
       <div className="nav">
+
+        <button
+          className="btn btn-io"
+          onClick={(e) => {
+            e.preventDefault()
+            location.href = "http://nuoxoxo.github.io"
+          }}
+        >
+          &#8203;
+          {/* &nbspio&nbsp */}
+        </button>
+
         {/* New code */}
 
         {Object.keys(routes).map((key) => (
@@ -125,16 +137,6 @@ function App() {
 
         */}
 
-        <button
-          className="btn btn-io"
-          onClick={(e) => {
-            e.preventDefault()
-            location.href = "http://nuoxoxo.github.io"
-          }}
-        >
-          &#8203;
-          {/* &nbspio&nbsp */}
-        </button>
       </div>
       {routes.hasOwnProperty(route) ? <TargetRoute /> : null}
     </>
