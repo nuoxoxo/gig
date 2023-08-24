@@ -113,7 +113,7 @@ var Aoc2210 = () => {
             <span>Part 2: </span>
             <span>{ p2 ? [...p2].reverse().join('\n') : 'No data available.' }</span>
           </div>
-          <div className="field data-field res-field-1908-image" >
+          <div className="field data-field data-field-2210" >
             { lines
               ? lines.length === 1
                 ? LenNStrsFromLine(lines[0], 16).join("\n")
