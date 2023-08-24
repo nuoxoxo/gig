@@ -199,6 +199,9 @@ body {
 }
 
 @media only screen and (max-width: 1010px) {
+  .nav, .playground, .field {
+    font-size: 17px;
+  }
   .data-field-2212 {
     font-size: 7px;
   }
@@ -221,7 +224,7 @@ body {
 @media only screen and (max-width: 768px) {
 
   .nav, .playground, .field {
-    font-size: 10px;
+    font-size: 9px;
   }
 
   .data-field-2212 {font-size: 3px}
