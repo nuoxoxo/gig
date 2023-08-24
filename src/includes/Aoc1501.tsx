@@ -123,7 +123,8 @@ var Aoc1501 = () => {
             <span>--- 2015 Day 1: Not Quite Lisp ---</span>
             <span>Part 1: {p1}</span>
             <span>Part 2: {p2}</span>
-            <div className='field data-field data-field-1501-santa'>
+            {/* <div className='field data-field data-field-1501-santa'> */}
+            <div>
               {lines ? computeFloors().join('\n') : 'No data available.'}
             </div>
           </div>
