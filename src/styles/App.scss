@@ -157,8 +157,9 @@ body {
 .dad-jokes-field {
   font-size: $TextSize-1;
   color: $CREAM-WHITE;
-  height: 96vh;
+  height:69vh;
   user-select: none;
+  cursor: pointer;
   margin-left: $DadMarginL;
   margin-right: $DadMarginR;
   margin-top: $DadMarginV;
