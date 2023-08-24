@@ -63,15 +63,6 @@ body {
   font-size: $TextSize-05;
 }
 
-.playground-1908 {
-  padding-left: 12px;
-  padding-right: 12px
-}
-
-.playground-2212 {
-  flex-direction: column;
-}
-
 .field {
   padding-left: 6px;
   padding-right: 6px;
@@ -80,10 +71,6 @@ body {
   span {
     margin: 0.3em
   }
-}
-
-.res-field-1908 {
-  padding-left: 42px;
 }
 
 @keyframes rainbow-rotate {
@@ -165,15 +152,6 @@ body {
   margin-top: $DadMarginV;
 }
 
-.res-field-1908-image {
-  font-size: 32px;
-}
-
-.data-field-single-line-string {
-
-  word-break: break-all;
-}
-
 .data-field-2223 {
   font-size: 16px;
 }
@@ -184,12 +162,40 @@ body {
   align-items: center;
 }
 
-.data-field-2210 {
-  font-size: 55px
+// .data-field-1908 {
+//   font-size: $TextSize-1
+// }
+
+
+.res-field-1908 {
+  padding-left: 80px;
+}
+
+.playground-1908 {
+  padding-left: 12px;
+  padding-right: 12px
+}
+
+.playground-2212 {
+  flex-direction: column;
+}
+
+.res-field-1908-image {
+  font-size: 32px;
+}
+
+.data-field-single-line-string {
+
+  padding-right: 80px;
+  word-break: break-all;
 }
 
 .res-field-2210-image {
-  font-size: 60px
+  font-size: $TextSize-05
+}
+
+.data-field-2210 {
+  font-size: 33px
 }
 
 @media only screen and (max-width: 1010px) {
@@ -202,12 +208,17 @@ body {
   .res-field-1908 {
     padding-left: 6px;
   }
+  .data-field-single-line-string {
+
+    padding-right: 6px;
+    word-break: break-all;
+  }
 }
 
 @media only screen and (max-width: 768px) {
 
   .nav, .playground, .field {
-    font-size: 8px;
+    font-size: 10px;
   }
 
   .data-field-2212 {font-size: 3px}
