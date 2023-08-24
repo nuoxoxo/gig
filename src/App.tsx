@@ -53,11 +53,6 @@ function App() {
           15:01
         </button>
 
-        {/* <button className='btn'
-          onClick={()=>handleSetRoute('1502')} >
-          15:02
-        </button> */}
-
         <button 
           className={
             `btn ${ oldRoute === '1608' || route === '1608' ? 'btn-current-route' : ''}`
@@ -90,7 +85,6 @@ function App() {
           22:10
         </button>
 
-        {/* New */}
         <button 
           className={
             `btn ${ oldRoute === '2212' || route === '2212' ? 'btn-current-route' : ''}`
