@@ -3,9 +3,9 @@ import { FetchData, LenNStrsFromLine } from "../helpers/Helpers"
 
 const URL:string = "https://raw.githubusercontent.com/nuoxoxo/in/main/2212.in"
 
-const symbolArr = ["○"] //, '·', '•', '▓']
+const symbolArr = ["○", '✲', '✳', '✵', '✶', '✻', '✼']
 const symbol = symbolArr[Math.floor(Math.random() * symbolArr.length)]
-const denseSymbol = '○'
+const denseSymbol = symbolArr[Math.floor(Math.random() * symbolArr.length)]
 const density:number = 170
 
 var Aoc2212 = () => {
@@ -271,8 +271,7 @@ var Aoc2212 = () => {
                   ? LenNStrsFromLine(lines[0], 16).join("\n")
                   : // : lines.join("\n")
                     lines.map((line) => line.split("").join(" ")).join("\n")
-                : // : lines.map(line => line.toUpperCase()).join('\n')
-                  "No data available."}
+                : "No data available."}
             </div>
           </div>
         </>
