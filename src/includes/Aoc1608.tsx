@@ -4,10 +4,10 @@ import { FetchData, LenNStrsFromLine, Deepcopy2DArray } from "../helpers/Helpers
 const URL:string = 
   "https://raw.githubusercontent.com/nuoxoxo/in/main/1608.in"
 
-// charset from 22:12
-const symbolArr = ['○', '○', '○', '○', '○', '○', '✲', '✳', '✵', '✶', '✻', '✼']
-const symbol = symbolArr[Math.floor(Math.random() * symbolArr.length)]
-// const denseSymbol = symbolArr[Math.floor(Math.random() * symbolArr.length)]
+// const charSet = ['○', '○', '○', '○', '○', '○', '✲', '✳', '✵', '✶', '✻', '✼']
+const charSet = ['░', '▒', '▓', '█', '¾', '⅞']
+const symbol = charSet[Math.floor(Math.random() * charSet.length)]
+// const denseSymbol = charSet[Math.floor(Math.random() * charSet.length)]
 
 let isTest = false
 // isTest = !isTest
@@ -44,7 +44,7 @@ var Aoc1608 = () => {
       let temp:string[] = []
       j = -1
       while (++j < W) {
-        temp.push('.')
+        temp.push(' ')
       }
       grid.push(temp)
     }
@@ -58,7 +58,7 @@ var Aoc1608 = () => {
 
       if (cmd === 'rotate') {
         cmd = arr[1] // columm OR row
-        let pos = parseInt(arr[2][2]) // '2' in 'y=2'
+        let pos = parseInt(arr[2].split('=')[1]) // '2' in 'y=2'  // BUG found and fixed
         let stp = parseInt(arr[4]) // steps '10'
 
         console.log(line, cmd, pos, stp) // TEST parsing 
