@@ -10,10 +10,10 @@ const URL:string =
 var Aoc1608 = () => {
 
   const [lines, setLines] = useState<string[]>([])
-  const [grid, setGrid] = useState<string[][]>([])
+  // const [grid, setGrid] = useState<string[][]>([])
 
-  const W:number = 50
-  const T:number = 6
+  // const W:number = 50
+  // const T:number = 6
 
   const handleData = async () => {
     try {
