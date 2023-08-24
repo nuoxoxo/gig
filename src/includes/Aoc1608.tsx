@@ -143,14 +143,14 @@ var Aoc1608 = () => {
     <>
       { lines ? (
         <div className="playground">
-          <div className="field res-field res-field-1608-image"
+          <div className="field res-field"
           >
             <span>--- 2016 Day 8: Two-Factor Authentication ---</span>
             <span>Part 1: {p1} </span>
             <span>Part 2: </span>
             {/* <span> { p2Grid.map((line) => line.join('')).join('\n') } </span> */}
             {/* <span> - sep - </span> */}
-            <span>
+            <span className="res-field-1608-image">
               { p2Traces.map((trace) => trace.map((t) => t.join('')).join('\n')).join('\n\n') }
             </span>
           </div>
