@@ -33,7 +33,6 @@ var DadJokes = () => {
     setIndex(randIdx)
   }
 
-
   return (
     <>
       <div className="playground" onClick={handleOnClick} >
