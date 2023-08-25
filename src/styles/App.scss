@@ -53,8 +53,8 @@ $DadMarginV: 169px;
   font-size: $ButtonSize;
   padding: 5px;
   margin: 0 1px;
-  // width: 77px;
-  width: 60px;
+  width: 77px;
+  // width: 60px;
   background-color: transparent;
   transition: background-color $TransitionS ease, color $TransitionS ease, border $TransitionS ease;
   cursor: pointer;
@@ -243,7 +243,7 @@ body {
 
   .btn {
     font-size: 9px;
-    width: 42px;
+    width: 39px;
     padding: 2px;
     border: 1px solid $ButtonColor;
   }
