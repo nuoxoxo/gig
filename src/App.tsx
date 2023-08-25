@@ -10,7 +10,7 @@ import Aoc1802 from "./includes/Aoc1802";
 import Aoc1608 from "./includes/Aoc1608";
 import Aoc1501 from "./includes/Aoc1501";
 import DadJokes from "./includes/DadJokes";
-import Label from "./includes/Label/Label.tsx"
+// import Label from "./includes/Label/Label.tsx"
 import "./styles/App.scss";
 // import "./includes/Label/Label.scss"
 
@@ -29,7 +29,7 @@ const routes: { [key: string]: TargetRoute } = {
   1802: Aoc1802,
   1501: Aoc1501,
   1608: Aoc1608,
-  Label: Label,
+  // Label: Label,
   DadJokes: DadJokes,
 };
 
