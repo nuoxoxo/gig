@@ -75,7 +75,6 @@ var CM: React.FC = () => {
             <span className="bold">Protein</span>
             4.2g
           </span>
-          {/* </span> */}
           <span className="bold">8.4%</span>
         </p>
         <div className="divider devider-camel-milk medium"></div>

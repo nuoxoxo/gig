@@ -59,7 +59,6 @@ var MC: React.FC = () => {
             <span className="bold">Cholesterol</span>
             10mg
           </span>
-          {/* </span> */}
           <span className="bold">3%</span>
         </p>
         <p>
