@@ -1,8 +1,9 @@
 import { useState } from "react"
 import Aoc2223 from "./includes/Aoc2223"
-import Aoc2212 from "./includes/Aoc2212" // New
+import Aoc2212 from "./includes/Aoc2212" // New New
 import Aoc2210 from "./includes/Aoc2210"
 import Aoc2105 from "./includes/Aoc2105" // New
+import Aoc2003 from "./includes/Aoc2003" // New New
 import Aoc1908 from "./includes/Aoc1908"
 import Aoc1802 from "./includes/Aoc1802"
 import Aoc1608 from "./includes/Aoc1608"
@@ -18,6 +19,7 @@ const routes: { [key: string]: TargetRoute } = {
   2212: Aoc2212, // New
   2210: Aoc2210,
   2105: Aoc2105,
+  2003: Aoc2003,
   1908: Aoc1908,
   1802: Aoc1802,
   1501: Aoc1501,
