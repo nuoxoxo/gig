@@ -12,11 +12,12 @@ $CREAM-WHITE: #FAEED5;
 $HOT-PINK: #EF7C8E;
 
 $ButtonColor: $CREAM-YELLO;
-$ButtonHoverColor: $WATER-GREEN;
+// $ButtonHoverColor: $WATER-GREEN;
+$ButtonHoverColor: $HOT-PINK;
 $ButtonOutline: 2px;
 $ButtonSize: 16px;
 
-$TransitionS: .2s;
+$TransitionS: .3s;
 
 $BGColor: #000000;
 $TextColor: #ffffff;
@@ -25,53 +26,6 @@ $TextColor: #ffffff;
 $DadMarginL: 16%;
 $DadMarginR: 8%;
 $DadMarginV: 169px;
-
-
-body {
-
-  font-size: $TextSize-05;
-  font-family: /*monospace, "Courier New",*/ "Lucida Console", Courier;
-  background-color: $BGColor;
-  color: $TextColor;
-
-}
-
-#root {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  white-space: pre-wrap;
-}
-
-.nav {
-
-  margin: .4em;
-  display: flex;
-  flex-direction: row;
-  // flex-wrap: nowrap;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.playground {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  font-size: $TextSize-05;
-}
-
-.field {
-  padding-left: 6px;
-  padding-right: 6px;
-  display: flex;
-  flex-direction: column;
-  span {
-    margin: 0.3em
-  }
-}
 
 @keyframes rainbow-rotate {
   from {
@@ -89,13 +43,6 @@ body {
   animation: rainbow-rotate 5s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-}
-
-.gig-header {
-  margin: 0;
-  font-size: $TextSize-1;
-  user-select: none;
-  @include animation-rainbow-rotate;
 }
 
 @mixin button-style {
@@ -119,6 +66,58 @@ body {
     // color: $ButtonHoverColor;
     border: $ButtonOutline solid $ButtonHoverColor;
   }
+}
+
+body {
+
+  font-size: $TextSize-05;
+  font-family: /*monospace, "Courier New",*/ "Lucida Console", Courier;
+  background-color: $BGColor;
+  color: $TextColor;
+
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  white-space: pre-wrap;
+}
+
+.nav {
+
+  margin: .4em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.playground {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  font-size: $TextSize-05;
+}
+
+.field {
+  padding-left: 6px;
+  padding-right: 6px;
+  display: flex;
+  flex-direction: column;
+  span {
+    margin: 0.3em
+  }
+}
+
+.gig-header {
+  margin: 0;
+  font-size: $TextSize-1;
+  user-select: none;
+  @include animation-rainbow-rotate;
 }
 
 .btn {
@@ -162,11 +161,6 @@ body {
   align-items: center;
 }
 
-// .data-field-1908 {
-//   font-size: $TextSize-1
-// }
-
-
 .res-field-1908 {
   padding-left: 80px;
 }
@@ -194,9 +188,13 @@ body {
   font-size: $TextSize-05
 }
 
-.data-field-2210 {
-  font-size: 33px
-}
+// .data-field-2210 {
+//   font-size: 33px
+// }
+
+// .data-field-1908 {
+//   font-size: $TextSize-1
+// }
 
 @media only screen and (max-width: 1010px) {
   .nav, .playground, .field {
@@ -229,26 +227,12 @@ body {
     font-size: 9px;
   }
 
-  .data-field-2212 {font-size: 3px}
-
-  .data-field-1501-santa {
-    font-size: 10px;
-  }
-
-  .res-field-1608-image {
-    font-size: 7px;
-  }
-
-  .res-field-1908-image, .res-field-1608 {
-    font-size: 9px;
-  }
-
   .playground {
     margin-top: .3em;
   }
 
-  .playground-2212 {
-    font-size: 4px;
+  h2 {
+    font-size: $TextSize-05;
   }
 
   .btn {
@@ -265,13 +249,26 @@ body {
     background-color: $ButtonColor;
   }
 
-  h2 {
-    font-size: $TextSize-05;
+  .data-field-2212 {font-size: 3px}
+
+  .data-field-1501-santa {
+    font-size: 10px;
+  }
+
+  .res-field-1608-image {
+    font-size: 7px;
+  }
+
+  .res-field-1908-image, .res-field-1608 {
+    font-size: 9px;
+  }
+
+  .playground-2212 {
+    font-size: 4px;
   }
 
   .dad-jokes-field {
     font-size: 5vh;
-    // height: 76vh;
     margin-top: 77px;
     margin-left: calc($DadMarginL - 5px);
     user-select: none;
