@@ -5,7 +5,7 @@ const URL:string =
   "https://raw.githubusercontent.com/nuoxoxo/in/main/1608.in"
 
 // const charSet = ['○', '○', '○', '○', '○', '○', '✲', '✳', '✵', '✶', '✻', '✼']
-const charSet = ['░', '▒', '▓', '█', '¾', '⅞']
+const charSet = ['○', '¾', '⅞', '░', '▒', '▓']//, '█']
 const symbol = charSet[Math.floor(Math.random() * charSet.length)]
 // const denseSymbol = charSet[Math.floor(Math.random() * charSet.length)]
 
