@@ -5,7 +5,7 @@ const URL:string = "https://raw.githubusercontent.com/nuoxoxo/in/main/2212.in"
 
 const symbolArr = ["○", '✲', '✳', '✵', '✶', '✻', '✼']
 const symbol = symbolArr[Math.floor(Math.random() * symbolArr.length)]
-const denseSymbol = symbolArr[Math.floor(Math.random() * symbolArr.length)]
+const denseSymbol = 'x'//symbolArr[Math.floor(Math.random() * symbolArr.length)]
 const density:number = 170
 
 var Aoc2212 = () => {
