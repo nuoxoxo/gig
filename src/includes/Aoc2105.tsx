@@ -17,7 +17,6 @@ var Aoc2105 = () => {
     }
   }
 
-
   useEffect(() => {
     handleData()
   }, [])
@@ -32,7 +31,7 @@ var Aoc2105 = () => {
             <span>Part 1: (empty) </span>
             <span>Part 2: (empty) </span>
           </div>
-          <div className="field data-field data-field-2021" >
+          <div className="field data-field data-field-2021" > {/* Using 2021, subject to mod after */}
             { lines
               ? lines.length === 1
                 ? LenNStrsFromLine(lines[0], 16).join("\n")
