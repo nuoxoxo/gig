@@ -12,7 +12,7 @@ import Aoc1501 from "./includes/Aoc1501";
 import DadJokes from "./includes/DadJokes";
 import Label from "./includes/Label/Label.tsx"
 import "./styles/App.scss";
-import "./includes/Label/Label.scss"
+// import "./includes/Label/Label.scss"
 
 
 type TargetRoute = React.FC;

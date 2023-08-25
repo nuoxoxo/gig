@@ -73,24 +73,27 @@ const PB: React.FC = () => {
         <div className="divider double-indent"></div>
         <p className="double-indent no-divider">
           Incl. 7g Added Sugars<span className="bold">14%</span>
+          </p>
           <div className="divider "></div>
+        {/* </p> */}
+        <p className="no-divider">
+          <span className="bold">Protein</span>
+          5g
+        </p>
+        <div className="divider large"></div>
+        <p>
+          Vitamin D 0mg <span>0%</span>
+        </p>
+        <p>
+          Calcium 40mg <span>4%</span>
+        </p>
+        <p>
+          Iron 1.9mg <span>10%</span>
         </p>
         <p className="no-divider">
-          <span className="bold">Protein</span> 5g
-          <div className="divider large"></div>
-          <p>
-            Vitamin D 0mg <span>0%</span>
-          </p>
-          <p>
-            Calcium 40mg <span>4%</span>
-          </p>
-          <p>
-            Iron 1.9mg <span>10%</span>
-          </p>
-          <p className="no-divider">
-            Potassium 270mg <span>6%</span>
-          </p>
+          Potassium 270mg <span>6%</span>
         </p>
+        {/* </p> */}
         <div className="divider medium"></div>
         <p className="note no-divider">
           * The % Daily Value (DV) tells you how much a nutrient in a serving of

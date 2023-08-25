@@ -82,10 +82,12 @@ var MC: React.FC = () => {
         <div className="divider devider-mac-n-cheese double-indent"></div>
         <p className="double-indent no-divider">
           Incl. Added Sugars 0g<span className="bold">0%</span>
+          </p>
           <div className="divider devider-mac-n-cheese"></div>
-        </p>
+        {/* </p> */}
         <p className="no-divider">
-          <span className="bold">Protein</span> 10g
+          <span className="bold">Protein</span>
+          10g</p>
           <div className="divider devider-mac-n-cheese large"></div>
           <p>
             Vitamin D 0mg <span>0%</span>
@@ -99,7 +101,7 @@ var MC: React.FC = () => {
           <p className="no-divider">
             Potassium 370mg <span>8%</span>
           </p>
-        </p>
+        {/* </p> */}
         <div className="divider devider-mac-n-cheese medium"></div>
         <p className="note no-divider">
           * As prepared using margarine with 0g trans fat and 2% reduced fat
