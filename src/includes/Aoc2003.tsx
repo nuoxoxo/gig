@@ -27,15 +27,15 @@ var Aoc2003 = () => {
     let i: number = 0
     let j: number = 0
 
-    while (i < g.length) {
+    while (i < lines.length) {
       g[i] = g[i].substring(0, j) + symbol + g[i].substring(j + 1)
       if (lines[i][j] === '#') {
         res++
       }
-      if (j + R < g[i].length) {
+      if (j + R < lines[i].length) {
         j += R
       } else {
-        j = (j + R) % g[i].length
+        j = (j + R) % lines[i].length
       }
       i += D
     }
