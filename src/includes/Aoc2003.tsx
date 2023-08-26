@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { FetchData, LenNStrsFromLine, /*Deepcopy2DArray,*/ } from "../helpers/Helpers"
 
 const URL: string = "https://raw.githubusercontent.com/nuoxoxo/in/main/2003.in"
-const symbolArr = ['█', '🔵', '🟡', '🟢']
+const symbolArr = ['▒', '▓', '█', '⬤', '⬢', '⭓']
 const symbol = symbolArr[Math.floor(Math.random() * symbolArr.length)]
 
 var Aoc2003 = () => {
