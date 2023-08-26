@@ -29,7 +29,7 @@ var Aoc2003 = () => {
 
     while (i < g.length) {
       g[i] = g[i].substring(0, j) + symbol + g[i].substring(j + 1)
-      if (lines[i][j] === "#") {
+      if (lines[i][j] === '#') {
         res++
       }
       if (j + R < g[i].length) {
@@ -39,7 +39,7 @@ var Aoc2003 = () => {
       }
       i += D
     }
-    // setGrid2(g)
+    setGrid2(g)
     return res
   }
 
@@ -52,8 +52,9 @@ var Aoc2003 = () => {
       * countTrees(g2, 1, 1)
       * countTrees(g2, 5, 1)
       * countTrees(g2, 7, 1)
-      * countTrees(g2, 1, 2))
-    setGrid2(g2)
+      * countTrees(g2, 1, 2)
+    )
+    // setGrid2(g2)
   }
 
   useEffect(() => {
