@@ -11,7 +11,7 @@ var Aoc2003 = () => {
   const [p1, setP1] = useState<number>(0)
   const [grid1, setGrid1] = useState<string[]>([])
   const [p2, setP2] = useState<number>(0)
-  const [grid2, setGrid2] = useState<string[]>([])
+  // const [grid2, setGrid2] = useState<string[]>([])
 
   const handleData = async () => {
     try {
@@ -23,6 +23,7 @@ var Aoc2003 = () => {
   }
 
   const countTrees = (g: string[], R: number, D: number): number => {
+
     let res: number = 0
     let i: number = 0
     let j: number = 0
@@ -56,7 +57,7 @@ var Aoc2003 = () => {
       * countTrees(g2, 1, 2)
 
     setP2(res2)
-    setGrid2(g2)
+    // setGrid2(g2)
   }
 
   useEffect(() => {
@@ -70,7 +71,6 @@ var Aoc2003 = () => {
   return (
     <>
       { lines ? (
-        // <div className="playground">
         <>
         <div className="field res-field">
           <span>--- 2020 Day 3: Toboggan Trajectory ---</span>
@@ -89,7 +89,7 @@ var Aoc2003 = () => {
             { grid1.join('\n') }
           </div>
           <div className='data-field-2003-children'>
-            { grid2.join('\n') }
+            {/* { grid2.join('\n') } */}
           </div>
         </div>
         </>
