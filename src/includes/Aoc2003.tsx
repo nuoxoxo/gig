@@ -2,10 +2,11 @@ import { useState, useEffect } from "react"
 import { FetchData, LenNStrsFromLine, /*Deepcopy2DArray,*/ } from "../helpers/Helpers"
 
 const URL: string = "https://raw.githubusercontent.com/nuoxoxo/in/main/2003.in"
-const symbolArr = ['▒', '▓', '█', '⬤', '⬢', '⭓']
+const symbolArr = ['▒', '▓', '█', '⬤', '⬢', '⭓', '◘']
 const symbol = symbolArr[Math.floor(Math.random() * symbolArr.length)]
 
 var Aoc2003 = () => {
+
   const [lines, setLines] = useState<string[]>([])
   const [p1, setP1] = useState<number>(0)
   const [grid1, setGrid1] = useState<string[]>([])
