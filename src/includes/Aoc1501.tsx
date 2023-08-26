@@ -105,8 +105,7 @@ var Aoc1501 = () => {
     <>
       { lines ? (
         <div className='playground'>
-          <div className='field data-field data-field-1501-santa'
-          >
+          <div className='field data-field data-field-1501-santa'>
             { lines
               ? lines.length === 1
                 // lines[0]
@@ -114,12 +113,10 @@ var Aoc1501 = () => {
                 : lines.join('\n')
               : 'No data available.'}
           </div>
-          <div className='field data-field'
-          >
+          <div className='field data-field'>
             {upDown ? [...upDown].reverse().join('\n') : 'No data available.'}
           </div>
-          <div className='field res-field'
-          >
+          <div className='field res-field'>
             <span>--- 2015 Day 1: Not Quite Lisp ---</span>
             <span>Part 1: {p1}</span>
             <span>Part 2: {p2}</span>
