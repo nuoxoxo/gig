@@ -22,7 +22,7 @@ var Aoc2003 = () => {
     }
   }
 
-  const countTrees = (g: string[], R: number, D: number): number => {
+  const countTrees = (g: string[], R: number, D: number, G?: string[]): number => {
     let res: number = 0
     let i: number = 0
     let j: number = 0
@@ -39,22 +39,24 @@ var Aoc2003 = () => {
       }
       i += D
     }
-    setGrid2(g)
     return res
   }
 
   const Solver = () => {
     let g1: string[] = [...lines]
     let g2: string[] = [...lines]
+    // let G: string[] = [...lines]
     setP1(countTrees(g1, 3, 1))
     setGrid1(g1)
-    setP2( p1
+
+    let res2 = p1
       * countTrees(g2, 1, 1)
       * countTrees(g2, 5, 1)
       * countTrees(g2, 7, 1)
       * countTrees(g2, 1, 2)
-    )
-    // setGrid2(g2)
+
+    setP2(res2)
+    setGrid2(g2)
   }
 
   useEffect(() => {
