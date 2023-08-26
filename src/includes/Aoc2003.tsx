@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { FetchData, LenNStrsFromLine, /*Deepcopy2DArray,*/ } from "../helpers/Helpers"
 
 const URL: string = "https://raw.githubusercontent.com/nuoxoxo/in/main/2003.in"
-const symbolArr = ['_']//'⬤', '⬢', '⭓']
+const symbolArr = ['⬤', '⬢', '⭓']
 const symbol = symbolArr[Math.floor(Math.random() * symbolArr.length)]
 
 var Aoc2003 = () => {
@@ -11,7 +11,7 @@ var Aoc2003 = () => {
   const [p1, setP1] = useState<number>(0)
   const [grid1, setGrid1] = useState<string[]>([])
   const [p2, setP2] = useState<number>(0)
-  // const [grid2, setGrid2] = useState<string[]>([])
+  const [grid2, setGrid2] = useState<string[]>([])
 
   const handleData = async () => {
     try {
@@ -43,21 +43,22 @@ var Aoc2003 = () => {
     return res
   }
 
-  const Solver = () => {
-    let g1: string[] = [...lines]
-    let g2: string[] = [...lines]
-    // let G: string[] = [...lines]
-    setP1(countTrees(g1, 3, 1))
-    setGrid1(g1)
+  const Solver_Part_One = () => {
+    let g: string[] = [...lines]
+    setP1(countTrees(g, 3, 1))
+    setGrid1(g)
+  }
 
-    let res2 = p1
-      * countTrees(g2, 1, 1)
-      * countTrees(g2, 5, 1)
-      * countTrees(g2, 7, 1)
-      * countTrees(g2, 1, 2)
-
-    setP2(res2)
-    // setGrid2(g2)
+  const Solver_Part_Two = () => {
+    let g: string[] = [...lines]
+    setP2(
+      p1
+      * countTrees(g, 1, 1)
+      * countTrees(g, 5, 1)
+      * countTrees(g, 7, 1)
+      * countTrees(g, 1, 2)
+    )
+    setGrid2(g)
   }
 
   useEffect(() => {
@@ -65,7 +66,11 @@ var Aoc2003 = () => {
   }, [])
 
   useEffect(() => {
-    Solver()
+    Solver_Part_One()
+  }, [lines])
+
+  useEffect(() => {
+    Solver_Part_Two()
   }, [lines])
 
   return (
@@ -89,7 +94,7 @@ var Aoc2003 = () => {
             { grid1.join('\n') }
           </div>
           <div className='data-field-2003-children'>
-            {/* { grid2.join('\n') } */}
+            { grid2.join('\n') }
           </div>
         </div>
         </>
