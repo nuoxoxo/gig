@@ -26,7 +26,7 @@ var Aoc2003 = () => {
 
     while (i < g.length) {
       g[i] = g[i].substring(0, j) + "█" + g[i].substring(j + 1)
-      if (g[i][j] === "#") {
+      if (lines[i][j] === "#") {
         res++
       }
       if (j + R < g[i].length) {
@@ -36,6 +36,7 @@ var Aoc2003 = () => {
       }
       i += D
     }
+    // console.log(res)
     return res
   }
 
@@ -43,11 +44,13 @@ var Aoc2003 = () => {
     let g1: string[] = [...lines]
     let g2: string[] = [...lines]
     setP1(countTrees(g1, 3, 1))
+    // console.log(p1)
     setGrid1(g1)
-    setP2(countTrees(g2, 1, 1)
-      + countTrees(g2, 5, 1)
-      + countTrees(g2, 7, 1)
-      + countTrees(g2, 1, 2))
+    setP2( p1
+      * countTrees(g2, 1, 1)
+      * countTrees(g2, 5, 1)
+      * countTrees(g2, 7, 1)
+      * countTrees(g2, 1, 2))
     setGrid2(g2)
   }
 
