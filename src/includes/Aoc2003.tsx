@@ -22,7 +22,7 @@ var Aoc2003 = () => {
     }
   }
 
-  const countTrees = (g: string[], R: number, D: number, G?: string[]): number => {
+  const countTrees = (g: string[], R: number, D: number): number => {
     let res: number = 0
     let i: number = 0
     let j: number = 0
