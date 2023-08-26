@@ -2,7 +2,8 @@ import { useState, useEffect } from "react"
 import { FetchData, LenNStrsFromLine, /*Deepcopy2DArray,*/ } from "../helpers/Helpers"
 
 const URL: string = "https://raw.githubusercontent.com/nuoxoxo/in/main/2003.in"
-const symbolArr =  ['▒', '▓', '█', '⬤', '⬢', '⭓', '⛬', '◘', '◙']
+const symbolArr =  ['█', '⬤', '🔵', '🟡', '🟢', '🌕', 
+  '🎾', '⭕', '🈵', '🈶', '🍊', '🦁', '🐯']
 const symbol = symbolArr[Math.floor(Math.random() * symbolArr.length)]
 
 var Aoc2003 = () => {
@@ -29,8 +30,9 @@ var Aoc2003 = () => {
     let j: number = 0
 
     while (i < lines.length) {
-      g[i] = g[i].substring(0, j) + symbol + g[i].substring(j + 1)
+      // g[i] = g[i].substring(0, j) + symbol + g[i].substring(j + 1)
       if (lines[i][j] === '#') {
+        g[i] = g[i].substring(0, j) + symbol + g[i].substring(j + 1)
         res++
       }
       if (j + R < lines[i].length) {
@@ -50,7 +52,7 @@ var Aoc2003 = () => {
     setGrid1(g1)
 
     let res2 = 
-      countTrees(g1, 3, 1)
+      countTrees(g2, 3, 1)
       * countTrees(g2, 1, 1)
       * countTrees(g2, 5, 1)
       * countTrees(g2, 7, 1)
