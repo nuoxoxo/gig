@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { FetchData, LenNStrsFromLine, /*Deepcopy2DArray,*/ } from "../helpers/Helpers"
 
 const URL: string = "https://raw.githubusercontent.com/nuoxoxo/in/main/2003.in"
-const symbolArr = ['Z']//▒']//, '▓', '█', '⬤', '⬢', '⭓', '◘', '◙']
+const symbolArr = ['▒', '▓', '█', '⬤', '⬢', '⭓', '◘', '◙']
 const symbol = symbolArr[Math.floor(Math.random() * symbolArr.length)]
 
 var Aoc2003 = () => {
@@ -39,7 +39,7 @@ var Aoc2003 = () => {
       }
       i += D
     }
-    // setGrid2(g)
+    setGrid2(g)
     return res
   }
 
@@ -53,7 +53,7 @@ var Aoc2003 = () => {
       * countTrees(g2, 5, 1)
       * countTrees(g2, 7, 1)
       * countTrees(g2, 1, 2))
-    setGrid2(g2)
+    // setGrid2(g2)
   }
 
   useEffect(() => {
