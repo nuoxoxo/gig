@@ -8,7 +8,7 @@ import Aoc1908 from "./includes/Aoc1908";
 import Aoc1803 from "./includes/Aoc1803"; // New New
 import Aoc1802 from "./includes/Aoc1802";
 import Aoc1608 from "./includes/Aoc1608";
-import Aoc1502 from "./includes/Aoc1502";
+// import Aoc1502 from "./includes/Aoc1502";
 import Aoc1501 from "./includes/Aoc1501";
 import DadJokes from "./includes/DadJokes";
 // import Label from "./includes/Label/Label.tsx"
@@ -28,7 +28,7 @@ const routes: { [key: string]: TargetRoute } = {
   1908: Aoc1908,
   1803: Aoc1803,
   1802: Aoc1802,
-  1502: Aoc1502,
+  // 1502: Aoc1502,
   1501: Aoc1501,
   1608: Aoc1608,
   // Label: Label,
