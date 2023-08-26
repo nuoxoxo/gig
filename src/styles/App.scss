@@ -162,6 +162,15 @@ body {
   align-items: center;
 }
 
+.data-field-2003 {
+  flex-direction: row;
+}
+
+.data-field-2003-children {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 .res-field-1908 {
   padding-left: 80px;
 }
@@ -286,6 +295,10 @@ body {
 
   .data-field-1803 {
     font-size: 7px;
+  }
+
+  .data-field-2003 {
+    flex-direction: column;
   }
 }
 

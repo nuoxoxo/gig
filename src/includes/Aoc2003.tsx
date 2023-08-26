@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react"
-import { FetchData, LenNStrsFromLine, /*Deepcopy2DArray*/ } from "../helpers/Helpers"
+import { FetchData, LenNStrsFromLine, /*Deepcopy2DArray,*/ } from "../helpers/Helpers"
 
-const URL:string = 
-  "https://raw.githubusercontent.com/nuoxoxo/in/main/2003.in"
+const URL: string = "https://raw.githubusercontent.com/nuoxoxo/in/main/2003.in"
 
 var Aoc2003 = () => {
-
   const [lines, setLines] = useState<string[]>([])
+  const [p1, setP1] = useState<number>(0)
+  const [grid1, setGrid1] = useState<string[]>([])
 
   const handleData = async () => {
     try {
@@ -17,28 +17,63 @@ var Aoc2003 = () => {
     }
   }
 
+  const countTrees = (g: string[], R: number, D: number): number => {
+    let res: number = 0
+    let i: number = 0
+    let j: number = 0
+
+    while (i < g.length) {
+      g[i] = g[i].substring(0, j) + "█" + g[i].substring(j + 1)
+      if (g[i][j] === "#") {
+        res++
+      }
+      if (j + R < g[i].length) {
+        j += R
+      } else {
+        j = (j + R) % g[i].length
+      }
+      i += D
+    }
+    return res
+  }
+
+  const Solver = () => {
+    let g1: string[] = [...lines]
+    setP1(countTrees(g1, 3, 1))
+    setGrid1(g1)
+  }
+
   useEffect(() => {
     handleData()
   }, [])
 
+  useEffect(() => {
+    Solver()
+  }, [lines])
+
   return (
     <>
       { lines ? (
-        <div className="playground">
-          <div className="field res-field"
-          >
-            <span>--- 2020 Day 3: Toboggan Trajectory ---</span>
-            <span>Part 1: (empty) </span>
-            <span>Part 2: (empty) </span>
-          </div>
-          <div className="field data-field data-field-2021" > {/* Using 2021, subject to mod after */}
-            { lines
+        // <div className="playground">
+        <>
+        <div className="field res-field">
+          <span>--- 2020 Day 3: Toboggan Trajectory ---</span>
+          <span>Part 1: {p1} </span>
+          <span>Part 2: (empty) </span>
+        </div>
+        <div className='field data-field data-field-2003'>
+          <div className='data-field-2003-children'>
+            {lines
               ? lines.length === 1
                 ? LenNStrsFromLine(lines[0], 16).join("\n")
-                : lines.join('\n')
+                : lines.join("\n")
               : "No data available."}
           </div>
+          <div>
+            { grid1.join('\n') }
+          </div>
         </div>
+        </>
       ) : (
         <p>Loading data...</p>
       )}
