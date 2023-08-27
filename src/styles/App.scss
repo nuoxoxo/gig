@@ -186,9 +186,17 @@ body {
   padding-left: 80px;
 }
 
+.res-field-2210-image {
+  padding-left: 0;
+}
+
 .playground-1908 {
   padding-left: 12px;
   padding-right: 12px
+}
+
+.playground-2210 {
+  font-size: 9px;
 }
 
 .playground-2212 {
@@ -209,8 +217,22 @@ body {
   word-break: break-all;
 }
 
+.res-field-2210 {
+  font-size: $TextSize-05;
+  display: flex;
+  flex-direction: column;
+}
+
+.res-field-2210-result {
+  font-size: $TextSize-05;
+  display: flex;
+  flex-direction: column;
+}
+
 .res-field-2210-image {
-  font-size: $TextSize-05
+  font-size: $TextSize-05;
+  display: flex;
+  flex-direction: column;
 }
 
 // .data-field-2210 {
@@ -239,6 +261,9 @@ body {
   }
   .data-field-2003 {
     font-size: 8px;
+  }
+  .res-field-2210-result {
+    font-size: 17px;
   }
 }
 
@@ -295,6 +320,9 @@ body {
 
   .data-field-2212 {font-size: 3px}
   .data-field-2011 {font-size: 8px;}
+  .res-field-2210-result {
+    font-size: 9px;
+  }
 
   .data-field-1501-santa {
     font-size: 10px;
