@@ -107,7 +107,7 @@ var Aoc2210 = () => {
       { lines ? (
         <div className="playground">
           <div className="field res-field res-field-2210">
-            <div className='res-field-2210-result'>
+            <div className='field res-field res-field-2210-result'>
               <span>--- 2022 Day 10: Cathode-Ray Tube ---</span>
               <span>Part 1: {p1}</span>
               <span>Part 2: </span>
