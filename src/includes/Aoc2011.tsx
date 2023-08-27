@@ -24,7 +24,7 @@ var Aoc2011 = () => {
       {lines ? (
         <div className='playground playground-2011'>
           <div className="field res-field">
-            <span>--- 2022 Day 12: Hill Climbing Algorithm ---</span>
+            <span>--- 2020 Day 11: Seating System ---</span>
             <span>Part 1: (empty)</span>
             <span>Part 2: (empty)</span>
           </div>
