@@ -263,14 +263,15 @@ body {
     padding: 2px;
     border: 1px solid $ButtonColor;
     &:hover {
-      // background-color: $ButtonColor;
-      // color: $ButtonHoverColor;
       border: 1px solid $ButtonHoverColor;
     }
   }
 
   .btn-current-route {
     border: 1px solid $ButtonHoverColor;
+    &:hover {
+      border: 1px solid $ButtonHoverColor;
+    }
   }
 
   .btn-io {
