@@ -53,7 +53,7 @@ var Aoc2011 = () => {
               ? lines.length === 1
                 ? LenNStrsFromLine(lines[0], 16).join("\n")
                 : // : lines.join("\n")
-                  lines.map((line) => line.split("").join(" ")).join("\n")
+                  lines/*.map((line) => line.split("").join(" "))*/.join("\n")
               : "No data available."}
           </div>
         </div>
