@@ -236,7 +236,7 @@ var Aoc2212 = () => {
   return (
     <>
       {lines ? (
-        <>
+        <div className='playground'>
           <div className="field res-field">
             <span>--- 2022 Day 12: Hill Climbing Algorithm ---</span>
             <span>Part 1: {p1}</span>
@@ -274,7 +274,7 @@ var Aoc2212 = () => {
                 : "No data available."}
             </div>
           </div>
-        </>
+        </div>
       ) : (
         <p>Loading data...</p>
       )}

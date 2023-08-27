@@ -9,8 +9,10 @@ const symbol = symbolArr[Math.floor(Math.random() * symbolArr.length)]
 var Aoc2003 = () => {
 
   const [lines, setLines] = useState<string[]>([])
+
   const [p1, setP1] = useState<number>(0)
   const [grid1, setGrid1] = useState<string[]>([])
+
   const [p2, setP2] = useState<number>(0)
   const [grid2, setGrid2] = useState<string[]>([])
 
@@ -30,9 +32,9 @@ var Aoc2003 = () => {
     let j: number = 0
 
     while (i < lines.length) {
-      // g[i] = g[i].substring(0, j) + symbol + g[i].substring(j + 1)
+      g[i] = g[i].substring(0, j) + symbol + g[i].substring(j + 1)
       if (lines[i][j] === '#') {
-        g[i] = g[i].substring(0, j) + symbol + g[i].substring(j + 1)
+        // g[i] = g[i].substring(0, j) + symbol + g[i].substring(j + 1)
         res++
       }
       if (j + R < lines[i].length) {
@@ -73,28 +75,28 @@ var Aoc2003 = () => {
   return (
     <>
       { lines ? (
-        <>
-        <div className="field res-field">
-          <span>--- 2020 Day 3: Toboggan Trajectory ---</span>
-          <span>Part 1: {p1} </span>
-          <span>Part 2: {p2} </span>
+        <div className='playground'>
+          <div className="field res-field">
+            <span>--- 2020 Day 3: Toboggan Trajectory ---</span>
+            <span>Part 1: {p1} </span>
+            <span>Part 2: {p2} </span>
+          </div>
+          <div className='field data-field data-field-2003'>
+            <div className='data-field-2003-children'>
+              {lines
+                ? lines.length === 1
+                  ? LenNStrsFromLine(lines[0], 16).join("\n")
+                  : lines.join("\n")
+                : "No data available."}
+            </div>
+            <div className='data-field-2003-children'>
+              { grid1.join('\n') }
+            </div>
+            <div className='data-field-2003-children'>
+              { grid2.join('\n') }
+            </div>
+          </div>
         </div>
-        <div className='field data-field data-field-2003'>
-          <div className='data-field-2003-children'>
-            {lines
-              ? lines.length === 1
-                ? LenNStrsFromLine(lines[0], 16).join("\n")
-                : lines.join("\n")
-              : "No data available."}
-          </div>
-          <div className='data-field-2003-children'>
-            { grid1.join('\n') }
-          </div>
-          <div className='data-field-2003-children'>
-            { grid2.join('\n') }
-          </div>
-        </div>
-        </>
       ) : (
         <p>Loading data...</p>
       )}

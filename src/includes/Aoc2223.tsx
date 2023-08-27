@@ -44,7 +44,7 @@ var Aoc2223 = () => {
   return (
     <>
       { lines ? (
-        <>
+        <div className='playground'>
           <div className="field res-field">
             <span>--- 2022 Day 23: Unstable Diffusion ---</span>
             <span>Part 1: (empty)</span>
@@ -69,7 +69,7 @@ var Aoc2223 = () => {
               }
             </div>
           </div>
-        </>
+        </div>
       ) : (
         <p>Loading data...</p>
       )}
