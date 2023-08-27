@@ -5,6 +5,7 @@ const URL: string = "https://raw.githubusercontent.com/nuoxoxo/in/main/2003.in"
 const symbolArr =  ['█', '⬤', '🔵', '🟡', '🟢', '🌕', 
   '🎾', '⭕', '🈵', '🈶', '🍊', '🦁', '🐯']
 const symbol = symbolArr[Math.floor(Math.random() * symbolArr.length)]
+const tempSymbol = '_'
 
 var Aoc2003 = () => {
 
@@ -32,9 +33,9 @@ var Aoc2003 = () => {
     let j: number = 0
 
     while (i < lines.length) {
-      g[i] = g[i].substring(0, j) + symbol + g[i].substring(j + 1)
+      g[i] = g[i].substring(0, j) + tempSymbol + g[i].substring(j + 1)
       if (lines[i][j] === '#') {
-        // g[i] = g[i].substring(0, j) + symbol + g[i].substring(j + 1)
+        // g[i] = g[i].substring(0, j) + tempSymbol + g[i].substring(j + 1)
         res++
       }
       if (j + R < lines[i].length) {
@@ -75,7 +76,7 @@ var Aoc2003 = () => {
   return (
     <>
       { lines ? (
-        <div className='playground'>
+        <div className='playground playground-2003'>
           <div className="field res-field">
             <span>--- 2020 Day 3: Toboggan Trajectory ---</span>
             <span>Part 1: {p1} </span>
@@ -90,10 +91,10 @@ var Aoc2003 = () => {
                 : "No data available."}
             </div>
             <div className='data-field-2003-children'>
-              { grid1.join('\n') }
+              { grid1.map( line => line.split(tempSymbol).join(symbol) ).join('\n') }
             </div>
             <div className='data-field-2003-children'>
-              { grid2.join('\n') }
+              { grid2.map( line => line.split(tempSymbol).join(symbol) ).join('\n') }
             </div>
           </div>
         </div>
