@@ -107,21 +107,18 @@ var Aoc2210 = () => {
       { lines ? (
         <div className="playground">
           <div className="field res-field res-field-2210">
-            <div className='field res-field res-field-2210-result'>
-              <span>--- 2022 Day 10: Cathode-Ray Tube ---</span>
-              <span>Part 1: {p1}</span>
-              <span>Part 2: </span>
-            </div>
-            <div className="field res-field res-field-2210-image">
-              <span>{ p2 ? [...p2].reverse().join('\n') : 'No data available.' }</span>
-            </div>
+            <span>--- 2022 Day 10: Cathode-Ray Tube ---</span>
+            <span>Part 1: {p1}</span>
+            <span>Part 2: </span>
+            <span className="res-field-2210-image">{ p2 ? [...p2].reverse().join('\n') : 'No data available.' }</span>
           </div>
           <div className="field data-field data-field-2210" >
             { lines
               ? lines.length === 1
                 ? LenNStrsFromLine(lines[0], 16).join("\n")
                 : lines.join("\n")
-              : "No data available."}
+              : "No data available."
+            }
           </div>
         </div>
       ) : (
