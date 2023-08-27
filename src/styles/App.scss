@@ -261,7 +261,11 @@ body {
     font-size: 9px;
     width: 39px;
     padding: 2px;
-    // border: 1px solid $ButtonColor;
+    border: 1px solid $ButtonColor;
+  }
+
+  .btn-current-route {
+    border: 1px solid $ButtonHoverColor;
   }
 
   .btn-io {
