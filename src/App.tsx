@@ -6,7 +6,7 @@ import Aoc2105 from "./includes/Aoc2105"; // New
 import Aoc2003 from "./includes/Aoc2003"; // New New
 import Aoc2011 from "./includes/Aoc2011"; // New New New
 import Aoc1908 from "./includes/Aoc1908";
-import Aoc1803 from "./includes/Aoc1803"; // New New
+// import Aoc1803 from "./includes/Aoc1803"; // New New
 import Aoc1802 from "./includes/Aoc1802";
 import Aoc1608 from "./includes/Aoc1608";
 import Aoc1502 from "./includes/Aoc1502";
@@ -28,7 +28,7 @@ const routes: { [key: string]: TargetRoute } = {
   2003: Aoc2003,
   2011: Aoc2011,
   1908: Aoc1908,
-  1803: Aoc1803,
+  // 1803: Aoc1803,
   1802: Aoc1802,
   1502: Aoc1502,
   1501: Aoc1501,
