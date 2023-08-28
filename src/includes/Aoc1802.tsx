@@ -111,8 +111,8 @@ var Aoc1802 = () => {
           </div>
           <div className="field res-field">
             <span>--- 2018 Day 2: Inventory Management System ---</span>
-            <span>Part 1: {p1}</span>
-            <span>Part 2: {p2}</span>
+            <span>Part 1: {p1?p1:'(empty)'}</span>
+            <span>Part 2: {p2?p2:'(empty)'}</span>
             <div className="field data-field">
               { lines
                 ? lines.length === 1
