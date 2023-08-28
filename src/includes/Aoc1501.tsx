@@ -118,8 +118,8 @@ var Aoc1501 = () => {
           </div>
           <div className='field res-field'>
             <span>--- 2015 Day 1: Not Quite Lisp ---</span>
-            <span>Part 1: {p1}</span>
-            <span>Part 2: {p2}</span>
+            <span>Part 1: {p1?p1:'(empty)'}</span>
+            <span>Part 2: {p2?p2:'(empty)'}</span>
             {/* <div className='field data-field data-field-1501-santa'> */}
             <div>
               {lines ? computeFloors().join('\n') : 'No data available.'}
