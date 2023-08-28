@@ -8,7 +8,7 @@ var Aoc2223 = () => {
   const [lines, setLines] = useState<string[]>([])
   const [p1/*, setP1*/] = useState<number>(0)
   const [set1, setSet1] = useState<Set<number[]>>(new Set<number[]>)
-  // const [p2, setP2] = useState<number>(0)
+  const [p2/*, setP2*/] = useState<number>(0)
 
   const handleData = async () => {
     try {
@@ -48,7 +48,7 @@ var Aoc2223 = () => {
           <div className="field res-field">
             <span>--- 2022 Day 23: Unstable Diffusion ---</span>
             <span>Part 1: {p1 ? p1 : '(empty)'}</span>
-            <span>Part 2: (empty)</span>
+            <span>Part 2: {p2 ? p2 : '(empty)'}</span>
           </div>
 
           <div className="playground">
