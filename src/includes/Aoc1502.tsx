@@ -55,8 +55,8 @@ var Aoc1501 = () => {
         <div className='playground'>
           <div className="field res-field">
             <span>--- 2015 Day 2: I Was Told There Would Be No Math ---</span>
-            <span>Part 1: {p1}</span>
-            <span>Part 2: {p2}</span>
+            <span>Part 1: {p1?p1:'(empty)'}</span>
+            <span>Part 2: {p2?p2:'(empty)'}</span>
           </div>
           <div className="field data-field">
             { lines
