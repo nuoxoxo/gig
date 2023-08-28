@@ -28,7 +28,7 @@ const routes: { [key: string]: TargetRoute } = {
   2003: Aoc2003,
   2011: Aoc2011,
   1908: Aoc1908,
-  // 1803: Aoc1803,
+  1803: Aoc1803,
   1802: Aoc1802,
   1502: Aoc1502,
   1501: Aoc1501,
