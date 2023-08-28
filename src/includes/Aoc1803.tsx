@@ -7,6 +7,8 @@ const URL:string =
 var Aoc1803 = () => {
 
   const [lines, setLines] = useState<string[]>([])
+  const [p1/*, setP1*/] = useState<number>(0)
+  const [p2/*, setP2*/] = useState<number>(0)
 
   const handleData = async () => {
     try {
@@ -28,8 +30,8 @@ var Aoc1803 = () => {
           <div className="field res-field"
           >
             <span>--- 2018 Day 3: No Matter How You Slice It ---</span>
-            <span>Part 1: (empty) </span>
-            <span>Part 2: (empty) </span>
+            <span>Part 1: {p1?p1:'(empty)'} </span>
+            <span>Part 2: {p2?p2:'(empty)'} </span>
           </div>
           <div className="field data-field data-field-1803" >
             { lines
