@@ -6,7 +6,7 @@ const URL:string =
 
 var Aoc2223 = () => {
   const [lines, setLines] = useState<string[]>([])
-  // const [p1, setP1] = useState<number>(0)
+  const [p1/*, setP1*/] = useState<number>(0)
   const [set1, setSet1] = useState<Set<number[]>>(new Set<number[]>)
   // const [p2, setP2] = useState<number>(0)
 
