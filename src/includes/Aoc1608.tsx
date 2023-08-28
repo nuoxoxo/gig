@@ -146,7 +146,7 @@ var Aoc1608 = () => {
           <div className="field res-field"
           >
             <span>--- 2016 Day 8: Two-Factor Authentication ---</span>
-            <span>Part 1: {p1} </span>
+            <span>Part 1: {p1?p1:'(empty)'} </span>
             <span>Part 2: </span>
             {/* <span> { p2Grid.map((line) => line.join('')).join('\n') } </span> */}
             {/* <span> - sep - </span> */}
