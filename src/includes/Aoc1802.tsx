@@ -103,6 +103,14 @@ var Aoc1802 = () => {
       { lines ? (
         <div className="playground playground-1802">
 
+          <div className="field data-field">
+            { lines
+              ? lines.length === 1
+                ? LenNStrsFromLine(lines[0], 16).join("\n")
+                : lines.join("\n")
+              : "No data available."}
+          </div>
+
           <div className="field res-field">
             <span>--- 2018 Day 2: Inventory Management System ---</span>
             <span>Part 1: {p1?p1:'(empty)'}</span>
@@ -114,14 +122,6 @@ var Aoc1802 = () => {
                   : lines23.join("\n")
                 : "No data available."}
             </div>
-          </div>
-
-          <div className="field data-field">
-            { lines
-              ? lines.length === 1
-                ? LenNStrsFromLine(lines[0], 16).join("\n")
-                : lines.join("\n")
-              : "No data available."}
           </div>
 
         </div>
