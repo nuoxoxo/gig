@@ -108,7 +108,7 @@ var Aoc2210 = () => {
         <div className="playground">
           <div className="field res-field res-field-2210">
             <span>--- 2022 Day 10: Cathode-Ray Tube ---</span>
-            <span>Part 1: {p1}</span>
+            <span>Part 1: {p1?p1:'(empty)'}</span>
             <span>Part 2: </span>
             <span className="res-field-2210-image">{ p2 ? [...p2].reverse().join('\n') : 'No data available.' }</span>
           </div>
