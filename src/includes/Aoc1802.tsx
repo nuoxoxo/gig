@@ -107,7 +107,7 @@ var Aoc1802 = () => {
             <span>--- 2018 Day 2: Inventory Management System ---</span>
             <span>Part 1: {p1?p1:'(empty)'}</span>
             <span>Part 2: {p2?p2:'(empty)'}</span>
-            <div className="field data-field">
+            <div className="field data-field data-field-1802">
               { lines
                 ? lines.length === 1
                   ? LenNStrsFromLine(lines23[0], 16).join("\n")
