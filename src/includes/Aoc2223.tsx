@@ -47,7 +47,7 @@ var Aoc2223 = () => {
         <div className='playground playground-2223'>
           <div className="field res-field">
             <span>--- 2022 Day 23: Unstable Diffusion ---</span>
-            <span>Part 1: (empty)</span>
+            <span>Part 1: {p1 ? p1 : '(empty)'}</span>
             <span>Part 2: (empty)</span>
           </div>
 
