@@ -101,7 +101,7 @@ var Aoc1802 = () => {
   return (
     <>
       { lines ? (
-        <div className="playground">
+        <div className="playground playground-1802">
 
           <div className="field res-field">
             <span>--- 2018 Day 2: Inventory Management System ---</span>
