@@ -79,8 +79,8 @@ var Aoc2003 = () => {
         <div className='playground playground-2003'>
           <div className="field res-field">
             <span>--- 2020 Day 3: Toboggan Trajectory ---</span>
-            <span>Part 1: {p1} </span>
-            <span>Part 2: {p2} </span>
+            <span>Part 1: {p1?p1:'(empty)'} </span>
+            <span>Part 2: {p2?p2:'(empty)'} </span>
           </div>
           <div className='field data-field data-field-2003'>
             <div className='data-field-2003-children'>
