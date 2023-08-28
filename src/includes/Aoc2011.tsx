@@ -5,6 +5,8 @@ const URL:string = "https://raw.githubusercontent.com/nuoxoxo/in/main/2011.in"
 
 var Aoc2011 = () => {
   const [lines, setLines] = useState<string[]>([])
+  const [p1/*, setP1*/] = useState<number>(0)
+  const [p2/*, setP2*/] = useState<number>(0)
 
   const handleData = async () => {
     try {
@@ -25,8 +27,8 @@ var Aoc2011 = () => {
         <div className='playground playground-2011'>
           <div className="field res-field">
             <span>--- 2020 Day 11: Seating System ---</span>
-            <span>Part 1: (empty)</span>
-            <span>Part 2: (empty)</span>
+            <span>Part 1: {p1?p1:'(empty)'}</span>
+            <span>Part 2: {p2?p2:'(empty)'}</span>
           </div>
           {/*
           <div className="field data-field data-field-2011">
