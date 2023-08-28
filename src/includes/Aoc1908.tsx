@@ -119,7 +119,7 @@ var Aoc1908 = () => {
           <div className="playground playground-1908">
             <div className="field res-field res-field-1908" >
               <span>--- 2019 Day 8: Space Image Format ---</span>
-              <span>Part 1: { p1 }</span>
+              <span>Part 1: { p1 ? p1 : '(empty)' }</span>
               <span>Part 2: </span>
               <span className='res-field-1908-image'>
                 { imgFinal.map(line => line.join('')).join('\n') }
