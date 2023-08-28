@@ -79,6 +79,7 @@ function App() {
         {/* O.d code */}
 
         {/*
+
         <button
           className={`btn ${ routeFromLocalStorage === '1501' || route === '1501' ? 'btn-current-route' : ''}`}
           onClick={()=>handleSetRoute('1501')} >
@@ -91,54 +92,6 @@ function App() {
           }
           onClick={()=>handleSetRoute('1608')} >
           16:08
-        </button>
-
-        <button
-          className={
-            `btn ${ routeFromLocalStorage === '1802' || route === '1802' ? 'btn-current-route' : ''}`
-          }
-          onClick={()=>handleSetRoute('1802')} >
-          18:02
-        </button>
-
-        <button 
-          className={
-            `btn ${ routeFromLocalStorage === '1908' || route === '1908' ? 'btn-current-route' : ''}`
-          }
-          onClick={()=>handleSetRoute('1908')} >
-          19:08
-        </button>
-
-        <button 
-          className={
-            `btn ${ routeFromLocalStorage === '2210' || route === '2210' ? 'btn-current-route' : ''}`
-          }
-          onClick={()=>handleSetRoute('2210')} >
-          22:10
-        </button>
-
-        <button 
-          className={
-            `btn ${ routeFromLocalStorage === '2212' || route === '2212' ? 'btn-current-route' : ''}`
-          }
-          onClick={()=>handleSetRoute('2212')} >
-          22:12
-        </button>
-
-        <button 
-          className={
-            `btn ${ routeFromLocalStorage === '2223' || route === '2223' ? 'btn-current-route' : ''}`
-          }
-          onClick={()=>handleSetRoute('2223')} >
-          22:23
-        </button>
-
-        <button 
-          className={
-            `btn ${ routeFromLocalStorage === 'DadJokes' || route === 'DadJokes'  ? 'btn-current-route' : ''}`
-          }
-          onClick={()=>handleSetRoute('DadJokes')} >
-          Jokes
         </button>
 
         */}
