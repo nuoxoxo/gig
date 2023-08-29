@@ -60,7 +60,7 @@ var Aoc2223 = () => {
               }
             </div>
             <div className="field data-field"
-              style={{ fontSize: '7px', width: '60%', textAlign: 'match-parent' }}
+              style={{ fontSize: '8px' }}
             >
               {
                 set1.size > 0 ?
