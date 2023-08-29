@@ -259,6 +259,9 @@ body {
   .nav, .playground, .field {
     font-size: 17px;
   }
+  .nav {
+    justify-content: left;
+  }
   .data-field-1501-santa {
     font-size: 14px;
   }
@@ -280,9 +283,7 @@ body {
 }
 
 @media only screen and (max-width: 910px) {
-  .nav {
-    justify-content: left;
-  }
+
   .res-field-1908 {
     padding-left: 6px;
   }
