@@ -113,10 +113,6 @@ body {
   }
 }
 
-.btn-current-route {
-  border: $ButtonOutline solid $ButtonHoverColor;
-}
-
 .data-field {
   font-size: $TextSize-05;
   padding: 6px;
@@ -138,6 +134,10 @@ body {
   width: calc($ButtonSize * 2);
   height: calc($ButtonSize * 2);
   background-color: $ButtonColor;
+}
+
+.btn-current-route {
+  border: $ButtonOutline solid $ButtonHoverColor;
 }
 
 .playground-2212, .playground-2003, .playground-2223, .playground-2011 {
