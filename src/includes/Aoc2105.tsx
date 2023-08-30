@@ -19,9 +19,6 @@ var Aoc2105 = () => {
       for (let line of raws) {
 
         let match = line.match(/(\d+),(\d+) -> (\d+),(\d+)/)
-        // console.log(match?.length, match)
-        
-        // console.log(match?.length, match)
 
         if (match) {
           match.shift() // pop the 1st element returned by .match() which is the string itself
@@ -30,7 +27,6 @@ var Aoc2105 = () => {
             temp.push(parseInt(n)) 
           }
           parsedTemp.push(temp)
-          // console.log(parsedTemp.length)
         }
       }
       setParsedLines(parsedTemp)
@@ -55,7 +51,7 @@ var Aoc2105 = () => {
             <span>--- 2021 Day 5: Hydrothermal Venture ---</span>
             <span>Part 1: {p1 ? p1 : '(empty)'} </span>
 
-            <div>{parsedLines&&parsedLines[0]?parsedLines[0].join('; '):"No data available."}</div>
+            <div>{parsedLines&&parsedLines[0]?`len: $(parsedLines.length) - $(parsedLines[0].join('; '))`:"No data available."}</div>
 
             <span>Part 2: {p2 ? p2 : '(empty)'} </span>
             <div className="field data-field data-field-2021" > {/* Using 2021, subject to mod after */}
