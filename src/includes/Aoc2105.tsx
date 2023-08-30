@@ -5,11 +5,6 @@ import {
 
 const URL: string = "https://raw.githubusercontent.com/nuoxoxo/in/main/2105.in"
 
-// const grid:number[][] = Array.from(
-//   { length: 1000 },
-//   () => Array.from({ length: 1000 }, () => 0)
-// )
-
 var Aoc2105 = () => {
   const [lines, setLines] = useState<string[]>([])
   const [v, setVent] = useState<number[][]>([])
@@ -126,13 +121,8 @@ var Aoc2105 = () => {
   }, [])
 
   useEffect(() => {
-    Solve_Part_One()
-    // Solve_Part_Two()
-  }, [v])
-
-  useEffect(() => {
     // Solve_Part_One()
-    Solve_Part_Two()
+    // Solve_Part_Two()
   }, [v])
 
   return (
