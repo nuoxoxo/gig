@@ -37,6 +37,7 @@ var Aoc2105 = () => {
     }
   }
 
+  /*
   const Solve_Part_One = () => {
 
     let g:number[][] = Array.from(
@@ -115,6 +116,7 @@ var Aoc2105 = () => {
     setP2(res)
     setGrid(g)
   }
+  */
 
   useEffect(() => {
     handleData()
