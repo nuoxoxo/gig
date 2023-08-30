@@ -55,7 +55,7 @@ var Aoc2105 = () => {
             <span>--- 2021 Day 5: Hydrothermal Venture ---</span>
             <span>Part 1: {p1 ? p1 : '(empty)'} </span>
 
-            <div>{parsedLines?parsedLines[0].join('; '):"No data available."}</div>
+            <div>{parsedLines&&parsedLines[0]?parsedLines[0].join('; '):"No data available."}</div>
 
             <span>Part 2: {p2 ? p2 : '(empty)'} </span>
             <div className="field data-field data-field-2021" > {/* Using 2021, subject to mod after */}
