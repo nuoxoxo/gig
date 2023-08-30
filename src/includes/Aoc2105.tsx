@@ -7,8 +7,8 @@ const URL:string =
 var Aoc2105 = () => {
 
   const [lines, setLines] = useState<string[]>([])
-  const [p1/*, setLines*/] = useState<number>(0)
-  const [p2/*, setLines*/] = useState<number>(0)
+  const [p1/*, setP1*/] = useState<number>(0)
+  const [p2/*, setP1*/] = useState<number>(0)
 
 
   const handleData = async () => {
@@ -19,6 +19,8 @@ var Aoc2105 = () => {
       console.error("Error fetching data: ", error)
     }
   }
+
+
 
   useEffect(() => {
     handleData()

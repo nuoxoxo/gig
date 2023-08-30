@@ -70,31 +70,11 @@ function App() {
                 : ""
             }`}
           >
-            {key === "DadJokes" ? "Jokes"
+            { key === "DadJokes" ? "Jokes"
               : key === "Nut" ? "Nut"
               : key.replace(/^(\d{2})(\d{2})$/, "$1:$2")}
           </button>
         ))}
-
-        {/* O.d code */}
-
-        {/*
-
-        <button
-          className={`btn ${ routeFromLocalStorage === '1501' || route === '1501' ? 'btn-current-route' : ''}`}
-          onClick={()=>handleSetRoute('1501')} >
-          15:01
-        </button>
-
-        <button 
-          className={
-            `btn ${ routeFromLocalStorage === '1608' || route === '1608' ? 'btn-current-route' : ''}`
-          }
-          onClick={()=>handleSetRoute('1608')} >
-          16:08
-        </button>
-
-        */}
 
         <button
           className="btn btn-io"
@@ -106,6 +86,7 @@ function App() {
           &#8203;
           {/* &nbspio&nbsp */}
         </button>
+
       </div>
       {routes.hasOwnProperty(route) ? <TargetRoute /> : null}
     </>
