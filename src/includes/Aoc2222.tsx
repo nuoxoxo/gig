@@ -54,13 +54,13 @@ var Aoc2222 = () => {
             </div>
           </div>
 
-          <div className="field data-field data-field-2222">
+          {/*<div className="field data-field data-field-2222">
             {
               surface 
               ? surface.join("\n") 
               : "No data available."
             }
-          </div>
+          </div>*/}
 
           <div className="field data-field data-field-2222">
             {
