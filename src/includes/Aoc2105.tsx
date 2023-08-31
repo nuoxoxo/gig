@@ -1,9 +1,13 @@
 import { useState, useEffect } from "react"
 import {
-  FetchData, /*LenNStrsFromLine,*/ /*Deepcopy2DArray*/
+  FetchData,
+  // LenNStrsFromLine,
+  // Deepcopy2DArray,
 } from "../helpers/Helpers"
 
-const URL: string = "https://raw.githubusercontent.com/nuoxoxo/in/main/2105.in"
+const URL: string = 
+  "https://raw.githubusercontent.com/nuoxoxo/in/main/2105.in"
+
 let grid:number[][] = Array.from(
   { length: 1000 },
   () => Array.from({ length: 1000 }, () => 0)
@@ -61,8 +65,9 @@ var Aoc2105 = () => {
       } else if (v[i][1] === v[i][3]) {
         L = v[i][0]
         R = v[i][2]
-        if (L > R)
+        if (L > R){
           [L, R] = [R, L]
+        }
         j = L - 1
         while (++j <= R)
           grid[j][ v[i][1] ] += 1
@@ -113,26 +118,41 @@ var Aoc2105 = () => {
     handleData()
   }, [])
 
+  // useEffect(() => {
+  //   Solve_Part_One()
+  //   Solve_Part_Two()
+  // }, [v])
+
   useEffect(() => {
     Solve_Part_One()
-    Solve_Part_Two()
+    // Solve_Part_Two()
   }, [v])
+
+  useEffect(() => {
+    // Solve_Part_One()
+    Solve_Part_Two()
+  }, [])
 
   return (
     <>
       {lines ? (
-        <div className="playground">
-          <div className="field res-field">
-            <span>--- 2021 Day 5: Hydrothermal Venture ---</span>
-            <span>Part 1: {p1 ? p1 : "(empty)"} </span>
-            {/* <div>{v && v[0] ? v[0].join(" ") : "No data available."}</div> */}
-            <span>Part 2: {p2 ? p2 : "(empty)"} </span>
-            {/* <div style={{ fontSize:'1px'}}>{grid && grid[0] ? grid.join('\n') : "No data available."}</div> */}
+        <>
+
+          <div className="playground">
+            <div className="field res-field">
+              <span>--- 2021 Day 5: Hydrothermal Venture ---</span>
+              <span>Part 1: {p1 ? p1 : "(empty)"} </span>
+              {/* <div>{v && v[0] ? v[0].join(" ") : "No data available."}</div> */}
+              <span>Part 2: {p2 ? p2 : "(empty)"} </span>
+              {/* <div style={{ fontSize:'1px'}}>{grid && grid[0] ? grid.join('\n') : "No data available."}</div> */}
+            </div>
           </div>
+
           <div className="field data-field data-field-2021">
             { lines ? lines.join("\n") : "No data available." }
           </div>
-        </div>
+
+        </>
       ) : (
         <p>Loading data...</p>
       )}
