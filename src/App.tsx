@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Aoc2223 from "./includes/Aoc2223";
+import Aoc2222 from "./includes/Aoc2222";
 import Aoc2212 from "./includes/Aoc2212"; // New New
 import Aoc2210 from "./includes/Aoc2210";
 import Aoc2105 from "./includes/Aoc2105"; // New
@@ -22,6 +23,7 @@ type TargetRoute = React.FC;
 const routes: { [key: string]: TargetRoute } = {
   // Valid Identifiers (No quotes needed)
   2223: Aoc2223,
+  2222: Aoc2222,
   2212: Aoc2212, // New
   2210: Aoc2210,
   2105: Aoc2105,
