@@ -26,6 +26,7 @@ var Aoc1803 = () => {
   return (
     <>
       { lines ? (
+        <>
         <div className="playground playground-1803">
           <div className="field res-field"
           >
@@ -42,6 +43,7 @@ var Aoc1803 = () => {
               : lines.join('\n')
             : "No data available."}
         </div>
+        </>
       ) : (
         <p>Loading data...</p>
       )}
