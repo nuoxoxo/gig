@@ -26,7 +26,7 @@ var Aoc1803 = () => {
   return (
     <>
       { lines ? (
-        <div className="playground">
+        <div className="playground playground-1803">
           <div className="field res-field"
           >
             <span>--- 2018 Day 3: No Matter How You Slice It ---</span>
