@@ -6,7 +6,7 @@ import {
 } from "../helpers/Helpers"
 
 const URL: string = "https://raw.githubusercontent.com/nuoxoxo/in/main/2222.in"
-const chrs: string[] = ['@', '○', '▓', '▒', '#', 'x', '✲', '✳', '✵', '✶', '✻', '✼']
+const chrs: string[] = ['○', '▓', '▒', '#']//, 'x', '✲', '✳', '✵', '✶', '✻', '✼']
 const chr: string = chrs[Math.floor(Math.random() * chrs.length)]
 
 var Aoc2222 = () => {
