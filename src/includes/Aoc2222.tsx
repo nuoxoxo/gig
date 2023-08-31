@@ -6,12 +6,13 @@ import {
 } from "../helpers/Helpers"
 
 const URL: string = "https://raw.githubusercontent.com/nuoxoxo/in/main/2222.in"
-const chr: string = '▓'
+const chrs: string[] = ['@', '○', '▓', '▒', '#', 'x', '✲', '✳', '✵', '✶', '✻', '✼']
+const chr: string = chrs[Math.floor(Math.random() * chrs.length)]
 
 var Aoc2222 = () => {
   const [lines, setLines] = useState<string[]>([])
   const [Surface, setSurface] = useState<string[]>([])
-  const [SurfaceRes, setSurfaceres] = useState<string[]>([])
+  const [SurfaceRes, setSurfaceRes] = useState<string[]>([])
   const [Command, setCommand] = useState<string>()
   const [p1, setP1] = useState<number>(0)
   const [p2, setP2] = useState<number>(0)
@@ -37,8 +38,10 @@ var Aoc2222 = () => {
   }
 
   const Solver = () => {
-    if (Surface === undefined || Command === undefined) return
-    let surface = Surface
+    if (Surface === undefined || Command === undefined)
+      return
+    let surface:string[] = [...Surface]
+    let surfaceResTemp:string[] = [...Surface]
     let W = -1
     for (let line of surface) {
       // line = line.split('').reverse().join('')
@@ -140,6 +143,9 @@ var Aoc2222 = () => {
         let ddc = dc
         let rr = r + dr
         let cc = c + dc
+
+        if (surfaceResTemp[rr] !== undefined)
+          surfaceResTemp[rr] = surfaceResTemp[rr].substring(0, cc) + chr + surfaceResTemp[rr].substring(cc + 1)
 
         // 14 wrap around cases
 
@@ -284,7 +290,7 @@ var Aoc2222 = () => {
     }
 
     setP2(1000 * (r + 1) + 4 * (c + 1) + x)
-    setSurfaceres(surface)
+    setSurfaceRes(surfaceResTemp)
   }
 
   useEffect(() => {
@@ -308,15 +314,15 @@ var Aoc2222 = () => {
           </div>
 
           <div className="field data-field data-field-2222">
-            {Surface ? Surface.join("\n") : "No data available."}
+            { SurfaceRes ? SurfaceRes.join("\n") : "No data available." }
           </div>
 
           <div className="field data-field data-field-2222">
-            {SurfaceRes ? SurfaceRes.join("\n") : "No data available."}
+            { Surface ? Surface.join("\n") : "No data available." }
           </div>
 
           <div className="field data-field data-field-2222">
-            {Command
+            { Command
               ? LenNStrsFromLine(Command, 100).join("\n")
               : "No data available."}
           </div>
