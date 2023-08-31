@@ -26,21 +26,24 @@ var Aoc1803 = () => {
   return (
     <>
       { lines ? (
-        <div className="playground">
+        <>
+        <div className="playground playground-1803">
           <div className="field res-field"
           >
             <span>--- 2018 Day 3: No Matter How You Slice It ---</span>
             <span>Part 1: {p1?p1:'(empty)'} </span>
             <span>Part 2: {p2?p2:'(empty)'} </span>
           </div>
-          <div className="field data-field data-field-1803" >
-            { lines
-              ? lines.length === 1
-                ? LenNStrsFromLine(lines[0], 16).join("\n")
-                : lines.join('\n')
-              : "No data available."}
-          </div>
+
         </div>
+        <div className="field data-field data-field-1803" >
+          { lines
+            ? lines.length === 1
+              ? LenNStrsFromLine(lines[0], 16).join("\n")
+              : lines.join('\n')
+            : "No data available."}
+        </div>
+        </>
       ) : (
         <p>Loading data...</p>
       )}

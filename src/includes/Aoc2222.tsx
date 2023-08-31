@@ -5,8 +5,8 @@ import {
   // Deepcopy2DArray,
 } from "../helpers/Helpers"
 
-const URL: string = 
-  "https://raw.githubusercontent.com/nuoxoxo/in/main/2222.in"
+const URL: string = "https://raw.githubusercontent.com/nuoxoxo/in/main/2222.in"
+const chr: string = '▓'
 
 var Aoc2222 = () => {
   const [lines, setLines] = useState<string[]>([])
@@ -17,16 +17,15 @@ var Aoc2222 = () => {
   const [p2, setP2] = useState<number>(0)
 
   const handleData = async () => {
-
     try {
-      const resp = await fetch( URL )
+      const resp = await fetch(URL)
       const text = await resp.text()
       // console.log(text.charCodeAt(1))
-      const raws: string[] = text.split('\n')
-      const idx = raws.indexOf('')
-      
-      const surf:string[] = raws.slice(0, idx)
-      const cour:string = raws.slice(idx + 1)[0]
+      const raws: string[] = text.split("\n")
+      const idx = raws.indexOf("")
+
+      const surf: string[] = raws.slice(0, idx)
+      const cour: string = raws.slice(idx + 1)[0]
       setLines(raws)
       setSurface(surf)
       setCommand(cour)
@@ -38,8 +37,7 @@ var Aoc2222 = () => {
   }
 
   const Solver = () => {
-    if (Surface === undefined || Command === undefined)
-      return
+    if (Surface === undefined || Command === undefined) return
     let surface = Surface
     let W = -1
     for (let line of surface) {
@@ -47,12 +45,14 @@ var Aoc2222 = () => {
       W = Math.max(W, line.length)
     }
     let i = -1
-    while (++i < surface.length) { // fill zero for lines that come short
-      surface[i] = surface[i] + ' '.repeat(W - surface[i].length)
+    while (++i < surface.length) {
+      // fill zero for lines that come short
+      surface[i] = surface[i] + " ".repeat(W - surface[i].length)
     }
     let c = 0
     // console.log('HERE: ', surface[0])
-    while (surface[0][c] !== '.') { // find the Start
+    while (surface[0][c] !== ".") {
+      // find the Start
       c += 1
     }
     let r = 0
@@ -64,7 +64,6 @@ var Aoc2222 = () => {
     let match
 
     while ((match = regex.exec(Command)) !== null) {
-
       let [, str, key] = match
       let val = parseInt(str)
       // console.log('v - ', val, 'k - ', key)
@@ -87,23 +86,23 @@ var Aoc2222 = () => {
             cc = C + cc
           }
           // console.log(surface.length, rr)
-          if (surface[rr][cc] !== ' ') {
+          if (surface[rr][cc] !== " ") {
             break
           }
         }
-        if (surface[rr][cc] === '#') {
+        if (surface[rr][cc] === "#") {
           break
         }
         r = rr
         c = cc
       }
-      if (key === 'R') {
+      if (key === "R") {
         [dr, dc] = [dc, -dr]
-      } else if (key === 'L') {
+      } else if (key === "L") {
         [dr, dc] = [-dc, dr]
       }
     }
-    let x:number
+    let x: number
     if (dr === 0) {
       if (dc === 1) {
         x = 0
@@ -118,21 +117,21 @@ var Aoc2222 = () => {
       }
     }
 
-    setP1( 1000 * (r + 1) + 4 * (c + 1) + x )
+    setP1(1000 * (r + 1) + 4 * (c + 1) + x)
 
     //  Part 1
     //
     //  Part 2
 
     c = 0
-    while (surface[0][c] !== '.') { // find the Start
+    while (surface[0][c] !== ".") {
+      // find the Start
       c += 1
     }
     r = 0
     dr = 0
     dc = 1
     while ((match = regex.exec(Command)) !== null) {
-
       let [, str, key] = match
       let val = parseInt(str)
       i = -1
@@ -160,113 +159,113 @@ var Aoc2222 = () => {
         // Case: ba .. ab
         // upper ba...lower ab...moving left
         if (0 <= rr && rr < 50 && cc == 49 && dc == -1) {
-            dc = 1
-            rr = 149 - rr
-            cc = 0
+          dc = 1
+          rr = 149 - rr
+          cc = 0
         }
         //  lower ab...upper ba...moving left
         if (100 <= rr && rr < 150 && cc < 0 && dc == -1) {
-        //  if 100 <= rr < 150 && cc < 0 && dr == -1:
-            dc = 1
-            rr = 149 - rr
-            cc = 50
+          //  if 100 <= rr < 150 && cc < 0 && dr == -1:
+          dc = 1
+          rr = 149 - rr
+          cc = 50
         }
         //  Case: be ... be
         //  upper be...lower be...moving on Up
         if (rr < 0 && 50 <= cc && cc < 100 && dr == -1) {
-            dr = 0
-            dc = 1
-            rr = cc + 100
-            cc = 0
+          dr = 0
+          dc = 1
+          rr = cc + 100
+          cc = 0
         }
         //  lower be...upper be...moving Left
         if (cc < 0 && 150 <= rr && rr < 200 && dc == -1) {
-            dr = 1
-            dc = 0
-            cc = rr - 100
-            rr = 0
+          dr = 1
+          dc = 0
+          cc = rr - 100
+          rr = 0
         }
         //  Case: eD ... eD
         //  upper eD...lower eD...moving Up
         if (rr < 0 && 100 <= cc && cc < 150 && dr == -1) {
-            rr = 199
-            cc = cc - 100
+          rr = 199
+          cc = cc - 100
         }
         //  lower eD...upper eD...moving Down
         if (200 <= rr && 0 <= cc && cc < 50 && dr == 1) {
-            rr = 0
-            cc += 100
+          rr = 0
+          cc += 100
         }
         //  Case: Dc ... cD
         //  upper Dc...lower cD...moving Right (dc is 1 to be flipped)
         if (cc >= 150 && 0 <= rr && rr < 50 && dc == 1) {
-            dc = -1
-            rr = 149 - rr
-            cc = 99
+          dc = -1
+          rr = 149 - rr
+          cc = 99
         }
         //  lower cD...upper Dc...moving right (dc 1 to -1)
         if (cc == 100 && 100 <= rr && rr < 150 && dc == 1) {
-            dc = -1
-            rr = 149 - rr
-            cc = 149
+          dc = -1
+          rr = 149 - rr
+          cc = 149
         }
         //  Case: a...
         //  a dotted-edge 45-clockwise . moving Up
         if (0 <= cc && cc < 50 && rr == 99 && dr == -1) {
-            dr = 0
-            //  dc = -1
-            dc = 1
-            rr = cc + 50
-            cc = 50
+          dr = 0
+          //  dc = -1
+          dc = 1
+          rr = cc + 50
+          cc = 50
         }
         //  a dotted-edge 45-counterclockwise . moving left
         if (cc == 49 && 50 <= rr && rr <= 100 && dc == -1) {
-            dr = 1
-            dc = 0
-            cc = rr - 50
-            rr = 100
+          dr = 1
+          dc = 0
+          cc = rr - 50
+          rr = 100
         }
         //  Case: D...
         //  D dotted-edge 45-clockwise . moving down
         if (rr == 150 && 50 <= cc && cc < 100 && dr == 1) {
-            dr = 0
-            dc = -1
-            rr = cc + 100
-            cc = 49
+          dr = 0
+          dc = -1
+          rr = cc + 100
+          cc = 49
         }
         //  D dotted-edge 45-counterclockwise . moving right
         if (cc == 50 && 150 <= rr && rr < 200 && dc == 1) {
-            dr = -1
-            dc = 0
-            cc = rr - 100
-            rr = 149
+          dr = -1
+          dc = 0
+          cc = rr - 100
+          rr = 149
         }
         //  Case: c...
         //  c dotted-edge 45-clockwise . moving down
         if (rr == 50 && 100 <= cc && cc < 150 && dr == 1) {
-            dr = 0
-            dc = -1
-            rr = cc - 50
-            cc = 99
+          dr = 0
+          dc = -1
+          rr = cc - 50
+          cc = 99
         }
         //  c dotted-edge 45-counterclockwise . moving right
         if (50 <= rr && rr < 100 && cc == 100 && dc == 1) {
-            dr = -1
-            dc = 0
-            cc = rr + 50
-            rr = 49
+          dr = -1
+          dc = 0
+          cc = rr + 50
+          rr = 49
         }
-        if (surface[rr][cc] == '#') {
-            dr = ddr
-            dc = ddc
-            break
+        if (surface[rr][cc] == "#") {
+          dr = ddr
+          dc = ddc
+          break
         }
         r = rr
         c = cc
       }
-      if (key === 'R') {
+      if (key === "R") {
         [dr, dc] = [dc, -dr]
-      } else if (key === 'L') {
+      } else if (key === "L") {
         [dr, dc] = [-dc, dr]
       }
     }
@@ -284,7 +283,7 @@ var Aoc2222 = () => {
       }
     }
 
-    setP2( 1000 * (r + 1) + 4 * (c + 1) + x )
+    setP2(1000 * (r + 1) + 4 * (c + 1) + x)
     setSurfaceres(surface)
   }
 
@@ -294,11 +293,11 @@ var Aoc2222 = () => {
 
   useEffect(() => {
     Solver()
-  }, [ Surface ])
+  }, [Surface])
 
   return (
     <>
-      { lines ? (
+      {lines ? (
         <>
           <div className="playground">
             <div className="field res-field">
@@ -309,29 +308,18 @@ var Aoc2222 = () => {
           </div>
 
           <div className="field data-field data-field-2222">
-            {
-              Surface ?
-              Surface.join("\n") :
-              "No data available."
-            }
+            {Surface ? Surface.join("\n") : "No data available."}
           </div>
 
           <div className="field data-field data-field-2222">
-            {
-              SurfaceRes ?
-              SurfaceRes.join("\n") :
-              "No data available."
-            }
+            {SurfaceRes ? SurfaceRes.join("\n") : "No data available."}
           </div>
 
           <div className="field data-field data-field-2222">
-            {
-              Command ? 
-              LenNStrsFromLine(Command, 100).join("\n") :
-              "No data available."
-            }
+            {Command
+              ? LenNStrsFromLine(Command, 100).join("\n")
+              : "No data available."}
           </div>
-
         </>
       ) : (
         <p>Loading data...</p>
