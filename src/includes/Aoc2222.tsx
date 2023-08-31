@@ -42,6 +42,7 @@ var Aoc2222 = () => {
 
   return (
     <>
+      { lines ? lines.join('\n') : 'something is wrong' }
       { lines && surface && course ? (
         <>
 
