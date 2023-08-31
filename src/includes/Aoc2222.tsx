@@ -42,7 +42,7 @@ var Aoc2222 = () => {
 
   return (
     <>
-      { surface && course ? (
+      { lines && surface && course ? (
         <>
 
           <div className="playground">
