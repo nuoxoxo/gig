@@ -23,26 +23,44 @@ var Aoc2105 = () => {
 
     try {
       const raws = await FetchData(URL)
-      let parsed: number[][] = []
-      for (let line of raws) {
-        let match = line.match(/(\d+),(\d+) -> (\d+),(\d+)/)
-        if (match) {
-          match.shift() // pop the 1st element returned by .match()
-          let temp: number[] = []
-          for (let n of match) {
-            temp.push(parseInt(n))
-          }
-          parsed.push(temp)
-        }
-      }
-      setVent(parsed)
+      // let parsed: number[][] = []
+      // for (let line of raws) {
+      //   let match = line.match(/(\d+),(\d+) -> (\d+),(\d+)/)
+      //   if (match) {
+      //     match.shift() // pop the 1st element returned by .match()
+      //     let temp: number[] = []
+      //     for (let n of match) {
+      //       temp.push(parseInt(n))
+      //     }
+      //     parsed.push(temp)
+      //   }
+      // }
+      // setVent(parsed)
       setLines(raws)
     } catch (error: any) {
       console.error("Error fetching data: ", error)
     }
   }
 
-  const Solve_Part_One = () => {
+  const PreSolver = () => {
+    let parsed: number[][] = []
+    for (let line of lines) {
+      let match = line.match(/(\d+),(\d+) -> (\d+),(\d+)/)
+      if (match) {
+        match.shift() // pop the 1st element returned by .match()
+        let temp: number[] = []
+        for (let n of match) {
+          temp.push(parseInt(n))
+        }
+        parsed.push(temp)
+      }
+    }
+    setVent(parsed)
+  }
+
+  const Solver = () => {
+
+    //  Part 1
 
     let L:number // start
     let R:number // finish
@@ -81,11 +99,10 @@ var Aoc2105 = () => {
       }
     }
     setP1(res)
-  }
 
-  const Solve_Part_Two = () => {
+    // Part 2
 
-    let res:number = 0
+    let res2: number = 0
     for (let line of v) {
       if (line[0] !== line[2] && line[1] !== line[3]) {
         let dx:number = 1
@@ -107,30 +124,23 @@ var Aoc2105 = () => {
     for (let row of grid) {
       for (let cell of row) {
         if (cell > 1) {
-          res += 1
+          res2 += 1
         }
       }
     }
-    setP2(res)
+    setP2(res2)
   }
 
   useEffect(() => {
     handleData()
   }, [])
 
-  // useEffect(() => {
-  //   Solve_Part_One()
-  //   Solve_Part_Two()
-  // }, [v])
+  useEffect(() => {
+    PreSolver()
+  }, [lines])
 
   useEffect(() => {
-    Solve_Part_One()
-    // Solve_Part_Two()
-  }, [v])
-
-  useEffect(() => {
-    // Solve_Part_One()
-    Solve_Part_Two()
+    Solver()
   }, [v])
 
   return (
