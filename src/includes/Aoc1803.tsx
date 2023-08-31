@@ -33,13 +33,14 @@ var Aoc1803 = () => {
             <span>Part 1: {p1?p1:'(empty)'} </span>
             <span>Part 2: {p2?p2:'(empty)'} </span>
           </div>
-          <div className="field data-field data-field-1803" >
-            { lines
-              ? lines.length === 1
-                ? LenNStrsFromLine(lines[0], 16).join("\n")
-                : lines.join('\n')
-              : "No data available."}
-          </div>
+
+        </div>
+        <div className="field data-field data-field-1803" >
+          { lines
+            ? lines.length === 1
+              ? LenNStrsFromLine(lines[0], 16).join("\n")
+              : lines.join('\n')
+            : "No data available."}
         </div>
       ) : (
         <p>Loading data...</p>
