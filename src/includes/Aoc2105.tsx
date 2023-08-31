@@ -4,25 +4,27 @@ import {
 } from "../helpers/Helpers"
 
 const URL: string = "https://raw.githubusercontent.com/nuoxoxo/in/main/2105.in"
+let grid:number[][] = Array.from(
+  { length: 1000 },
+  () => Array.from({ length: 1000 }, () => 0)
+)
+let sta
 
 var Aoc2105 = () => {
   const [lines, setLines] = useState<string[]>([])
   const [v, setVent] = useState<number[][]>([])
-
   const [p1, setP1] = useState<number>(0)
-  const [grid, setGrid] = useState<number[][]>([])
-
   const [p2, setP2] = useState<number>(0)
 
   const handleData = async () => {
+
     try {
       const raws = await FetchData(URL)
       let parsed: number[][] = []
       for (let line of raws) {
         let match = line.match(/(\d+),(\d+) -> (\d+),(\d+)/)
-
         if (match) {
-          match.shift() // pop the 1st element returned by .match() which is the string itself
+          match.shift() // pop the 1st element returned by .match()
           let temp: number[] = []
           for (let n of match) {
             temp.push(parseInt(n))
@@ -37,15 +39,10 @@ var Aoc2105 = () => {
     }
   }
 
-  /*
   const Solve_Part_One = () => {
 
-    let g:number[][] = Array.from(
-      { length: 1000 },
-      () => Array.from({ length: 1000 }, () => 0)
-    )
-    let start:number
-    let end:number
+    let L:number // start
+    let R:number // finish
     let i:number = -1
     let j:number
 
@@ -53,27 +50,26 @@ var Aoc2105 = () => {
 
     while (++i < v.length) {
       if (v[i][0] === v[i][2]) {
-        start = v[i][1]
-        end = v[i][3]
-        if (start > end) {
-          [start, end] = [end, start]
+        L = v[i][1]
+        R = v[i][3]
+        if (L > R) {
+          [L, R] = [R, L]
         }
-        j = start - 1
-        while (++j <= end) {
-          g[v[i][0]][j] += 1
+        j = L - 1
+        while (++j <= R) {
+          grid[v[i][0]][j] += 1
         }
-      } else if (v[i][1] === v[i][3])
-      {
-        start = v[i][0]
-        end = v[i][2]
-        if (start > end)
-          [start, end] = [end, start]
-        j = start - 1
-        while (++j <= end)
-          g[j][ v[i][1] ] += 1
+      } else if (v[i][1] === v[i][3]) {
+        L = v[i][0]
+        R = v[i][2]
+        if (L > R)
+          [L, R] = [R, L]
+        j = L - 1
+        while (++j <= R)
+          grid[j][ v[i][1] ] += 1
       }
     }
-    for (let row of g) {
+    for (let row of grid) {
       for (let cell of row) {
         if (cell > 1) {
           res += 1
@@ -81,12 +77,10 @@ var Aoc2105 = () => {
       }
     }
     setP1(res)
-    setGrid(g)
   }
 
   const Solve_Part_Two = () => {
 
-    let g:number[][] = Deepcopy2DArray(grid)
     let res:number = 0
     for (let line of v) {
       if (line[0] !== line[2] && line[1] !== line[3]) {
@@ -100,13 +94,13 @@ var Aoc2105 = () => {
           dy = -dy
         }
         while (x !== xx + dx) {
-          g[x][y] += 1
+          grid[x][y] += 1
           x += dx
           y += dy
         }
       }
     }
-    for (let row of g) {
+    for (let row of grid) {
       for (let cell of row) {
         if (cell > 1) {
           res += 1
@@ -114,16 +108,14 @@ var Aoc2105 = () => {
       }
     }
     setP2(res)
-    setGrid(g)
   }
-  */
 
   useEffect(() => {
     handleData()
   }, [])
 
   useEffect(() => {
-    // Solve_Part_One()
+    Solve_Part_One()
     // Solve_Part_Two()
   }, [v])
 
