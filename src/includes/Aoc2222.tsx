@@ -42,7 +42,7 @@ var Aoc2222 = () => {
 
   return (
     <>
-      { lines ? lines.join('\n') : 'something is wrong' }
+      {/*{ lines ? lines.join('\n') : 'something is wrong' }*/}
       { lines && surface && course ? (
         <>
 
@@ -54,21 +54,21 @@ var Aoc2222 = () => {
             </div>
           </div>
 
-          {/*<div className="field data-field data-field-2222">
+          <div className="field data-field data-field-2222">
             {
               surface 
               ? surface.join("\n") 
               : "No data available."
             }
-          </div>*/}
+          </div>
 
-          {/*<div className="field data-field data-field-2222">
+          <div className="field data-field data-field-2222">
             {
               course 
               ? LenNStrsFromLine(course[0], 16).join("\n")
               : "No data available."
             }
-          </div>*/}
+          </div>
 
         </>
       ) : (
