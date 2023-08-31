@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import {
-  FetchData, /*LenNStrsFromLine,*/ Deepcopy2DArray
+  FetchData, /*LenNStrsFromLine,*/ /*Deepcopy2DArray*/
 } from "../helpers/Helpers"
 
 const URL: string = "https://raw.githubusercontent.com/nuoxoxo/in/main/2105.in"
@@ -8,7 +8,6 @@ let grid:number[][] = Array.from(
   { length: 1000 },
   () => Array.from({ length: 1000 }, () => 0)
 )
-let sta
 
 var Aoc2105 = () => {
   const [lines, setLines] = useState<string[]>([])
@@ -116,7 +115,7 @@ var Aoc2105 = () => {
 
   useEffect(() => {
     Solve_Part_One()
-    // Solve_Part_Two()
+    Solve_Part_Two()
   }, [v])
 
   return (
