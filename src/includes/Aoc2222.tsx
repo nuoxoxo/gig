@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import {
-  FetchData,
+  // FetchData,
   LenNStrsFromLine,
   // Deepcopy2DArray,
 } from "../helpers/Helpers"
@@ -18,33 +18,32 @@ var Aoc2222 = () => {
   const handleData = async () => {
 
     try {
-      const raws = await FetchData(URL)
-      setLines(raws)
+      const resp = await fetch( URL )
+      const text = await resp.text()
+      console.log(text.charCodeAt(1))
+      const raws: string[] = text.split('\n')
       const idx = raws.indexOf('')
-      if (idx === -1) {
-        throw new Error("what why !?");
-      }
-      let surf:string[] = raws.splice(0, idx)
-      let cour:string = raws.splice(idx + 1)[0]
-      // console.log(surf.length, cour.length)
+      
+      const surf:string[] = raws.slice(0, idx)
+      const cour:string = raws.slice(idx + 1)[0]
+      setLines(raws)
       setSurface(surf)
       setCourse(cour)
       
     } catch (error: any) {
       console.error("Error fetching data: ", error)
+      throw error
     }
   }
 
   useEffect(() => {
     handleData()
-    // console.log(lines, lines.length, lines[1].length)
   }, [])
 
   return (
     <>
-      { surface && course ? (
+      { lines ? (
         <>
-
           <div className="playground">
             <div className="field res-field">
               <span>--- 2222 Day 5: Hydrothermal Venture ---</span>
@@ -55,17 +54,17 @@ var Aoc2222 = () => {
 
           <div className="field data-field data-field-2222">
             {
-              surface 
-              ? surface.join("\n") 
-              : "No data available."
+              surface ?
+              surface.join("\n") :
+              "No data available."
             }
           </div>
 
           <div className="field data-field data-field-2222">
             {
-              course 
-              ? LenNStrsFromLine(course[0], 16).join("\n")
-              : "No data available."
+              course ? 
+              LenNStrsFromLine(course, 100).join("\n") :
+              "No data available."
             }
           </div>
 
