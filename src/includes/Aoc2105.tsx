@@ -131,7 +131,7 @@ var Aoc2105 = () => {
   useEffect(() => {
     // Solve_Part_One()
     Solve_Part_Two()
-  }, [])
+  }, [v])
 
   return (
     <>
