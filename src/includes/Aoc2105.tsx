@@ -8,11 +8,6 @@ import {
 const URL: string = 
   "https://raw.githubusercontent.com/nuoxoxo/in/main/2105.in"
 
-let grid:number[][] = Array.from(
-  { length: 1000 },
-  () => Array.from({ length: 1000 }, () => 0)
-)
-
 var Aoc2105 = () => {
   const [lines, setLines] = useState<string[]>([])
   const [V, setVent] = useState<number[][]>([])
@@ -23,19 +18,6 @@ var Aoc2105 = () => {
 
     try {
       const raws = await FetchData(URL)
-      // let parsed: number[][] = []
-      // for (let line of raws) {
-      //   let match = line.match(/(\d+),(\d+) -> (\d+),(\d+)/)
-      //   if (match) {
-      //     match.shift() // pop the 1st element returned by .match()
-      //     let temp: number[] = []
-      //     for (let n of match) {
-      //       temp.push(parseInt(n))
-      //     }
-      //     parsed.push(temp)
-      //   }
-      // }
-      // setVent(parsed)
       setLines(raws)
     } catch (error: any) {
       console.error("Error fetching data: ", error)
@@ -61,6 +43,11 @@ var Aoc2105 = () => {
   const Solver = () => {
 
     //  Part 1
+
+    let grid:number[][] = Array.from(
+      { length: 1000 },
+      () => Array.from({ length: 1000 }, () => 0)
+    )
 
     let L:number // start
     let R:number // finish
@@ -101,6 +88,10 @@ var Aoc2105 = () => {
     setP1(res)
 
     // Part 2
+
+    if (!res) {
+      return
+    }
 
     let res2: number = 0
     for (let line of V) {
@@ -152,9 +143,7 @@ var Aoc2105 = () => {
             <div className="field res-field">
               <span>--- 2021 Day 5: Hydrothermal Venture ---</span>
               <span>Part 1: {p1 ? p1 : "(empty)"} </span>
-              {/* <div>{V && V[0] ? V[0].join(" ") : "No data available."}</div> */}
               <span>Part 2: {p2 ? p2 : "(empty)"} </span>
-              {/* <div style={{ fontSize:'1px'}}>{grid && grid[0] ? grid.join('\n') : "No data available."}</div> */}
             </div>
           </div>
 
