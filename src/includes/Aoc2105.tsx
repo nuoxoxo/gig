@@ -15,7 +15,7 @@ let grid:number[][] = Array.from(
 
 var Aoc2105 = () => {
   const [lines, setLines] = useState<string[]>([])
-  const [v, setVent] = useState<number[][]>([])
+  const [V, setVent] = useState<number[][]>([])
   const [p1, setP1] = useState<number>(0)
   const [p2, setP2] = useState<number>(0)
 
@@ -69,26 +69,26 @@ var Aoc2105 = () => {
 
     let res:number = 0
 
-    while (++i < v.length) {
-      if (v[i][0] === v[i][2]) {
-        L = v[i][1]
-        R = v[i][3]
+    while (++i < V.length) {
+      if (V[i][0] === V[i][2]) {
+        L = V[i][1]
+        R = V[i][3]
         if (L > R) {
           [L, R] = [R, L]
         }
         j = L - 1
         while (++j <= R) {
-          grid[v[i][0]][j] += 1
+          grid[V[i][0]][j] += 1
         }
-      } else if (v[i][1] === v[i][3]) {
-        L = v[i][0]
-        R = v[i][2]
+      } else if (V[i][1] === V[i][3]) {
+        L = V[i][0]
+        R = V[i][2]
         if (L > R){
           [L, R] = [R, L]
         }
         j = L - 1
         while (++j <= R)
-          grid[j][ v[i][1] ] += 1
+          grid[j][ V[i][1] ] += 1
       }
     }
     for (let row of grid) {
@@ -103,7 +103,7 @@ var Aoc2105 = () => {
     // Part 2
 
     let res2: number = 0
-    for (let line of v) {
+    for (let line of V) {
       if (line[0] !== line[2] && line[1] !== line[3]) {
         let dx:number = 1
         let dy:number = 1;
@@ -141,7 +141,7 @@ var Aoc2105 = () => {
 
   useEffect(() => {
     Solver()
-  }, [v])
+  }, [V])
 
   return (
     <>
@@ -152,7 +152,7 @@ var Aoc2105 = () => {
             <div className="field res-field">
               <span>--- 2021 Day 5: Hydrothermal Venture ---</span>
               <span>Part 1: {p1 ? p1 : "(empty)"} </span>
-              {/* <div>{v && v[0] ? v[0].join(" ") : "No data available."}</div> */}
+              {/* <div>{V && V[0] ? V[0].join(" ") : "No data available."}</div> */}
               <span>Part 2: {p2 ? p2 : "(empty)"} </span>
               {/* <div style={{ fontSize:'1px'}}>{grid && grid[0] ? grid.join('\n') : "No data available."}</div> */}
             </div>
