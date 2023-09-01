@@ -27,8 +27,8 @@ var Aoc2011 = () => {
         <div className='playground playground-2011'>
           <div className="field res-field">
             <span>--- 2020 Day 11: Seating System ---</span>
-            <span>Part 1: {p1?p1:'(empty)'}</span>
-            <span>Part 2: {p2?p2:'(empty)'}</span>
+            <span>Part 1: {p1?p1:'(no solution available)'}</span>
+            <span>Part 2: {p2?p2:'(no solution available)'}</span>
           </div>
           {/*
           <div className="field data-field data-field-2011">

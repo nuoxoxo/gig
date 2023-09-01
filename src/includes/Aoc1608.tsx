@@ -4,13 +4,10 @@ import { FetchData, LenNStrsFromLine, Deepcopy2DArray } from "../helpers/Helpers
 const URL:string = 
   "https://raw.githubusercontent.com/nuoxoxo/in/main/1608.in"
 
-// const charSet = ['○', '○', '○', '○', '○', '○', '✲', '✳', '✵', '✶', '✻', '✼']
 const charSet = ['○', '¾', '⅞', '░', '▒', '▓']//, '█']
 const symbol = charSet[Math.floor(Math.random() * charSet.length)]
-// const denseSymbol = charSet[Math.floor(Math.random() * charSet.length)]
 
 let isTest = false
-// isTest = !isTest
 
 const [W, T] = isTest ? [7, 3] : [50, 6]
 
@@ -18,7 +15,6 @@ var Aoc1608 = () => {
 
   const [lines, setLines] = useState<string[]>([])
   const [p1, setP1] = useState<number>(0)
-  // const [p2Grid, setP2Grid] = useState<string[][]>([])
   const [p2Traces, setP2Traces] = useState<string[][][]>([])
 
   const handleData = async () => {
@@ -54,14 +50,13 @@ var Aoc1608 = () => {
       let arr:string[] = line.split(' ')
       let cmd = arr[0] // rotate OR rect
 
-      // console.log(arr)
 
       if (cmd === 'rotate') {
         cmd = arr[1] // columm OR row
         let pos = parseInt(arr[2].split('=')[1]) // '2' in 'y=2'  // BUG found and fixed
         let stp = parseInt(arr[4]) // steps '10'
 
-        console.log(line, cmd, pos, stp) // TEST parsing 
+        // console.log(line, cmd, pos, stp) // TEST parsing 
 
         if (cmd === 'column') {
           while (stp--) {
@@ -114,15 +109,9 @@ var Aoc1608 = () => {
       res += line.filter((c) => c === symbol).length
     }
     setP1(res)
-    // setP2Grid(grid)
     setP2Traces(traces)
-    // for (let line of grid) {
-    //   console.log(line)
-    // }
-  }
 
-  // const Solver_Part_Two = () => {
-  // }
+  }
 
   useEffect(() => {
     handleData()
@@ -130,14 +119,7 @@ var Aoc1608 = () => {
 
   useEffect(() => {
     Solver()
-    // Solver_Part_One()
-    // Solver_Part_Two()
   }, [lines])
-
-  // useEffect(() => {
-  //   // Solver_Part_One()
-  //   Solver_Part_Two()
-  // }, [lines])
 
   return (
     <>
@@ -148,8 +130,6 @@ var Aoc1608 = () => {
             <span>--- 2016 Day 8: Two-Factor Authentication ---</span>
             <span>Part 1: {p1?p1:'(empty)'} </span>
             <span>Part 2: </span>
-            {/* <span> { p2Grid.map((line) => line.join('')).join('\n') } </span> */}
-            {/* <span> - sep - </span> */}
             <span className="res-field-1608-image">
               { p2Traces.map((trace) => trace.map((t) => t.join('')).join('\n')).join('\n\n') }
             </span>
