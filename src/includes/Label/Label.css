@@ -1,0 +1,182 @@
+@import "Normalize.css";
+html {
+  line-height: 1.2;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.wen-xin-ti-xing {
+  padding: 4px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.daily-value p:not(.no-divider) {
+  border-bottom: 1px solid #888989;
+  margin: 2px 0;
+  border-bottom: 1px solid #888989;
+}
+
+.label {
+  border: 6px solid #ffffff;
+  width: 320px;
+  margin: 21px;
+  padding: 0 7px;
+}
+
+.label-mac-n-cheese {
+  border: 4px solid #f19703;
+  width: 320px;
+  margin: 21px;
+  padding: 0 7px;
+}
+.label-mac-n-cheese .daily-value p:not(.no-divider) {
+  border-bottom: 1px solid #888989;
+  margin: 2px 0;
+  border-bottom: 1px solid #f2c99b;
+}
+
+.label-camel-milk {
+  border: 4px solid #2095c7;
+  width: 320px;
+  margin: 21px;
+  padding: 0 7px;
+}
+.label-camel-milk .daily-value p:not(.no-divider) {
+  border-bottom: 1px solid #888989;
+  margin: 2px 0;
+  border-bottom: 1px solid #106c92;
+}
+
+header h1, header h2, header h3 {
+  text-align: center;
+  margin: -4px 0;
+  letter-spacing: 0.15px;
+}
+
+p {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+p .divider {
+  border-bottom: 1px solid #888989;
+  margin: 2px 0;
+}
+
+.divider {
+  border-bottom: 1px solid #888989;
+  margin: 2px 0;
+}
+
+.devider-mac-n-cheese {
+  border-bottom: 1px solid #f2c99b;
+}
+
+.devider-camel-milk {
+  border-bottom: 1px solid #106c92;
+}
+
+.bold {
+  font-weight: 800;
+}
+
+.large {
+  height: 10px;
+  background-color: #ffffff;
+  border: 0;
+}
+
+.medium {
+  height: 5px;
+  background-color: #ffffff;
+  border: 0;
+}
+
+.label-camel-milk .large {
+  height: 10px;
+  background-color: #ffffff;
+  border: 0;
+  background-color: #2095c7;
+}
+.label-camel-milk .medium {
+  height: 5px;
+  background-color: #ffffff;
+  border: 0;
+  background-color: #2095c7;
+}
+
+.label-mac-n-cheese .large {
+  height: 10px;
+  background-color: #ffffff;
+  border: 0;
+  background-color: #f19703;
+}
+.label-mac-n-cheese .medium {
+  height: 5px;
+  background-color: #ffffff;
+  border: 0;
+  background-color: #f19703;
+}
+
+.small-text {
+  font-size: 0.85rem;
+}
+
+.calories-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.calories-info h2 {
+  margin: 0;
+}
+.calories-info span {
+  margin: -7px -2px;
+  font-size: 2.4em;
+  font-weight: 700;
+}
+
+.left-container p {
+  margin: -5px -2px;
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.right {
+  justify-content: flex-end;
+}
+
+.indent {
+  margin-left: 1em;
+}
+
+.double-indent {
+  margin-left: 2em;
+}
+
+.note {
+  padding: 0 8px;
+  text-indent: -8px;
+  font-size: 0.6rem;
+  margin: 5px 0;
+}
