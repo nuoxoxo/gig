@@ -89,6 +89,17 @@ function App() {
           {/* &nbspio&nbsp */}
         </button>
 
+        <button
+          className="btn"
+          onClick={(e) => {
+            e.preventDefault();
+            location.href = "http://nuoxoxo.github.io/jukebox";
+          }}
+        >
+          Music
+          {/* &nbspio&nbsp */}
+        </button>
+
       </div>
       {routes.hasOwnProperty(route) ? <TargetRoute /> : null}
     </>
