@@ -5,7 +5,7 @@ import {
   // Deepcopy2DArray,
 } from "../helpers/Helpers"
 
-const URL: string = "https://raw.githubusercontent.com/nuoxoxo/in/aoc/main/2222.in"
+const URL: string = "https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/2222.in"
 const chrs: string[] = ['○', '▓', '▒', '#']//, 'x', '✲', '✳', '✵', '✶', '✻', '✼']
 const chr: string = chrs[Math.floor(Math.random() * chrs.length)]
 

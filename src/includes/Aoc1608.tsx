@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { FetchData, LenNStrsFromLine, Deepcopy2DArray } from "../helpers/Helpers"
 
 const URL:string = 
-  "https://raw.githubusercontent.com/nuoxoxo/in/aoc/main/1608.in"
+  "https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/1608.in"
 
 const charSet = ['○', '¾', '⅞', '░', '▒', '▓']//, '█']
 const symbol = charSet[Math.floor(Math.random() * charSet.length)]
