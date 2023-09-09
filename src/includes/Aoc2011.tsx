@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { FetchData, LenNStrsFromLine } from "../helpers/Helpers"
 
-const URL:string = "https://raw.githubusercontent.com/nuoxoxo/in/main/2011.in"
+const URL:string = "https://raw.githubusercontent.com/nuoxoxo/in/aoc/main/2011.in"
 
 var Aoc2011 = () => {
   const [lines, setLines] = useState<string[]>([])

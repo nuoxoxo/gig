@@ -6,7 +6,7 @@ import {
 } from "../helpers/Helpers"
 
 const URL: string = 
-  "https://raw.githubusercontent.com/nuoxoxo/in/main/2105.in"
+  "https://raw.githubusercontent.com/nuoxoxo/in/aoc/main/2105.in"
 
 var Aoc2105 = () => {
   const [lines, setLines] = useState<string[]>([])
