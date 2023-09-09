@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { FetchData, LenNStrsFromLine } from "../helpers/Helpers"
 
-const URL:string = "https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/1802.in"
+const URL:string = "https://raw.githubusercontent.com/nuoxoxo/in/aoc/main/1802.in"
 
 const special3 = "🟡"
 const special2 = "🔵"

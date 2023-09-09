@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { FetchData, LenNStrsFromLine } from '../helpers/Helpers'
 
 const URL:string = 
-  'https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/1501.in'
+  'https://raw.githubusercontent.com/nuoxoxo/in/aoc/main/1501.in'
 
 const santaArray: string[] = 
   ['🎅🏻', '🧑🏻‍🎄', '🤶🏻', '🦌', '🛷', '🎄', 

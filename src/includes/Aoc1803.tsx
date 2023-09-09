@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { FetchData, LenNStrsFromLine, /*Deepcopy2DArray*/ } from "../helpers/Helpers"
 
 const URL:string = 
-  "https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/1803.in"
+  "https://raw.githubusercontent.com/nuoxoxo/in/aoc/main/1803.in"
 
 var Aoc1803 = () => {
 
