@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { FetchData, LenNStrsFromLine } from "../helpers/Helpers"
 
 const URL:string = 
-  "https://raw.githubusercontent.com/nuoxoxo/in/main/2210.in"
+  "https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/2210.in"
 
 const denseChars:string[] = 
   ['@']//, '▓', '✲', '✳', '✴', '✵', '✶', '✷', '✸', '✹', '✺', '✻', '✼', '✽', '✾', '✿', '❀']
