@@ -87,7 +87,15 @@ function App() {
           Music
           {/* &nbspio&nbsp */}
         </button>
-
+        <button
+          className="btn btn-dmd"
+          onClick={(e) => {
+            e.preventDefault();
+            location.href = "http://nuoxoxo.github.io/dmd";
+          }}>
+          Dooms
+          {/* &nbspio&nbsp */}
+        </button>
         <button
           className="btn btn-io"
           onClick={(e) => {
