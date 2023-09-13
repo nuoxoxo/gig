@@ -317,7 +317,7 @@ body {
 
   .btn {
     font-size: 9px;
-    width: 41px;
+    width: $TextSize-1;
     padding: 2px;
     border: 1px solid $ButtonColor;
     &:hover {
