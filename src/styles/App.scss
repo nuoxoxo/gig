@@ -229,6 +229,7 @@ body {
 .playground-2212-alt {
   flex-direction: column;
   color:$CREAM-YELLO;
+  @include animation-rainbow-rotate;
 }
 
 .playground-2223 {
