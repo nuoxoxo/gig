@@ -11,6 +11,8 @@ const choice = suffixes[Math.floor(Math.random() * suffixes.length)]
 const URL: string =
   "https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/1810." + choice
 
+console.log(choice, URL)
+
 var Aoc1810 = () => {
   const [lines, setLines] = useState<string[]>([])
   const [images, setImages] = useState<string[][]>([])
@@ -42,7 +44,7 @@ var Aoc1810 = () => {
     console.log(A)
 
     let i = -1
-    while (++i < 10600) { // range is hand picked
+    while (++i < 10700) { // range is hand picked
       let hix: number = Math.max(...A.map(([n, , ,]) => n))
       let lox: number = Math.min(...A.map(([n, , ,]) => n))
       let hiy: number = Math.max(...A.map(([, n, ,]) => n))
