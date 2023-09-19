@@ -96,10 +96,6 @@ var Aoc1810 = () => {
             </div>
           </div>
 
-          <div className="field data-field data-field-2021">
-            {lines ? lines.join("\n") : "No data available."}
-          </div>
-
         </>
       ) : (
         <p>Loading data...</p>
