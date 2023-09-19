@@ -97,7 +97,7 @@ var Aoc1810 = () => {
               {/* <span>Part 1: {p1 ? p1 : "(empty)"} </span> */}
               {/* <span>Part 2: {p2 ? p2 : "(empty)"} </span> */}
               <div className='res-field-1810-image'>
-                {images ? images.map(line => line.join('\n')).join('\n') : "No data available."}
+                {images ? images.map(line => line.join('\n')).join('\n\n') : "No data available."}
               </div>
             </div>
           </div>
