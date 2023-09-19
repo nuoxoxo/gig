@@ -5,8 +5,11 @@ import {
   // Deepcopy2DArray,
 } from "../helpers/Helpers"
 
+const suffixes = ['alt', '0']
+const choice = suffixes[Math.floor(Math.random() * suffixes.length)]
+
 const URL: string =
-  "https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/1810.0"
+  "https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/1810." + choice
 
 var Aoc1810 = () => {
   const [lines, setLines] = useState<string[]>([])
