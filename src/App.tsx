@@ -27,7 +27,7 @@ const routes: { [key: string]: TargetRoute } = {
   // 2223: Aoc2223,
   2222: Aoc2222,
   2212: Aoc2212, // New
-  '221Z': Aoc2212Alt, // New
+  '2212Alt': Aoc2212Alt, // New
   2210: Aoc2210,
   2105: Aoc2105,
   2003: Aoc2003,
@@ -78,6 +78,7 @@ function App() {
           >
             { key === "DadJokes" ? "Jokes"
               : key === "Nut" ? "Nut"
+              : key === '2212Alt' ? "22:12\'"
               : key.replace(/^(\d{2})(\d{1,2})$/, "$1:$2")}
           </button>
         ))}
