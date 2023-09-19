@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { FetchData, LenNStrsFromLine } from "../helpers/Helpers"
 
-const choice:string = 'in'
+const choice:string = 'alt'
 const URL:string = "https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/2212." + choice
 
 const symbolArr = ["○", '✲', '✳', '✵', '✶', '✻', '✼']
@@ -9,7 +9,7 @@ const symbol = symbolArr[Math.floor(Math.random() * symbolArr.length)]
 const denseSymbol = 'x'//symbolArr[Math.floor(Math.random() * symbolArr.length)]
 const density:number = 170
 
-var Aoc2212 = () => {
+var Aoc2212Alt = () => {
   const [lines, setLines] = useState<string[]>([])
 
   const [p1, setP1] = useState<number>(0)
@@ -240,34 +240,34 @@ var Aoc2212 = () => {
         <>
         {/* <div className='playground playground-2212'> */}
           <div className="field res-field">
-            <span>--- 2022 Day 12: Hill Climbing Algorithm ---</span>
+            <span>--- 2022 Day 12: Hill Climbing Algorithm Alt. ---</span>
             <span>Part 1: {p1}</span>
             <span>Part 2: {p2}</span>
           </div>
-          <div className="playground playground-2212">
+          <div className="playground playground-2212-alt">
 
-            <div className="field data-field data-field-2212">
+            <div className="field data-field data-field-2212-alt">
               {/* { p2Grid ? p2Grid.join('\n') : "No data available." } */}
               { p2Grid
                 ? p2Grid.map((line) => line.split("").join(" ")).join("\n")
                 : "No data available."}
             </div>
 
-            <div className="field data-field data-field-2212">
+            <div className="field data-field data-field-2212-alt">
               {/* { p1Grid ? p1Grid.join("\n") : "No data available." } */}
               { p1Grid
                 ? p1Grid.map((line) => line.split("").join(" ")).join("\n")
                 : "No data available."}
             </div>
 
-            <div className="field data-field data-field-2212">
+            <div className="field data-field data-field-2212-alt">
               {/* { p2Grid ? p2Grid.join('\n') : "No data available." } */}
               { P2Path
                 ? P2Path.map((line) => line.split("").join(" ")).join("\n")
                 : "No data available."}
             </div>
 
-            <div className="field data-field data-field-2212">
+            <div className="field data-field data-field-2212-alt">
               {lines
                 ? lines.length === 1
                   ? LenNStrsFromLine(lines[0], 16).join("\n")
@@ -285,4 +285,4 @@ var Aoc2212 = () => {
   )
 }
 
-export default Aoc2212
+export default Aoc2212Alt
