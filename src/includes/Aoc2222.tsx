@@ -307,7 +307,7 @@ var Aoc2222 = () => {
         <>
           <div className="playground">
             <div className="field res-field">
-              <span>--- 2222 Day 5: Hydrothermal Venture ---</span>
+              <span>--- 2022 Day 22: Monkey Map ---</span>
               <span>Part 1: {p1 ? p1 : "(empty)"} </span>
               <span>Part 2: {p2 ? p2 : "(empty)"} </span>
             </div>
