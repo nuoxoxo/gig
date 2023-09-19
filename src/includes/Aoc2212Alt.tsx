@@ -76,7 +76,7 @@ var Aoc2212Alt = () => {
     while (++i < mp.length) {
       let j: number = -1
       while (++j < mp[i].length) {
-        if (mp[i][j] > 170) {
+        if (mp[i][j] > 242) {
           tempGrid[i][j] = symbol
         }
       }
