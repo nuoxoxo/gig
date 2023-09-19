@@ -78,7 +78,7 @@ function App() {
           >
             { key === "DadJokes" ? "Jokes"
               : key === "Nut" ? "Nut"
-              : key.replace(/^(\d{2})(\d{2})$/, "$1:$2")}
+              : key.replace(/^(\d{2})(\d{1,2})$/, "$1:$2")}
           </button>
         ))}
 
