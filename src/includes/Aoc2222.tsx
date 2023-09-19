@@ -4,8 +4,9 @@ import {
   LenNStrsFromLine,
   // Deepcopy2DArray,
 } from "../helpers/Helpers"
-
-const URL: string = "https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/2222.in"
+const suffixes = ['in', 'alt']
+const choice = suffixes[Math.floor(Math.random() * suffixes.length)]
+const URL: string = "https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/2222." + choice
 const chrs: string[] = ['○', '▓', '▒', '#']//, 'x', '✲', '✳', '✵', '✶', '✻', '✼']
 const chr: string = chrs[Math.floor(Math.random() * chrs.length)]
 
