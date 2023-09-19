@@ -119,7 +119,7 @@ var Aoc2212Alt = () => {
       Array(C).fill(" ")
     )
     let tempPath: string[][] = Array.from({ length: R }, () =>
-      Array(C).fill(".")
+      Array(C).fill("✼")
     )
     let dq: number[][] = [[er, ec]]
     let [r, c]: number[] = [-1, -1]
