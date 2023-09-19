@@ -249,21 +249,21 @@ var Aoc2212Alt = () => {
             <div className="field data-field data-field-2212-alt">
               {/* { p2Grid ? p2Grid.join('\n') : "No data available." } */}
               { p2Grid
-                ? p2Grid.map((line) => line.split("").join(" ")).join("\n")
+                ? p2Grid.map((line) => line.split("").join("  ")).join("\n")
                 : "No data available."}
             </div>
 
             <div className="field data-field data-field-2212-alt">
               {/* { p1Grid ? p1Grid.join("\n") : "No data available." } */}
               { p1Grid
-                ? p1Grid.map((line) => line.split("").join(" ")).join("\n")
+                ? p1Grid.map((line) => line.split("").join("  ")).join("\n")
                 : "No data available."}
             </div>
 
             <div className="field data-field data-field-2212-alt">
               {/* { p2Grid ? p2Grid.join('\n') : "No data available." } */}
               { P2Path
-                ? P2Path.map((line) => line.split("").join(" ")).join("\n")
+                ? P2Path.map((line) => line.split("").join("  ")).join("\n")
                 : "No data available."}
             </div>
 
@@ -272,7 +272,7 @@ var Aoc2212Alt = () => {
                 ? lines.length === 1
                   ? LenNStrsFromLine(lines[0], 16).join("\n")
                   : // : lines.join("\n")
-                    lines.map((line) => line.split("").join(" ")).join("\n")
+                    lines.map((line) => line.split("").join("  ")).join("\n")
                 : "No data available."}
             </div>
           </div>
