@@ -11,7 +11,7 @@ const choice = suffixes[Math.floor(Math.random() * suffixes.length)]
 const URL: string =
   "https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/1810." + choice
 
-console.log(choice, URL)
+// console.log(choice, URL)
 
 var Aoc1810 = () => {
   const [lines, setLines] = useState<string[]>([])
