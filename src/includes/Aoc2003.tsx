@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react"
 import { FetchData, LenNStrsFromLine, /*Deepcopy2DArray,*/ } from "../helpers/Helpers"
 
-const URL: string = "https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/2003.in"
+const suffixes = ['in', 'alt']
+const choice = suffixes[Math.floor(Math.random() * suffixes.length)]
+const URL: string = "https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/2003." + choice
+
 const symbolArr =  ['█', '⬤', '🔵', '🟡', '🟢', '🌕', 
   '🎾', '⭕', '🈵', '🈶', '🍊', '🦁', '🐯']
 const symbol = symbolArr[Math.floor(Math.random() * symbolArr.length)]
