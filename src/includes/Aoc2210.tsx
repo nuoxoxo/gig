@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react"
 import { FetchData, LenNStrsFromLine } from "../helpers/Helpers"
 
+const suffixes = ['in', 'alt']
+const choice = suffixes[Math.floor(Math.random() * suffixes.length)]
 const URL:string = 
-  "https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/2210.in"
+  "https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/2210." + choice
 
 const denseChars:string[] = 
   ['@']//, '▓', '✲', '✳', '✴', '✵', '✶', '✷', '✸', '✹', '✺', '✻', '✼', '✽', '✾', '✿', '❀']
