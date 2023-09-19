@@ -177,6 +177,12 @@ body {
   align-items: center;
 }
 
+.data-field-2212-alt {
+  font-family: monospace;
+  font-size: 3px;
+  align-items: center;
+}
+
 .data-field-2011 {
   font-family: monospace;
   font-size: 11px;
@@ -217,6 +223,9 @@ body {
 }
 
 .playground-2212 {
+  flex-direction: column;
+}
+.playground-2212-alt {
   flex-direction: column;
 }
 
@@ -291,6 +300,9 @@ body {
   .data-field-2212 {
     font-size: 7px;
   }
+  .data-field-2212-alt {
+    font-size: 2px;
+  }
   .data-field-2011 {
     font-size: 10px;
   }
@@ -355,6 +367,7 @@ body {
   }
 
   .data-field-2212 {font-size: 3px}
+  .data-field-2212-alt {font-size: 1px}
   .data-field-2011 {font-size: 6px;}
   .res-field-2210-result {
     font-size: 9px;
@@ -375,6 +388,10 @@ body {
   }
 
   .playground-2212 {
+    font-size: 1px;
+  }
+
+  .playground-2212-alt {
     font-size: 1px;
   }
 
