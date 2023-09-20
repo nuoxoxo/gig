@@ -28,7 +28,8 @@ var Aoc1818 = () => {
   const Solver = (limit: number, lines: string[]): [number, string[][]] /*| undefined*/ => {
 
     if (lines === undefined || lines[0] === undefined)
-      throw new Error("something is very wrong")
+      return [0, [['']]]
+      //throw new Error("something is very wrong")
     let res:number = 0
     let g:string[][] = []
     for (let line of lines) {
