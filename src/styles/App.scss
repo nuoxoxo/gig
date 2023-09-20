@@ -286,6 +286,21 @@ body {
   flex-direction: column;
 }
 
+.res-field-1818 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.data-field-1818 {
+  font-size: $TextSize-025;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 // .data-field-2210 {
 //   font-size: 33px
 // }
