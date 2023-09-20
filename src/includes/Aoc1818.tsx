@@ -9,12 +9,12 @@ const choice = suffixes[Math.floor(Math.random() * suffixes.length)]
 const URL:string = "https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/1818." + choice
 
 var Aoc1818 = () => {
+
   const [lines, setLines] = useState<string[]>([])
   const [p1, p1setter] = useState<number>(0)
   const [p2, p2setter] = useState<number>(0)
   const [image1, setImage1] = useState<string[][]>([])
   const [image2, setImage2] = useState<string[][]>([])
-
 
   const handleData = async () => {
 
