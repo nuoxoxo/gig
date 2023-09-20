@@ -37,6 +37,7 @@ var Aoc2212 = () => {
     er: number,
     ec: number
   ) => {
+
     let [R, C]: number[] = [lines.length, lines[0].length]
     const D: [number, number][] = [
       [-1, 0],
@@ -98,6 +99,7 @@ var Aoc2212 = () => {
     er: number,
     ec: number
   ) => {
+
     let res: number = 1e9
     let [R, C]: number[] = [lines.length, lines[0].length]
     const D: [number, number][] = [
