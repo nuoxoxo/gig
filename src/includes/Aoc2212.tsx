@@ -8,7 +8,7 @@ const choice = suffixes[Math.floor(Math.random() * suffixes.length)]
 const URL:string = "https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/2212." + choice
 
 const symbolArr = ["○", '✲', '✳', '✵', '✶', '✻', '✼']
-const symbol = symbolArr[Math.floor(Math.random() * symbolArr.length)]
+const symbol = (choice == 'in') ? symbolArr[Math.floor(Math.random() * symbolArr.length)] : '-'
 const denseSymbol = 'x'//symbolArr[Math.floor(Math.random() * symbolArr.length)]
 const density:number = 170
 
