@@ -150,7 +150,7 @@ var Aoc1818 = () => {
             </div>
           </div>
 
-          <div className="field data-field data-field-1818">
+          <div className="field data-field res-field-1818">
             { lines ? lines.join("\n") : "No data available." }
           </div>
 
