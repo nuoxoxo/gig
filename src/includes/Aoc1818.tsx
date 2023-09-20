@@ -111,7 +111,6 @@ var Aoc1818 = () => {
                 }
             }
         }
-        // res = `iteration no. ${ll}, lumbers: ${L}, trees: ${T}, res: ${L * T}`
         res = L * T
     }
     return [ res, g ]
