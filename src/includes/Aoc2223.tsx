@@ -169,11 +169,6 @@ var Aoc2223 = () => {
     setGridPart1([...gridPart1, prepare_state_for_printing(input_1)!])
   }, [lines])
 
-  // useEffect(() => {
-  //   Solver_Part_One()
-  //   Solver_Part_Two()
-  // }, [lines])
-
   return (
     <>
       {lines ? (
