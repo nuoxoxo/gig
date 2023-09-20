@@ -140,7 +140,7 @@ var Aoc1818 = () => {
         <>
 
           <div className="playground">
-            <div className="field res-field">
+            <div className="field res-field res-field-1818">
               <span>--- 1818 Day 18: Settlers of The North Pole ---</span>
               <span>Part 1: {p1 ? p1 : "(empty)"} </span>
               <span>Part 2: {p2 ? p2 : "(empty)"} </span>
