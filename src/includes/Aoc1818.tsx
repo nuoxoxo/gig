@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import {
   FetchData,
   // LenNStrsFromLine,
-  // Deepcopy2DArray,
+  Deepcopy2DArray,
 } from "../helpers/Helpers"
 
 const suffixes = ['in', 'alt']
@@ -90,9 +90,12 @@ var Aoc1818 = () => {
                 }
             }
         }
+        /*
         r = -1
         while (++r < R)
             g[r] = [...temp[r]]
+        */
+        g = Deepcopy2DArray(temp)
         let key:string = g.map(line => line.join('')).join('')
         if (D.hasOwnProperty(key)) {
             ll += Math.floor((limit - ll) / (ll - D[key])) * (ll - D[key])
