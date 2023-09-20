@@ -275,8 +275,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color:$CREAM-YELLO;
-  @include animation-rainbow-rotate;
 }
 
 .res-field-1810-image {
@@ -295,6 +293,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color:$CREAM-YELLO;
+  @include animation-rainbow-rotate;
 }
 
 .data-field-1818 {
