@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react"
 import { FetchData, LenNStrsFromLine } from "../helpers/Helpers"
 
-const choice:string = 'in'
+const [sp1, sp2] = [' ', '']
+
+const suffixes = ['in', 'alt']
+const choice = suffixes[Math.floor(Math.random() * suffixes.length)]
 const URL:string = "https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/2212." + choice
 
 const symbolArr = ["○", '✲', '✳', '✵', '✶', '✻', '✼']
@@ -76,7 +79,7 @@ var Aoc2212 = () => {
     while (++i < mp.length) {
       let j: number = -1
       while (++j < mp[i].length) {
-        if (mp[i][j] > 170) {
+        if (mp[i][j] > (choice == 'in' ? 170 : 242)) {
           tempGrid[i][j] = symbol
         }
       }
@@ -246,33 +249,33 @@ var Aoc2212 = () => {
           </div>
           <div className="playground playground-2212">
 
-            <div className="field data-field data-field-2212">
+            <div className={`field data-field-2212${choice === 'alt' ? '-alt' : ''}`}>
               {/* { p2Grid ? p2Grid.join('\n') : "No data available." } */}
               { p2Grid
-                ? p2Grid.map((line) => line.split("").join(" ")).join("\n")
+                ? p2Grid.map((line) => line.split("").join(choice === 'alt' ? sp2 : sp1)).join("\n")
                 : "No data available."}
             </div>
 
-            <div className="field data-field data-field-2212">
+            <div className={`field data-field-2212${choice === 'alt' ? '-alt' : ''}`}>
               {/* { p1Grid ? p1Grid.join("\n") : "No data available." } */}
               { p1Grid
-                ? p1Grid.map((line) => line.split("").join(" ")).join("\n")
+                ? p1Grid.map((line) => line.split("").join(choice === 'alt' ? sp2 : sp1)).join("\n")
                 : "No data available."}
             </div>
 
-            <div className="field data-field data-field-2212">
+            <div className={`field data-field-2212${choice === 'alt' ? '-alt' : ''}`}>
               {/* { p2Grid ? p2Grid.join('\n') : "No data available." } */}
               { P2Path
-                ? P2Path.map((line) => line.split("").join(" ")).join("\n")
+                ? P2Path.map((line) => line.split("").join(choice === 'alt' ? sp2 : sp1)).join("\n")
                 : "No data available."}
             </div>
 
-            <div className="field data-field data-field-2212">
+            <div className={`field data-field-2212${choice === 'alt' ? '-alt' : ''}`}>
               {lines
                 ? lines.length === 1
                   ? LenNStrsFromLine(lines[0], 16).join("\n")
                   : // : lines.join("\n")
-                    lines.map((line) => line.split("").join(" ")).join("\n")
+                    lines.map((line) => line.split("").join(choice === 'alt' ? sp2 : sp1)).join("\n")
                 : "No data available."}
             </div>
           </div>
