@@ -297,7 +297,6 @@ body {
 
 .data-field-1813 {
   font-size: 10px;
-  white-space: pre;
 }
 
 .data-field-1818 {
@@ -346,6 +345,9 @@ body {
   }
   .res-field-2210-result {
     font-size: 17px;
+  }
+  .data-field-1813 {
+    font-size: 8px;
   }
   .data-field-1818 {
     font-size: $TextSize-025;
@@ -480,5 +482,9 @@ body {
   .data-field-2003-children {
     padding-left: 1px;
     padding-right: 1px;
+  }
+
+  .data-field-1813 {
+    font-size: 5px;
   }
 }
