@@ -1,9 +1,5 @@
 import { useState, useEffect } from "react"
-import {
-  FetchData,
-  // LenNStrsFromLine,
-  // Deepcopy2DArray,
-} from "../helpers/Helpers"
+import { FetchData } from "../helpers/Helpers"
 
 const suffixes = ['alt', '0']
 const choice = suffixes[Math.floor(Math.random() * suffixes.length)]
@@ -14,6 +10,7 @@ const URL: string =
 // console.log(choice, URL)
 
 var Aoc1810 = () => {
+
   const [lines, setLines] = useState<string[]>([])
   const [images, setImages] = useState<string[][]>([])
 
@@ -34,6 +31,7 @@ var Aoc1810 = () => {
   }
 
   const Solver = () => {
+
     let res:string[][] = []
     let A: number[][] = []
     for (let line of lines) {
@@ -45,6 +43,7 @@ var Aoc1810 = () => {
 
     let i = -1
     while (++i < 10700) { // range is hand picked
+
       let hix: number = Math.max(...A.map(([n, , ,]) => n))
       let lox: number = Math.min(...A.map(([n, , ,]) => n))
       let hiy: number = Math.max(...A.map(([, n, ,]) => n))
