@@ -1,9 +1,5 @@
 import { useState, useEffect } from "react"
-import {
-  // FetchData,
-  LenNStrsFromLine,
-  // Deepcopy2DArray,
-} from "../helpers/Helpers"
+import { LenNStrsFromLine } from "../helpers/Helpers"
 
 const suffixes = ['in', 'alt']
 const choice = suffixes[Math.floor(Math.random() * suffixes.length)]
@@ -12,6 +8,7 @@ const chrs: string[] = ['○', '▓', '▒', '#']//, 'x', '✲', '✳', '✵', '
 const chr: string = chrs[Math.floor(Math.random() * chrs.length)]
 
 var Aoc2222 = () => {
+
   const [lines, setLines] = useState<string[]>([])
   const [Surface, setSurface] = useState<string[]>([])
   const [SurfaceRes, setSurfaceRes] = useState<string[]>([])
@@ -20,6 +17,7 @@ var Aoc2222 = () => {
   const [p2, setP2] = useState<number>(0)
 
   const handleData = async () => {
+
     try {
       const resp = await fetch(URL)
       const text = await resp.text()
@@ -40,6 +38,7 @@ var Aoc2222 = () => {
   }
 
   const Solver = () => {
+
     if (Surface === undefined || Command === undefined)
       return
     let surface:string[] = [...Surface]
