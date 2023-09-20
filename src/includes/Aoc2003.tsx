@@ -52,6 +52,7 @@ var Aoc2003 = () => {
   }
 
   const Solver = () => {
+
     let g1: string[] = [...lines]
     let g2: string[] = [...lines]
     setP1(countTrees(g1, 3, 1))
