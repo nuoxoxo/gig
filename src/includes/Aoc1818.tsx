@@ -13,7 +13,9 @@ var Aoc1818 = () => {
   const [lines, setLines] = useState<string[]>([])
   const [p1, p1setter] = useState<number>(0)
   const [p2, p2setter] = useState<number>(0)
-  const [image, setImage] = useState<string[][]>([])
+  const [image1, setImage1] = useState<string[][]>([])
+  const [image2, setImage2] = useState<string[][]>([])
+
 
   const handleData = async () => {
 
@@ -145,7 +147,8 @@ var Aoc1818 = () => {
               <span>Part 1: {p1 ? p1 : "(empty)"} </span>
               <span>Part 2: {p2 ? p2 : "(empty)"} </span>
               <div className="field data-field data-field-1818">
-                { image ? image.join("\n") : "No data available." }
+                { image1 ? image1.join("\n") : "No data available." }
+                { image2 ? image2.join("\n") : "No data available." }
               </div>
             </div>
           </div>
