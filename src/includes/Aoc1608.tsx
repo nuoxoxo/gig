@@ -20,6 +20,7 @@ var Aoc1608 = () => {
   const [p2Traces, setP2Traces] = useState<string[][][]>([])
 
   const handleData = async () => {
+
     try {
       const raws = isTest 
         ? ['rect 3x2', 'rotate column x=1 by 1', 'rotate row y=0 by 4', 'rotate column x=1 by 1']
@@ -31,7 +32,6 @@ var Aoc1608 = () => {
   }
 
   const Solver = () => {
-
 
     let grid:string[][] = []
     let traces:string[][][] = []
@@ -51,8 +51,6 @@ var Aoc1608 = () => {
 
       let arr:string[] = line.split(' ')
       let cmd = arr[0] // rotate OR rect
-
-
       if (cmd === 'rotate') {
         cmd = arr[1] // columm OR row
         let pos = parseInt(arr[2].split('=')[1]) // '2' in 'y=2'  // BUG found and fixed
@@ -92,9 +90,7 @@ var Aoc1608 = () => {
         let temp:string[] = arr[1].split('x')
         let a = parseInt(temp[0])
         let b = parseInt(temp[1])
-
         // console.log(line, cmd, a, b) // TEST parsing 
-
         i = -1
         while (++i < b) {
           j = -1
