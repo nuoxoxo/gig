@@ -13,11 +13,10 @@ const denseSymbol = 'x'//symbolArr[Math.floor(Math.random() * symbolArr.length)]
 const density:number = 170
 
 var Aoc2212 = () => {
-  const [lines, setLines] = useState<string[]>([])
 
+  const [lines, setLines] = useState<string[]>([])
   const [p1, setP1] = useState<number>(0)
   const [p1Grid, setP1Grid] = useState<string[]>([])
-
   const [p2, setP2] = useState<number>(0)
   const [p2Grid, setP2Grid] = useState<string[]>([])
   const [P2Path, setP2Path] = useState<string[]>([])
@@ -242,7 +241,7 @@ var Aoc2212 = () => {
       {lines ? (
         <>
         {/* <div className='playground playground-2212'> */}
-          <div className="field res-field">
+          <div className="field res-field res-field-2212">
             <span>--- 2022 Day 12: Hill Climbing Algorithm ---</span>
             <span>Part 1: {p1}</span>
             <span>Part 2: {p2}</span>

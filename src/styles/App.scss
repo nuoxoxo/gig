@@ -227,6 +227,8 @@ body {
 
 .playground-2212 {
   flex-direction: column;
+  color:$CREAM-YELLO;
+  @include animation-rainbow-rotate;
 }
 .playground-2212-alt {
   flex-direction: column;
@@ -254,8 +256,14 @@ body {
   flex-direction: column;
 }
 
-.res-field-2210-result {
-  font-size: $TextSize-05;
+/*
+.res-field-2212 {
+  justify-content: center;
+  align-items: center;
+}
+*/
+
+.res-field-2210 {
   display: flex;
   flex-direction: column;
 }
