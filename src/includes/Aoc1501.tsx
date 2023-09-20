@@ -11,6 +11,7 @@ const santaString: string =
   santaArray[Math.floor(Math.random() * santaArray.length)]
 
 var Aoc1501 = () => {
+
   const [lines, setLines] = useState<string[]>([])
   const [floors, setFloors] = useState<number[]>([])
   const [upDown, setUpDown] = useState<string[]>([])
@@ -18,6 +19,7 @@ var Aoc1501 = () => {
   const [p2, setP2] = useState<number>(0)
 
   const handleData = async () => {
+
     try {
       const raws = await FetchData(URL)
       setLines(raws)
@@ -27,7 +29,9 @@ var Aoc1501 = () => {
   }
 
   const Solver = () => {
-    if (lines === undefined || lines[0] === undefined) return
+
+    if (lines === undefined || lines[0] === undefined)
+      return
     let s: string = lines[0]
     let res1: number = 0
     let res2: number = 0
