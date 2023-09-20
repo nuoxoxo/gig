@@ -7,12 +7,14 @@ const special3 = "🟡"
 const special2 = "🔵"
 
 var Aoc1802 = () => {
+
   const [lines, setLines] = useState<string[]>([])
   const [lines23, setLines23] = useState<string[]>([])
   const [p1, setP1] = useState<number>(0)
   const [p2, setP2] = useState<string>("")
 
   const handleData = async () => {
+
     try {
       const raws = await FetchData(URL)
       setLines(raws)
@@ -22,6 +24,7 @@ var Aoc1802 = () => {
   }
 
   const Solver_Part_One = () => {
+
     let c2: number = 0
     let c3: number = 0
     let tempLines23: string[] = []
@@ -64,6 +67,7 @@ var Aoc1802 = () => {
   }
 
   const Solver_Part_Two = () => {
+
     let i: number = -1
     let len: number = lines.length > 0 ? lines[0].length : 0
     let res2: string = ""
