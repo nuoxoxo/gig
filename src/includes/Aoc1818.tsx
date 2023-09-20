@@ -122,10 +122,10 @@ var Aoc1818 = () => {
   const Setter = () => {
     let res1 = Solver(10, lines)
     p1setter(res1![0])
-    setImage(res1![1])
+    setImage1(res1![1])
     let res2 = Solver(Math.floor(1e9), lines)
     p2setter(res2![0])
-    setImage(res2![1])
+    setImage2(res2![1])
   }
 
   useEffect(() => {
@@ -148,6 +148,8 @@ var Aoc1818 = () => {
               <span>Part 2: {p2 ? p2 : "(empty)"} </span>
               <div className="field data-field data-field-1818">
                 { image1 ? image1.join("\n") : "No data available." }
+              </div>
+              <div className="field data-field data-field-1818">
                 { image2 ? image2.join("\n") : "No data available." }
               </div>
             </div>
