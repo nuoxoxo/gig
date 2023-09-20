@@ -295,8 +295,13 @@ body {
   align-items: center;
 }
 
+.data-field-1813 {
+  font-size: 10px;
+  white-space: pre;
+}
+
 .data-field-1818 {
-  font-size: 4px;
+  font-size: 16px;
   color:$WATER-GREEN;
   @include animation-rainbow-rotate;
 }

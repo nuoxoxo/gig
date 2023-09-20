@@ -133,7 +133,6 @@ var Aoc1818 = () => {
     <>
       {lines ? (
         <>
-
           <div className="playground">
             <div className="field res-field res-field-1818">
               <span>--- 1818 Day 18: Settlers of The North Pole ---</span>
