@@ -293,13 +293,12 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color:$WATER-GREEN;
-  @include animation-rainbow-rotate;
 }
 
 .data-field-1818 {
   font-size: 4px;
-
+  color:$WATER-GREEN;
+  @include animation-rainbow-rotate;
 }
 
 // .data-field-2210 {
