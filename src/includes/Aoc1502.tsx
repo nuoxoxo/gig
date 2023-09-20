@@ -4,11 +4,13 @@ import { FetchData, LenNStrsFromLine } from "../helpers/Helpers"
 const URL:string = "https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/1502.in"
 
 var Aoc1501 = () => {
+
   const [lines, setLines] = useState<string[]>( [] )
   const [p1, setP1] = useState<number>( 0 )
   const [p2, setP2] = useState<number>( 0 )
 
   const handleData = async () => {
+
     try {
       const raws = await FetchData(URL)
       setLines(raws)
@@ -18,6 +20,7 @@ var Aoc1501 = () => {
   }
 
   const Solver = () => {
+
     if (lines === undefined || lines[0] === undefined)
       return
     let res1: number = 0
