@@ -247,7 +247,7 @@ var Aoc2212 = () => {
             <span>Part 1: {p1}</span>
             <span>Part 2: {p2}</span>
           </div>
-          <div className="playground playground-2212">
+          <div className=`playground playground-2212${choice === 'alt' ? '-alt' : ''}`}>
 
             <div className={`field data-field-2212${choice === 'alt' ? '-alt' : ''}`}>
               {/* { p2Grid ? p2Grid.join('\n') : "No data available." } */}
