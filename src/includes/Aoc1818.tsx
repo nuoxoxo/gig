@@ -25,10 +25,10 @@ var Aoc1818 = () => {
     }
   }
 
-  const Solver = (limit: number, lines: string[]): [number, string[][]] => {
+  const Solver = (limit: number, lines: string[]): [number, string[][]] | undefined => {
 
     if (lines === undefined || lines[0] === undefined)
-      return []
+      return undefined // []
     let res:number = 0
     let g:string[][] = []
     for (let line of lines) {
@@ -118,11 +118,11 @@ var Aoc1818 = () => {
 
   const Setter = () => {
     let res1 = Solver(10, lines)
-    p1setter(res1[0])
-    setImage(res1[1])
+    p1setter(res1![0])
+    setImage(res1![1])
     let res2 = Solver(Math.floor(1e9), lines)
-    p2setter(res2[0])
-    setImage(res2[1])
+    p2setter(res2![0])
+    setImage(res2![1])
   }
 
   useEffect(() => {
