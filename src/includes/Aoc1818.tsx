@@ -90,11 +90,6 @@ var Aoc1818 = () => {
                 }
             }
         }
-        /*
-        r = -1
-        while (++r < R)
-            g[r] = [...temp[r]]
-        */
         g = Deepcopy2DArray(temp)
         let key:string = g.map(line => line.join('')).join('')
         if (D.hasOwnProperty(key)) {
