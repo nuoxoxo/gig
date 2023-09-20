@@ -4,6 +4,7 @@ import { FetchData, LenNStrsFromLine } from "../helpers/Helpers"
 const URL: string = "https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/2223.1"
 
 var Aoc2223 = () => {
+
   const [lines, setLines] = useState<string[]>([])
   const [gridPart1, setGridPart1] = useState<string[][]>([])
   const [p1, setP1] = useState<number>(0)
@@ -11,6 +12,7 @@ var Aoc2223 = () => {
   const [p2 /*, setP2*/] = useState<number>(0)
 
   const handleData = async () => {
+
     try {
       const raws = await FetchData(URL)
       setLines(raws)
@@ -20,6 +22,7 @@ var Aoc2223 = () => {
   }
 
   const prepare_state_for_printing = (state:Set<number[]>): string[] | undefined => {
+
     if (!state.size)
       return 
     const stateArray = [ ... state]
@@ -27,7 +30,9 @@ var Aoc2223 = () => {
     const min_y = stateArray.length > 0 ? Math.min(...stateArray.map(x => x[1])) : undefined
     const max_x = stateArray.length > 0 ? Math.max(...stateArray.map(x => x[0])) : undefined
     const max_y = stateArray.length > 0 ? Math.max(...stateArray.map(x => x[1])) : undefined
+
     console.log(min_x, min_y, max_x, max_y)
+
     let G:string[] = []
     let x = min_x! - 1
     while (++x < max_x! + 1) {
