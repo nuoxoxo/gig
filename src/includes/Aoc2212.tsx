@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { FetchData, LenNStrsFromLine } from "../helpers/Helpers"
 
-const [sp1, sp2] = [' ', ' ']
+const [sp1, sp2] = [' ', '']
 
 const suffixes = ['in', 'alt']
 const choice = suffixes[Math.floor(Math.random() * suffixes.length)]
