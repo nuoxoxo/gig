@@ -4,9 +4,10 @@ import { FetchData, LenNStrsFromLine } from "../helpers/Helpers"
 const URL:string = "https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/2011.in"
 
 var Aoc2011 = () => {
+
   const [lines, setLines] = useState<string[]>([])
-  const [p1/*, setP1*/] = useState<number>(0)
-  const [p2/*, setP2*/] = useState<number>(0)
+  const [p1] = useState<number>(0)
+  const [p2] = useState<number>(0)
 
   const handleData = async () => {
     try {
