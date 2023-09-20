@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { FetchData, LenNStrsFromLine, /*Deepcopy2DArray,*/ } from "../helpers/Helpers"
+import { FetchData, LenNStrsFromLine } from "../helpers/Helpers"
 
 const suffixes = ['in', 'alt']
 const choice = suffixes[Math.floor(Math.random() * suffixes.length)]
