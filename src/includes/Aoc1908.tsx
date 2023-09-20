@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { FetchData, /*LenNStrsFromLine, */ Deepcopy2DArray } from "../helpers/Helpers"
+import { FetchData, Deepcopy2DArray } from "../helpers/Helpers"
 
 const suffixes = ['alt', '0']
 const choice = suffixes[Math.floor(Math.random() * suffixes.length)]
@@ -27,6 +27,7 @@ var Aoc1908 = () => {
   const [imgFinal, setImgFinal] = useState<string[][]>([])
 
   const handleData = async () => {
+
     try {
       const raws = await FetchData(URL)
       setLines(raws)
