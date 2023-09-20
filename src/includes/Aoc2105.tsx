@@ -1,14 +1,11 @@
 import { useState, useEffect } from "react"
-import {
-  FetchData,
-  // LenNStrsFromLine,
-  // Deepcopy2DArray,
-} from "../helpers/Helpers"
+import { FetchData } from "../helpers/Helpers"
 
 const URL: string = 
   "https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/2105.in"
 
 var Aoc2105 = () => {
+
   const [lines, setLines] = useState<string[]>([])
   const [V, setVent] = useState<number[][]>([])
   const [p1, setP1] = useState<number>(0)
@@ -25,6 +22,7 @@ var Aoc2105 = () => {
   }
 
   const PreSolver = () => {
+
     let parsed: number[][] = []
     for (let line of lines) {
       let match = line.match(/(\d+),(\d+) -> (\d+),(\d+)/)
