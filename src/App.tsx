@@ -87,24 +87,27 @@ function App() {
           </button>
         ))}
 
+        {/*
         <button
           className="btn"
           onClick={(e) => {
             e.preventDefault();
             location.href = "http://nuoxoxo.github.io/jukebox";
           }}>
-          Music
-          {/* &nbspio&nbsp */}
+          Music 
         </button>
+        */}
+
+        {/*
         <button
           className="btn btn-dmd"
           onClick={(e) => {
             e.preventDefault();
             location.href = "http://nuoxoxo.github.io/dmd";
           }}>
-          Dooms
-          {/* &nbspio&nbsp */}
+          Dooms 
         </button>
+        */}
         <button
           className="btn btn-io"
           onClick={(e) => {
