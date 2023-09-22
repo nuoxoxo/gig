@@ -28,8 +28,8 @@ const routes: { [key: string]: TargetRoute } = {
   // Valid Identifiers (No quotes needed)
   // 2223: Aoc2223,
   2222: Aoc2222,
-  2212: Aoc2212, // New
-  // '2212Alt': Aoc2212Alt, // New
+  2212: Aoc2212, 
+  // '2212Alt': Aoc2212Alt, 
   2210: Aoc2210,
   2105: Aoc2105,
   2003: Aoc2003,
