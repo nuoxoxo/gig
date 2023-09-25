@@ -14,7 +14,7 @@ var Aoc1810 = () => {
   const [lines, setLines] = useState<string[]>([])
   const [images, setImages] = useState<string[][]>([])
 
-  const chrs: string[] = ['▓', '▒', '#' /*, '○'*/]//, 'x', '✲', '✳', '✵', '✶', '✻', '✼']
+  const chrs: string[] = ['🫧', '⚪️', '▓', '▒', '#' /*, '○'*/]//, 'x', '✲', '✳', '✵', '✶', '✻', '✼']
   const chr: string = chrs[Math.floor(Math.random() * chrs.length)]
 
   const sps: string[] = ['.'/*, ' '*/]//, 'x', '✲', '✳', '✵', '✶', '✻', '✼']
