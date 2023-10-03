@@ -48,15 +48,30 @@ const routes: { [key: string]: TargetRoute } = {
 };
 
 function App() {
+
   const routeFromLocalStorage = localStorage.getItem("route");
 
+  // To fix: previous code - take random route without `handleSetRoute`
+  /*
   const [route, setRoute] = useState<string>(
     routeFromLocalStorage
       ? JSON.parse(routeFromLocalStorage) // save route to local storage
       : Object.keys(routes)[
           Math.floor(Math.random() * Object.keys(routes).length)
         ]
-  );
+  )
+  */
+
+  // fixed
+  const [route, setRoute] = useState<string>(() => {
+    const initialRoute = routeFromLocalStorage
+      ? JSON.parse(routeFromLocalStorage)
+      : Object.keys(routes)[
+          Math.floor(Math.random() * Object.keys(routes).length)
+        ]
+    handleSetRoute(initialRoute)
+    return initialRoute
+  })
 
   const handleSetRoute = (r: string) => {
     localStorage.setItem("route", JSON.stringify(r)); // save route to local storage
