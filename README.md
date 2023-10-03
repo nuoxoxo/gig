@@ -1,5 +1,4 @@
 [![gig](https://github.com/nuoxoxo/gig/actions/workflows/gig.yml/badge.svg)](https://github.com/nuoxoxo/gig/actions/workflows/gig.yml)
-[![gig](https://github.com/nuoxoxo/gig/actions/workflows/gig.yml/badge.svg?branch=23)](https://github.com/nuoxoxo/gig/actions/workflows/gig.yml)
 ```
 """
      b___e___D
