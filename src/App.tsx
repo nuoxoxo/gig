@@ -69,7 +69,8 @@ function App() {
       : Object.keys(routes)[
           Math.floor(Math.random() * Object.keys(routes).length)
         ]
-    handleSetRoute(initialRoute)
+    // handleSetRoute(initialRoute) // hoisting seems wrong in strictMode
+    localStorage.setItem("route", JSON.stringify(initialRoute));
     return initialRoute
   })
 
@@ -77,6 +78,7 @@ function App() {
     localStorage.setItem("route", JSON.stringify(r)); // save route to local storage
     setRoute(r);
   };
+
   const TargetRoute: TargetRoute = routes[route];
 
   return (
