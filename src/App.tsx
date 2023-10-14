@@ -18,9 +18,6 @@ import Aoc1608 from "./includes/Aoc1608";
 import Aoc1501 from "./includes/Aoc1501";
 import DadJokes from "./includes/DadJokes";
 import "./styles/App.scss";
-// import Label from "./includes/Label/Label.tsx"
-// import "./includes/Label/Label.scss"
-
 
 type TargetRoute = React.FC;
 
@@ -29,7 +26,6 @@ const routes: { [key: string]: TargetRoute } = {
   // 2223: Aoc2223,
   2222: Aoc2222,
   2212: Aoc2212, 
-  // '2212Alt': Aoc2212Alt, 
   2210: Aoc2210,
   // 2105: Aoc2105,
   2003: Aoc2003,
@@ -43,7 +39,6 @@ const routes: { [key: string]: TargetRoute } = {
   // 1502: Aoc1502,
   1501: Aoc1501,
   1608: Aoc1608,
-  // Label: Label,
   DadJokes: DadJokes,
 };
 
@@ -62,7 +57,6 @@ function App() {
   )
   */
 
-  // fixed
   const [route, setRoute] = useState<string>(() => {
     const initialRoute = routeFromLocalStorage
       ? JSON.parse(routeFromLocalStorage)
