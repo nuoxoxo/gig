@@ -6,12 +6,12 @@ import Aoc2212 from "./includes/Aoc2212"; // New New
 import Aoc2210 from "./includes/Aoc2210";
 // import Aoc2105 from "./includes/Aoc2105"; // !interesting enough
 import Aoc2003 from "./includes/Aoc2003"; // New New
-// import Aoc2011 from "./includes/Aoc2011"; // New New New
+import Aoc2011 from "./includes/Aoc2011"; // New New New *
 import Aoc1908 from "./includes/Aoc1908";
 import Aoc1818 from "./includes/Aoc1818";
 import Aoc1813 from "./includes/Aoc1813";
 import Aoc1810 from "./includes/Aoc1810";
-// import Aoc1803 from "./includes/Aoc1803"; // New New
+import Aoc1803 from "./includes/Aoc1803"; // New New *
 import Aoc1802 from "./includes/Aoc1802";
 import Aoc1608 from "./includes/Aoc1608";
 // import Aoc1502 from "./includes/Aoc1502"; // !interesting enough
