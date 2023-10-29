@@ -46,7 +46,7 @@ function App() {
 
   const routeFromLocalStorage = localStorage.getItem("route");
 
-  // To fix: previous code - take random route without `handleSetRoute`
+  // fixed. previous code : take random route without `handleSetRoute`
   /*
   const [route, setRoute] = useState<string>(
     routeFromLocalStorage
