@@ -58,11 +58,12 @@ function App() {
   */
 
   const [route, setRoute] = useState<string>(() => {
+    const len = Object.keys(routes).length
     const initialRoute = 
       routeFromLocalStorage 
       ? JSON.parse(routeFromLocalStorage)
       : Object.keys(routes)[
-          Math.floor(Math.random() * Object.keys(routes).length)
+          Math.floor(Math.random() * len /*Object.keys(routes).length*/)
         ]
     // handleSetRoute(initialRoute) // hoisting seems wrong in strictMode
     localStorage.setItem("route", JSON.stringify(initialRoute));
