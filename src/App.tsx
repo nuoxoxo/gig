@@ -58,7 +58,8 @@ function App() {
   */
 
   const [route, setRoute] = useState<string>(() => {
-    const initialRoute = routeFromLocalStorage
+    const initialRoute = 
+      routeFromLocalStorage 
       ? JSON.parse(routeFromLocalStorage)
       : Object.keys(routes)[
           Math.floor(Math.random() * Object.keys(routes).length)
