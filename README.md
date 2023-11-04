@@ -1,6 +1,8 @@
 [![gig](https://github.com/nuoxoxo/gig/actions/workflows/gig.yml/badge.svg)](https://github.com/nuoxoxo/gig/actions/workflows/gig.yml)
 
-```
+```sh
+// Day 22
+
      b___e___D
      |   |   |
     a|___|___|c
