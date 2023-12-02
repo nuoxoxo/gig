@@ -87,7 +87,7 @@ var Aoc2302 = () => {
       {lines ? (
         <div className='playground playground-2003' style={{textAlign:'center'}}>
           <div className="field res-field">
-            <span>--- 2302 Day 2: Cube Conundrum ---</span>
+            <span>--- 2O23 Day 2: Cube Conundrum ---</span>
             <span>Part 1: {p1?p1:'(no solution available)'}</span>
             <span>Part 2: {p2?p2:'(no solution available)'}</span>
           </div>
