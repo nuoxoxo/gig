@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { FetchDataWithoutTrim, /*Deepcopy2DArray*/ } from "../helpers/Helpers"
 
-const suffixes = ['in']//, 'alt']
+const suffixes = ['in', 'alt']
 const choice = suffixes[Math.floor(Math.random() * suffixes.length)]
 const URL:string = "https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/2310." + choice
 
