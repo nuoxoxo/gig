@@ -9,7 +9,8 @@ var Aoc2310 = () => {
 
   const [lines, setLines] = useState<string[]>([])
   const [A, setA] = useState<string[]>([])
-  // const [path, setPath] = useState<string[]>([])
+  const [Path, setPath] = useState<string[]>([])
+  const [PathIsland, setPathIsland] = useState<string[][]>([])
   const [p1, setPart1] = useState<number>(0)
   const [p2] = useState<number>(0)
 
@@ -106,8 +107,21 @@ var Aoc2310 = () => {
       }
     }
     setPart1(Math.floor(Seen.size / 2))
+    // get path
+    let temp_Path: string[] = [...A]
+    // get path 2 : an island
+    let temp_Path_Island: string[][] = Array(R).fill(null).map(() => Array(C).fill(' '))
+    // get 2 paths at the same time
+    for (let coor of Seen) {
+      let [r, c] = coor
+      temp_Path[r] = temp_Path[r].substring(0, c) + ' ' + temp_Path[r].substring(c + 1)
+      temp_Path_Island[r][c] = A[r][c]
+    }
+    temp_Path[Start[0]] = temp_Path[Start[0]].substring(0, Start[1]) + '█' + temp_Path[Start[0]].substring(Start[1] + 1)
+    temp_Path_Island[Start[0]][Start[1]] = '█'
+    setPath(temp_Path)
+    setPathIsland(temp_Path_Island)    
   }
-
   return (
     <>
       {lines ? (
@@ -119,7 +133,14 @@ var Aoc2310 = () => {
               <span>Part 2: {p2 ? p2 : "(empty)"} </span>
             </div>
           </div>
-
+          <div className="field data-field data-field-2310">
+            { PathIsland ? PathIsland.map(row => row.join('')).join('\n') : "No data available." }
+          </div>
+          👆<br/>👇
+          <div className="field data-field data-field-2310">
+            { Path ? Path.join("\n") : "No data available." }
+          </div>
+          👆<br/>👇
           <div className="field data-field data-field-2310">
             {/* { lines ? lines.join("\n") : "No data available." } */}
             { A ? A.join("\n") : "No data available." }
