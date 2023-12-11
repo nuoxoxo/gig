@@ -32,7 +32,7 @@ const routes: { [key: string]: TargetRoute } = {
   2310: Aoc2310,
   2303: Aoc2303,
   // 2302: Aoc2302, // make way for 2310
-  2301: Aoc2301,
+  // 2301: Aoc2301, // make way for 2311
   // 2223: Aoc2223,
   2222: Aoc2222,
   2212: Aoc2212, 
