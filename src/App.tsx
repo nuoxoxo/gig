@@ -20,6 +20,7 @@ import Aoc2301 from "./includes/Aoc2301";
 // import Aoc2302 from "./includes/Aoc2302"; // make way for 2310
 import Aoc2303 from "./includes/Aoc2303";
 import Aoc2310 from "./includes/Aoc2310";
+import Aoc2311 from "./includes/Aoc2311";
 import DadJokes from "./includes/DadJokes";
 import "./styles/App.scss";
 
@@ -27,6 +28,7 @@ type TargetRoute = React.FC;
 
 const routes: { [key: string]: TargetRoute } = {
   // Valid Identifiers (No quotes needed)
+  2311: Aoc2311,
   2310: Aoc2310,
   2303: Aoc2303,
   // 2302: Aoc2302, // make way for 2310
