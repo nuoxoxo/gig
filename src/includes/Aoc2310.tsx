@@ -1,24 +1,27 @@
 import { useState, useEffect } from "react"
-import { FetchDataWithoutTrim, /*Deepcopy2DArray*/ } from "../helpers/Helpers"
+import { FetchDataWithoutTrim, Deepcopy2DArray } from "../helpers/Helpers"
 
-const suffixes = ['in', 'alt',]// 'test']
+const suffixes = ['in', 'alt',]// ]
 const choice = suffixes[Math.floor(Math.random() * suffixes.length)]
 const URL:string = "https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/2310." + choice
 
 var Aoc2310 = () => {
 
   const [lines, setLines] = useState<string[]>([])
+  const [lines2, setLines2] = useState<string[]>([])
   const [A, setA] = useState<string[]>([])
-  const [Path, setPath] = useState<string[]>([])
-  const [PathIsland, setPathIsland] = useState<string[][]>([])
+  const [PathUnusedPipes, setPathUnusedPipes] = useState<string[]>([])
+  const [PathAllPipes, setPathAllPipes] = useState<string[][]>([])
+  const [PathLandlock, setPathLandlock] = useState<string[][]>([])
   const [p1, setPart1] = useState<number>(0)
-  const [p2] = useState<number>(0)
+  const [p2, setPart2] = useState<number>(0)
 
   const handleData = async () => {
 
     try {
       const raws = await FetchDataWithoutTrim(URL)
       setLines(raws)
+      setLines2(raws)
       let temp_A: string[] = []
       let i = -1
       while (++i < raws.length) {
@@ -85,6 +88,10 @@ var Aoc2310 = () => {
     console.log('BFS :', Deque)
     let dr = [-1, 1, 0, 0]
     let dc = [ 0, 0,-1, 1] // UDLR
+
+    // Find what S is for part 2
+    let SS: Set<string> = new Set(['-', '|', '7', 'F', 'L', 'J'])
+
     while (Deque.length > 0) {
       let rc: number[] | undefined = Deque.shift()
       if (rc === undefined) return
@@ -103,24 +110,104 @@ var Aoc2310 = () => {
           Seen.add( [ rr,cc ])
           Deque.push([rr,cc ])
           // console.log('curr:', str, curr_pipe, 'next:', Get[i], next_pipe) /// DBG
+          if (curr_pipe == 'S') {
+            SS = new Set([...SS].filter(char => new Set((Go[i] + 'S').split('')).has(char)))
+          }
         }
       }
     }
     setPart1(Math.floor(Seen.size / 2))
-    // get path
-    let temp_Path: string[] = [...A]
-    // get path 2 : an island
-    let temp_Path_Island: string[][] = Array(R).fill(null).map(() => Array(C).fill(' '))
-    // get 2 paths at the same time
+
+    // Part 2
+    r = -1
+    while (++r < R) {
+      c = -1
+      while (++c < C) {
+        if (!checkSetHas(Seen, [r,c]))
+          lines2[r] = lines2[r].slice(0, c) + '.' + lines2[r].slice(c + 1);
+      }
+    }
+    console.log(lines2)
+    let OUT: Set<number[]> = new Set([])
+    r = -1
+    while (++r < R) {
+      let inside = false
+      let upward = false // is this strict true?
+      c = -1
+      while (++c < C) {
+        let curr_pipe = lines2[r][c]
+        if (curr_pipe == 'S')
+          [curr_pipe] = SS
+        if (curr_pipe == '|') {
+          inside = !inside
+        } else if (curr_pipe == 'L') {
+          upward = true
+        } else if (curr_pipe == 'F') {
+          upward = false
+        } else if (upward && curr_pipe == '7') {
+          inside = ! inside
+        } else if (!upward && curr_pipe == 'J') {
+          inside = ! inside
+        }
+        if ( ! inside) {
+          OUT.add([r, c])
+        }
+      }
+    }
+    let UNION: Set<number[]> = new Set([...OUT])
+    for (let point of Seen) {
+      if (!checkSetHas(UNION, point)) {
+        UNION.add(point)
+      }
+    }
+    let DIFFERENCE: Set<number[]> = new Set()
+    r = -1
+    while (++r < R) {
+      c = -1
+      while (++c < C) {
+        if (!checkSetHas(UNION, [r,c])) {
+          DIFFERENCE.add([r,c])
+        }
+      }
+    }
+
+    setPart2( R * C - UNION.size)
+
+    // get pathi
+    let temp_Path_Unused_Pipes: string[] = [...A]
+
+    // get path 2 : an unused pipes
+    let temp_Path_All_Pipes: string[][] = Array(R).fill(null).map(() => Array(C).fill(' '))
+
+    // get 3 paths at the same time
     for (let coor of Seen) {
       let [r, c] = coor
-      temp_Path[r] = temp_Path[r].substring(0, c) + ' ' + temp_Path[r].substring(c + 1)
-      temp_Path_Island[r][c] = A[r][c]
+      temp_Path_Unused_Pipes[r] = 
+        temp_Path_Unused_Pipes[r].substring(0, c) + ' ' + temp_Path_Unused_Pipes[r].substring(c + 1)
+      temp_Path_All_Pipes[r][c] = A[r][c]
     }
-    temp_Path[Start[0]] = temp_Path[Start[0]].substring(0, Start[1]) + '█' + temp_Path[Start[0]].substring(Start[1] + 1)
-    temp_Path_Island[Start[0]][Start[1]] = '█'
-    setPath(temp_Path)
-    setPathIsland(temp_Path_Island)    
+    temp_Path_Unused_Pipes[Start[0]] = 
+      temp_Path_Unused_Pipes[Start[0]].substring(0, Start[1]) + '█' + temp_Path_Unused_Pipes[Start[0]].substring(Start[1] + 1)
+    temp_Path_All_Pipes[Start[0]][Start[1]] = '█'
+
+    // get path 3 : all landlocked area
+    // let temp_Path_Landlock:string[][]= Deepcopy2DArray(A)
+    // for (let coor of UNION) {
+    //   let [r, c] = coor
+    //   temp_Path_Landlock[r][c] = '░'
+    // }
+
+    setPathUnusedPipes(temp_Path_Unused_Pipes)
+    setPathAllPipes(temp_Path_All_Pipes)
+
+    // get path 3 : all landlocked area
+    let temp_Path_Landlock:string[][]= Deepcopy2DArray(temp_Path_All_Pipes)
+    for (let coor of DIFFERENCE) {
+      let [r, c] = coor
+      temp_Path_Landlock[r][c] = '▓'
+    }
+
+    setPathLandlock(temp_Path_Landlock)
   }
   return (
     <>
@@ -129,18 +216,27 @@ var Aoc2310 = () => {
           <div className="playground">
             <div className="field res-field res-field-1813">
               <span>--- 2023 Day 10: Pipe Maze ---</span>
-              <span>Part 1: {p1 ? p1 : "(empty)"} </span>
-              <span>Part 2: {p2 ? p2 : "(empty)"} </span>
+              <span>Part 1: {p1 ? p1 : "(Loading)"} </span>
+              <span>Part 2: {p2 ? p2 : "(...it might be slow i know)"} </span>
             </div>
           </div>
+
+          <br/><br/>All Landlocked Seas<br/><br/>
           <div className="field data-field data-field-2310">
-            { PathIsland ? PathIsland.map(row => row.join('')).join('\n') : "No data available." }
+            { PathLandlock ? PathLandlock.map(row => row.join('')).join('\n') : "No data available." }
           </div>
-          👆<br/>👇
+
+          <br/>These are Joined Pipes<br/><br/>
           <div className="field data-field data-field-2310">
-            { Path ? Path.join("\n") : "No data available." }
+            { PathAllPipes ? PathAllPipes.map(row => row.join('')).join('\n') : "No data available." }
           </div>
-          👆<br/>👇
+
+          <br/>These are Invalid Pipes<br/><br/>
+          <div className="field data-field data-field-2310">
+            { PathUnusedPipes ? PathUnusedPipes.join("\n") : "No data available." }
+          </div>
+
+          <br/>Original Planning<br/><br/>
           <div className="field data-field data-field-2310">
             {/* { lines ? lines.join("\n") : "No data available." } */}
             { A ? A.join("\n") : "No data available." }
