@@ -183,19 +183,16 @@ var Aoc2310 = () => {
     for (let coor of Seen) {
       let [r, c] = coor
       temp_Path_Unused_Pipes[r] = 
-        temp_Path_Unused_Pipes[r].substring(0, c) + ' ' + temp_Path_Unused_Pipes[r].substring(c + 1)
+        temp_Path_Unused_Pipes[r].substring(0, c) + 
+        ' ' + 
+        temp_Path_Unused_Pipes[r].substring(c + 1)
       temp_Path_All_Pipes[r][c] = A[r][c]
     }
     temp_Path_Unused_Pipes[Start[0]] = 
-      temp_Path_Unused_Pipes[Start[0]].substring(0, Start[1]) + '█' + temp_Path_Unused_Pipes[Start[0]].substring(Start[1] + 1)
+      temp_Path_Unused_Pipes[Start[0]].substring(0, Start[1]) + 
+      '█' + 
+      temp_Path_Unused_Pipes[Start[0]].substring(Start[1] + 1)
     temp_Path_All_Pipes[Start[0]][Start[1]] = '█'
-
-    // get path 3 : all landlocked area
-    // let temp_Path_Landlock:string[][]= Deepcopy2DArray(A)
-    // for (let coor of UNION) {
-    //   let [r, c] = coor
-    //   temp_Path_Landlock[r][c] = '░'
-    // }
 
     setPathUnusedPipes(temp_Path_Unused_Pipes)
     setPathAllPipes(temp_Path_All_Pipes)
