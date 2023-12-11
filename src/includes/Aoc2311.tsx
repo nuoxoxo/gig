@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { FetchDataWithoutTrim, /*Deepcopy2DArray*/ } from "../helpers/Helpers"
 
-const suffixes = ['in']//, 'alt',]// 'test']
+const suffixes = ['in', 'alt',]// 'test']
 const choice = suffixes[Math.floor(Math.random() * suffixes.length)]
 const URL:string = "https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/2311." + choice
 
@@ -34,8 +34,9 @@ var Aoc2311 = () => {
 
   const Solver = () => {
 
-    const denseChars:string[] = [ '⬤', '◯', '◌', '◉', '✳', '✴', '✵', '✶', '✷', '✸', '✹', '✺']
-    const denseChar:string = denseChars[Math.floor(Math.random() * denseChars.length)]
+    //const denseChars:string[] = [ '☡', '⏆', '፨', '𖣘','𒀱', '𒆙', '߷']//, '⬤', '◯', '◌', '◉', '✳', '✴', '✵', '✶', '✷', '✸', '✹', '✺']
+    const denseChars:string[] = ['ᨁ', 'ᨂ', 'ᨃ', 'ᨄ', 'ᨅ', 'ᨆ', 'ᨇ', 'ᨈ', 'ᨉ', 'ᨊ', 'ᨋ', 'ᨌ', 'ᨍ', 'ᨎ', 'ᨏ', 'ᨐ', 'ᨑ', 'ᨒ', 'ᨓ', 'ᨔ', 'ᨕ', 'ᨖ']
+    // const denseChar:string = denseChars[Math.floor(Math.random() * denseChars.length)]
     if (lines === undefined || lines[0] === undefined) return
 
     let coor: number[][] = []
@@ -89,7 +90,7 @@ var Aoc2311 = () => {
           temp_null_lines[i] = 
             temp_null_lines[i]
             .replace(/\./g, ' ')
-            .replace(/\#/g, denseChar)
+            .replace(/\#/g, denseChars[Math.floor(Math.random() * denseChars.length)])//denseChar)
       }
     }
     for (let er of ER) {
@@ -97,7 +98,7 @@ var Aoc2311 = () => {
         temp_null_lines[er]
         .replace(/\ /g, '─')
         .replace(/\|/g, '┼')
-        .replace(/\#/g, denseChar)
+        .replace(/\#/g, denseChars[Math.floor(Math.random() * denseChars.length)])//denseChar)
     }
     setNullLines(temp_null_lines)
   }
