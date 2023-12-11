@@ -8,6 +8,7 @@ const URL:string = "https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/2311."
 var Aoc2311 = () => {
 
   const [lines, setLines] = useState<string[]>([])
+  const [null_lines, setNullLines] = useState<string[]>([])
   const [p1, setPart1] = useState<number>(0)
   const [p2, setPart2] = useState<number>(0)
 
@@ -33,6 +34,8 @@ var Aoc2311 = () => {
 
   const Solver = () => {
 
+    const denseChars:string[] = [ '⬤', '◯', '◌', '◉', '✳', '✴', '✵', '✶', '✷', '✸', '✹', '✺']
+    const denseChar:string = denseChars[Math.floor(Math.random() * denseChars.length)]
     if (lines === undefined || lines[0] === undefined) return
 
     let coor: number[][] = []
@@ -77,6 +80,26 @@ var Aoc2311 = () => {
     }
     setPart1(calc(coor, ER, EC))
     setPart2(calc(coor, ER, EC, 1e6))
+    let temp_null_lines: string[] = [...lines]
+    for (let ec of EC) {
+      let i = -1
+      while (++i < R) {
+        temp_null_lines[i] = 
+          temp_null_lines[i].substring(0, ec) + '|' + temp_null_lines[i].substring(ec + 1)
+          temp_null_lines[i] = 
+            temp_null_lines[i]
+            .replace(/\./g, ' ')
+            .replace(/\#/g, denseChar)
+      }
+    }
+    for (let er of ER) {
+      temp_null_lines[er] = 
+        temp_null_lines[er]
+        .replace(/\ /g, '─')
+        .replace(/\|/g, '┼')
+        .replace(/\#/g, denseChar)
+    }
+    setNullLines(temp_null_lines)
   }
 
   const calc = (coor: number[][], ER:number[], EC:number[], xp: number = 2): number => {
@@ -119,6 +142,11 @@ var Aoc2311 = () => {
               <span>Part 2: {p2 ? p2 : "(empty)"} </span>
             </div>
           </div>
+          <div className="field data-field data-field-2310">
+            { null_lines ? null_lines.join('\n') : "No data available." }
+          </div>
+          <br/>⬆️
+          <br/><br/>
           <div className="field data-field data-field-2310">
             { lines ? lines.join('\n') : "No data available." }
           </div>
