@@ -239,11 +239,6 @@ var Aoc2310 = () => {
             { A ? A.join("\n") : "No data available." }
           </div>
 
-          <br/>Original Input 2<br/><br/>
-          <div className="field data-field data-field-2310">
-            { lines2 ? lines2.join("\n") : "No data available." }
-          </div>
-
           <br/>Original Input<br/><br/>
           <div className="field data-field data-field-2310">
             { lines ? lines.join("\n") : "No data available." }
