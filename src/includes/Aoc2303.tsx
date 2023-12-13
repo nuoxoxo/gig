@@ -60,7 +60,7 @@ var Aoc2303 = () => {
             }
           </div>
           👆<br/>👇
-          <div className="field data-field data-field-2301" style={{fontSize:'11px',textAlign:'left'}}>
+          <div className="field data-field data-field-2303" >
             {linesWithBlocks
               ? lines.length === 1
                 ? LenNStrsFromLine(linesWithBlocks[0], 16).join("\n")
