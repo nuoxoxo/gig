@@ -57,6 +57,7 @@ var Aoc2313 = () => {
 
   useEffect(() => {
     Planner()
+    Renderer()
   }, [Coors,B,C])
 
   const Planner = () => {
@@ -165,6 +166,10 @@ var Aoc2313 = () => {
     return index
   }
 
+  const Renderer = () => {
+    return combinedArrays
+  }
+
   const combinedArrays = A.map((elemA, i) => {
     elemA = [Array(elemA[0].length).fill([' ']), Array(elemA[0].length).fill([' ']), ...elemA]
     // 👆 unshift 2 blank lines now the left block (which is the orignal block) looks better
@@ -173,7 +178,13 @@ var Aoc2313 = () => {
 
     // Return JSX or components if you want to render them
     return (
-      <div key={i} style={{display:'flex',flexDirection:'row',justifyContent:'center',alignContent:'center',paddingBottom:'21px'}}>
+      <div key={i} style={{
+        display:'flex',
+        flexDirection:'row',
+        justifyContent:'center',
+        alignContent:'center',
+        paddingBottom:'21px'
+      }}>
         <div>{elemA.map((row)=>row.join('')).join('\n')}</div>
         <div>{elemB.map((row)=>row.join('')).join('\n')}</div>
         <div>{elemC.map((row)=>row.join('')).join('\n')}</div>
