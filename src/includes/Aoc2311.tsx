@@ -137,7 +137,7 @@ var Aoc2311 = () => {
       {lines ? (
         <>
           <div className="playground">
-            <div className="field res-field res-field-1813">
+            <div className="field res-field res-field-2311">
               <span>--- 2023 Day 11: Cosmic Expansion ---</span>
               <span>Part 1: {p1 ? p1 : "(empty)"} </span>
               <span>Part 2: {p2 ? p2 : "(empty)"} </span>
