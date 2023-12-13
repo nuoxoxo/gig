@@ -96,8 +96,9 @@ var Aoc2313 = () => {
           C[nth_bloc].push(top)
         }
       }
-      console.log(B, C)
     }
+    setB(B)
+    setC(C)
   }
 
   const Solver = () => {
