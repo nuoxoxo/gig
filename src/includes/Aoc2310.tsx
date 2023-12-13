@@ -211,14 +211,14 @@ var Aoc2310 = () => {
       {lines ? (
         <>
           <div className="playground">
-            <div className="field res-field res-field-1813">
+            <div className="field res-field res-field-2310">
               <span>--- 2023 Day 10: Pipe Maze ---</span>
               <span>Part 1: {p1 ? p1 : "(Loading)"} </span>
               <span>Part 2: {p2 ? p2 : "(...it might be slow i know)"} </span>
             </div>
           </div>
 
-          <br/>All Landlocked Seas<br/>
+          All Landlocked Seas<br/>
           <div className="field data-field data-field-2310">
             { PathLandlock ? PathLandlock.map(row => row.join('')).join('\n') : "No data available." }
           </div>
