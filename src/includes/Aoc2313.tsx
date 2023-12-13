@@ -186,7 +186,7 @@ var Aoc2313 = () => {
   const Renderer = () => {
     return A.map((elemA, i) => {
       elemA = [
-        Array(elemA[0].length).fill([" "]),
+        // Array(elemA[0].length).fill([" "]),
         Array(elemA[0].length).fill([" "]),
         ...(elemA || []),
       ]
