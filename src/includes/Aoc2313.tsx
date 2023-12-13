@@ -67,7 +67,7 @@ var Aoc2313 = () => {
       // console.log('out:',coor)
       
       let [part, nth_bloc, axis, index] = coor
-      console.log(coor)
+      // console.log(coor)
 
       if ( part === 1 ) {
 
@@ -96,6 +96,7 @@ var Aoc2313 = () => {
           C[nth_bloc].push(top)
         }
       }
+      console.log(B, C)
     }
   }
 
