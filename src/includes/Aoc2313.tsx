@@ -163,7 +163,8 @@ var Aoc2313 = () => {
   }
 
   const combinedArrays = A.map((elemA, i) => {
-    elemA = [Array(elemA[0].length).fill([' ']), ...elemA]
+    elemA = [Array(elemA[0].length).fill([' ']), Array(elemA[0].length).fill([' ']), ...elemA]
+    // 👆 unshift 2 blank lines now the left block (which is the orignal block) looks better
     const elemB = B[i]
     const elemC = C[i]
 
