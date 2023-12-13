@@ -52,7 +52,6 @@ var Aoc2313 = () => {
   }, [])
 
   useEffect(() => {
-    console.log(A.length,B.length,C.length)
     Solver()
   }, [A,B,C])
 
@@ -67,7 +66,10 @@ var Aoc2313 = () => {
       // console.log('out:',coor)
       
       let [part, nth_bloc, axis, index] = coor
+      console.log(coor)
+
       if ( part === 1 ) {
+
         if (axis == 1) {// horizontal
           B[nth_bloc].splice(index, 0, Array(B[nth_bloc][0].length).fill(['━']))
         } else if (axis == 2) {//vertical
@@ -80,6 +82,7 @@ var Aoc2313 = () => {
           B[nth_bloc].push(top)
         }
       } else if (part == 2){
+
         if (axis == 1) {// horizontal
           C[nth_bloc].splice(index, 0, Array(C[nth_bloc][0].length).fill(['━']))
         } else if (axis == 2) {//vertical
