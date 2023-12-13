@@ -83,9 +83,9 @@ var Aoc2310 = () => {
     Seen.add(Start)
     // let Seen: Set<string> = new Set()
     // Seen.add(`${Start[0]},${Start[1]}`)
-    console.log('From:', Start)
-    console.log('Seen:', Seen)
-    console.log('BFS :', Deque)
+    // console.log('From:', Start)
+    // console.log('Seen:', Seen)
+    // console.log('BFS :', Deque)
     let dr = [-1, 1, 0, 0]
     let dc = [ 0, 0,-1, 1] // UDLR
 
@@ -127,7 +127,7 @@ var Aoc2310 = () => {
           lines2[r] = lines2[r].slice(0, c) + '.' + lines2[r].slice(c + 1);
       }
     }
-    console.log(lines2)
+    // console.log(lines2)
     let OUT: Set<number[]> = new Set([])
     r = -1
     while (++r < R) {
@@ -218,7 +218,7 @@ var Aoc2310 = () => {
             </div>
           </div>
 
-          <br/><br/>All Landlocked Seas<br/>
+          <br/>All Landlocked Seas<br/>
           <div className="field data-field data-field-2310">
             { PathLandlock ? PathLandlock.map(row => row.join('')).join('\n') : "No data available." }
           </div>
