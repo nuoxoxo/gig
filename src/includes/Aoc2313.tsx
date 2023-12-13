@@ -167,30 +167,28 @@ var Aoc2313 = () => {
   }
 
   const Renderer = () => {
-    return combinedArrays
+    return A.map((elemA, i) => {
+      elemA = [Array(elemA[0].length).fill([' ']), Array(elemA[0].length).fill([' ']), ...elemA]
+      // 👆 unshift 2 blank lines now the left block (which is the orignal block) looks better
+      const elemB = B[i]
+      const elemC = C[i]
+
+      // Return JSX or components if you want to render them
+      return (
+        <div key={i} style={{
+          display:'flex',
+          flexDirection:'row',
+          justifyContent:'center',
+          alignContent:'center',
+          paddingBottom:'21px'
+        }}>
+          <div>{elemA.map((row)=>row.join('')).join('\n')}</div>
+          <div>{elemB.map((row)=>row.join('')).join('\n')}</div>
+          <div>{elemC.map((row)=>row.join('')).join('\n')}</div>
+        </div>
+      )
+    })
   }
-
-  const combinedArrays = A.map((elemA, i) => {
-    elemA = [Array(elemA[0].length).fill([' ']), Array(elemA[0].length).fill([' ']), ...elemA]
-    // 👆 unshift 2 blank lines now the left block (which is the orignal block) looks better
-    const elemB = B[i]
-    const elemC = C[i]
-
-    // Return JSX or components if you want to render them
-    return (
-      <div key={i} style={{
-        display:'flex',
-        flexDirection:'row',
-        justifyContent:'center',
-        alignContent:'center',
-        paddingBottom:'21px'
-      }}>
-        <div>{elemA.map((row)=>row.join('')).join('\n')}</div>
-        <div>{elemB.map((row)=>row.join('')).join('\n')}</div>
-        <div>{elemC.map((row)=>row.join('')).join('\n')}</div>
-      </div>
-    )
-  })
 
   return (
     <>
