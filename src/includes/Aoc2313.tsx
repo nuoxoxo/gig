@@ -204,7 +204,8 @@ var Aoc2313 = () => {
             </div>
           </div>
           <div className="field data-field data-field-2313">
-            <div>{combinedArrays}</div>
+            {/* <div>{combinedArrays}</div> */}
+            <div>{Renderer()}</div>
             {/* <div>
               { A ? A
                 .slice(Math.floor(A.length/2))
