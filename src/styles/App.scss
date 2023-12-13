@@ -116,6 +116,7 @@ body {
 .data-field {
   font-size: $TextSize-05;
   padding: 6px;
+  margin-top: 21px;
 }
 
 .gig-header {
@@ -303,6 +304,24 @@ body {
 .data-field-2310 {
   font-size: 10px;
   text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.res-field-2313 {
+  align-items: center;
+  justify-self: center
+}
+
+.data-field-2313 {
+  display: flex;
+  flex-direction: row;
+  font-size: 14px;
+  text-align: center;
+  div {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
 .data-field-1818 {
