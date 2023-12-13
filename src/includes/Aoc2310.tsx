@@ -218,12 +218,12 @@ var Aoc2310 = () => {
             </div>
           </div>
 
-          All Landlocked Seas<br/>
+          All Landlocked Seas<br/><br/>
           <div className="field data-field data-field-2310">
             { PathLandlock ? PathLandlock.map(row => row.join('')).join('\n') : "No data available." }
           </div>
 
-          <br/>These are Joined Pipes<br/>
+          <br/>These are Joined Pipes<br/><br/>
           <div className="field data-field data-field-2310">
             { PathAllPipes ? PathAllPipes.map(row => row.join('')).join('\n') : "No data available." }
           </div>
