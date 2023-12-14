@@ -101,6 +101,7 @@ body {
   flex-wrap: nowrap;
   justify-content: center;
   font-size: $TextSize-05;
+  padding-top:10px;
 }
 
 .field {
@@ -321,7 +322,7 @@ body {
 
 .data-field-2310 {
   margin-top: 1px;
-  padding: 0;
+  padding-top: 21px;
 }
 
 .res-field-2313, .res-field-2311, .res-field-2212, .res-field-2310 {
@@ -341,6 +342,17 @@ body {
   div {
     padding-left: 15px;
     padding-right: 15px;
+  }
+}
+
+.data-field-2314 {
+  display: flex;
+  // flex-direction: row;
+  font-size: 16px;
+  text-align: center;
+  div {
+    padding-bottom: 42px;
+    padding-top: 42px;
   }
 }
 
