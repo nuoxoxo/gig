@@ -133,7 +133,7 @@ var Aoc2314 = () => {
                 arrTransposedClockwise90_right_again
                   .map((arr) => arr.join(''))
                   .map((s) => s.replace(/\./g,' '))
-                  .map((s) => s.replace(/O/g, '.'))
+                  .map((s) => s.replace(/O/g, ':'))
                   .map((s) => s.replace(/#/g, '─'))
                   .join('\n') : "No data available."
                   
