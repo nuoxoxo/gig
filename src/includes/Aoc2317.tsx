@@ -1,0 +1,72 @@
+import { useState, useEffect } from "react"
+import { FetchData, LenNStrsFromLine } from "../helpers/Helpers"
+const suffixes = ['alt', 'in']
+const choice = suffixes[Math.floor(Math.random() * suffixes.length)]
+const URL:string = 
+  "https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/2317." + choice
+
+var Aoc2317 = () => {
+
+  const [lines, setLines] = useState<string[]>([])
+  const [p1] = useState<number>(0)
+  const [p2] = useState<number>(0)
+
+  const handleData = async () => {
+    try {
+      const raws = await FetchData(URL)
+      setLines(raws)
+    } catch (error: any) {
+      console.error("Error fetching data: ", error)
+    }
+  }
+
+  useEffect(() => {
+    handleData()
+  }, [])
+
+  return (
+    <>
+      {lines ? (
+        <div className='playground playground-2011'>
+          <div className="field res-field-2313">
+            <span>--- 2023 Day 17: Clumsy Crucible ---</span>
+            <span>Part 1: {p1?p1:'(no solution available)'}</span>
+            <span>Part 2: {p2?p2:'(no solution available)'}</span>
+          </div>
+          {/*
+          <div className="field data-field data-field-2011">
+            { p2Grid
+              ? p2Grid.map((line) => line.split("").join(" ")).join("\n")
+              : "No data available."}
+          </div>
+
+          <div className="field data-field data-field-2011">
+            { p1Grid
+              ? p1Grid.map((line) => line.split("").join(" ")).join("\n")
+              : "No data available."}
+          </div>
+
+          <div className="field data-field data-field-2011">
+            { P2Path
+              ? P2Path.map((line) => line.split("").join(" ")).join("\n")
+              : "No data available."}
+          </div>
+          */}
+
+          <div className="field data-field data-field-2011">
+            {lines
+              ? lines.length === 1
+                ? LenNStrsFromLine(lines[0], 16).join("\n")
+                : // : lines.join("\n")
+                  lines/*.map((line) => line.split("").join(" "))*/.join("\n")
+              : "No data available."}
+          </div>
+        </div>
+      ) : (
+        <p>Loading data...</p>
+      )}
+    </>
+  )
+}
+
+export default Aoc2317
