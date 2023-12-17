@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react"
 import { FetchData, Deepcopy2DArray } from "../helpers/Helpers"
 
-const suffixes = ['alt', '0']
+const suffixes = ['alt', 'in']
 const choice = suffixes[Math.floor(Math.random() * suffixes.length)]
 const URL:string = 
-  "https://raw.githubusercontent.com/nuoxoxo/advent-of-code/main/_inputs_/1908." + choice
+  "https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/1908." + choice
 
 const sparseChars:string[] = [':']
 const sparseChar:string = sparseChars[Math.floor(Math.random() * sparseChars.length)]
