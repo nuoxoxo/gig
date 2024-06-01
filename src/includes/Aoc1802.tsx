@@ -103,6 +103,7 @@ var Aoc1802 = () => {
   }, [lines])
 
   return (
+
     <>
       { lines ? (
         <div className="playground playground-1802">
