@@ -95,7 +95,7 @@ function App() {
 
   return (
     <>
-      <h2 className="gig-header">Hello World</h2>
+      <h2 className="gig-header">Visualizing Answers to Advent of Code Puzzles</h2>
       <div className="nav">
         {/* New code */}
 
